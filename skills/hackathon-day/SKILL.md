@@ -36,6 +36,7 @@ Planeje de trás para frente a partir da submissão e reserve tempo para ensaio 
 
 ## Honestidade técnica (a banca verifica)
 
+- **IA para construir e IA no produto são decisões distintas.** Dentro das regras do evento, use agentes para acelerar pesquisa, código, testes e ensaio. Só inclua um modelo no produto quando a proposta depender dele ou o regulamento pedir.
 - **A tecnologia exigida pelo tema precisa ser real no caminho da demo.** Se o tema pede IA, a IA roda de verdade (API ou modelo local), com plano B rotulado. Simulação (regras, léxico, resposta fixa) só se a tela e a fala disserem isso **em todo lugar**, com o mesmo nome. Use `mechanism-integrity` para registrar rótulo, fronteira e evidência em `docs/MECHANISM.md`.
 - **Entrada ao vivo.** O jurado precisa poder testar um caso próprio. Sem input, a demo vira resultado pré-calculado.
 - **Não termine cedo.** Se o caminho da demo ficou pronto antes da metade, o tempo restante vai para tornar o mecanismo real e testável, não para polimento.
