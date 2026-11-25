@@ -1,0 +1,78 @@
+/* PitchTour — minimal, token-based; products restyle freely. */
+.ds-pitch-tour {
+	position: fixed;
+	z-index: 60;
+	inset-inline: max(1rem, calc(50% - 17rem));
+	inset-block-end: max(1rem, env(safe-area-inset-bottom));
+	display: grid;
+	gap: 0.5rem;
+	padding: 1rem 1.1rem;
+	background: var(--surface-raised, #fff);
+	color: var(--foreground, #111);
+	border: var(--border-width, 1px) solid var(--border, #d4d4d8);
+	border-radius: var(--radius-lg, 8px);
+	box-shadow: var(--shadow-lg, 0 12px 32px rgb(0 0 0 / 0.18));
+}
+
+.ds-pitch-tour:focus-visible {
+	outline: 2px solid var(--focus, #1d4ed8);
+	outline-offset: 2px;
+}
+
+.ds-pitch-progress {
+	font-family: ui-monospace, monospace;
+	color: var(--muted, #52525b);
+	font-size: 0.75rem;
+}
+
+.ds-pitch-title {
+	font-family: inherit;
+	font-weight: var(--heading-weight, 700);
+	font-size: 1.25rem;
+	line-height: 1.2;
+}
+
+.ds-pitch-body {
+	color: var(--muted, #52525b);
+	margin-top: 0.25rem;
+}
+
+.ds-pitch-actions {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+.ds-pitch-button,
+.ds-pitch-close {
+	min-height: max(var(--target-min, 24px), 2.75rem);
+	padding: 0 0.9rem;
+	border: var(--border-width, 1px) solid var(--control-border, #71717a);
+	border-radius: var(--radius-control, 6px);
+	font-weight: 600;
+}
+
+.ds-pitch-button[data-primary] {
+	background: var(--primary, #18181b);
+	color: var(--on-primary, #fff);
+	border-color: var(--primary, #18181b);
+}
+
+.ds-pitch-button:disabled {
+	opacity: 0.5;
+}
+
+.ds-pitch-close {
+	margin-inline-start: auto;
+	min-width: 2.75rem;
+	padding: 0;
+	font-size: 1.25rem;
+}
+
+[data-pitch-active] {
+	position: relative;
+	z-index: 55;
+	outline: 3px solid var(--focus, #1d4ed8);
+	outline-offset: 4px;
+	box-shadow: 0 0 0 100vmax var(--pitch-scrim, var(--dialog-scrim, rgb(0 0 0 / 0.35)));
+}
