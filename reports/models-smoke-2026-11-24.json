@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-11-25T02:20:20.394Z",
+  "status": {
+    "opencode/tidepool-alpha-free": "ok",
+    "opencode/hy4-flash-free": "ok",
+    "opencode/iceman-free": "ok",
+    "opencode/flint-40b-free": "ok",
+    "opencode/deepseek-v4.1-flash-free": "quota",
+    "opencode/nemotron-3.5-super-vl-free": "quota",
+    "opencode/beam-free": "ok",
+    "opencode/mimo-v2.6-flash-free": "quota",
+    "opencode/nemotron-3.5-lightning-free": "ok",
+    "opencode/big-pickle": "ok"
+  },
+  "available": [
+    "opencode/tidepool-alpha-free",
+    "opencode/hy4-flash-free",
+    "opencode/iceman-free",
+    "opencode/flint-40b-free",
+    "opencode/beam-free",
+    "opencode/nemotron-3.5-lightning-free",
+    "opencode/big-pickle"
+  ]
+}

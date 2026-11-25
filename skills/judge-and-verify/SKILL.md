@@ -5,7 +5,7 @@ description: Avalia um app de hackathon como uma banca real — verificação no
 
 # Verificar e julgar
 
-Testes aprovados não significam que o jurado entende. Rode as três etapas, com o app rodando.
+Testes aprovados não significam que o jurado entende. Rode as etapas, com o app rodando.
 
 ## 1. Verificação de regras (`scripts/verify.mjs`)
 
@@ -30,9 +30,9 @@ Requer Playwright no projeto (`bun add -d @playwright/test && bunx playwright in
 }
 ```
 
-- Valores: `{--var}` (ou `{var}`) lê a variável CSS do `:root`; `>= 64px`, `<= 300ms`, `= 0px` comparam números (px↔rem, s↔ms); `~texto` exige que contenha; o resto é igualdade (cores normalizadas).
-- `viewports` e `states` numa regra a restringem a esses tamanhos e estados; `optional: true` aceita elemento ausente; `all: true` verifica todos os elementos, não só o primeiro.
-- Inclua em `states` o resultado e o antes × depois: o que a banca verá também precisa passar.
+- Valores: `{--var}` lê a variável CSS do `:root`; `>= 64px`, `<= 300ms`, `= 0px` comparam números; `~texto` exige que contenha; o resto é igualdade.
+- `viewports` e `states` restringem a regra; `optional: true` aceita ausência; `all: true` verifica todos os elementos.
+- Inclua em `states` o resultado e o antes × depois.
 
 ## 2. Observação como jurado (`scripts/observe.mjs`)
 
@@ -40,27 +40,41 @@ Requer Playwright no projeto (`bun add -d @playwright/test && bunx playwright in
 node <skill>/scripts/observe.mjs http://127.0.0.1:3000/ [--out design/judging] [--click "text=Usar exemplo"]
 ```
 
-Em 360 e 1440 px: tempo até o conteúdo, a tela aos 5 s, a página inteira, a ação principal clicada, cada passo do `?demo=1`, erros, overflow, texto visível da primeira tela, densidade (palavras/números/controles), marcadores `data-story`, presença de input ao vivo e violações do axe (se `@axe-core/playwright` estiver instalado). Gera `observation.json` e capturas, que são a evidência comum da banca.
+Em 360 e 1440 px: tempo até conteúdo, tela aos 5 s, página inteira, ação principal clicada, passos do `?demo=1`, erros, overflow, texto visível da primeira tela, densidade (palavras/números/controles), marcadores `data-story`, presença de input ao vivo e axe (se instalado). Gera `observation.json` e capturas.
 
-O script também marca **gates P0**: densidade acima do orçamento, ausência de `problem/promise/action`, ausência de input ao vivo, erros de console/page e overflow. Gate falhando é defeito de entrega, não preferência estética.
+O script marca **gates P0** e sai com código `2` se falhar: densidade acima do orçamento, ausência de `problem/promise/action` na primeira tela, ausência de input ao vivo, overflow, ou erros console/page. Gate falhando é defeito de entrega.
 
-**Olhe as capturas você mesmo**, em especial durante a interação: nos ensaios, defeitos como um mecanismo "pixelado" ou uma comparação que sumia só apareceram nelas.
+## 3. Judge packet (`scripts/judge-packet.mjs`)
 
-## 3. Banca de jurados
+```sh
+node <skill>/scripts/judge-packet.mjs --in design/judging --out design/judging/packet.md
+```
+
+Gera um pacote único para banca cega: métricas, gates P0, capturas, passos do demo e checklist rápido. Use como entrada padrão dos jurados.
+
+## 4. Claim ledger (`scripts/claim-ledger.mjs`)
+
+```sh
+node <skill>/scripts/claim-ledger.mjs .
+```
+
+Varre números em código/docs e aponta claims sem procedência provável. Todo número mostrado ao jurado deve ter fonte, "estimativa" ou "dado de exemplo". Use antes do congelamento.
+
+## 5. Banca de jurados
 
 Monte a banca descrita em `references/panel.md`: **impacto, técnico, inovação, design, comunicação** (e **patrocinador**, se o evento exigir uma tecnologia). Cada jurado:
 - é um agente separado, sem acesso à conversa nem às intenções do time;
-- recebe a URL, `docs/CHALLENGE.md`, a saída do `observe.mjs` e o seu papel;
-- **usa o app por 5 minutos** com Playwright (clica, muda entradas, abre a demo, tira prints) e, no caso do técnico, lê o repositório;
-- dá uma nota de 0 a 10 com evidência e uma correção.
+- recebe URL, `docs/CHALLENGE.md`, `design/judging/packet.md` (ou observation+capturas) e o seu papel;
+- **usa o app por 5 minutos** com Playwright e, no caso do técnico, lê o repositório;
+- dá nota 0–10 com evidência e uma correção.
 
-Claude Code: dispare os jurados em paralelo como subagentes novos (sem fork), um por papel. Codex ou outro agente: uma sessão limpa por jurado, ou em sequência. Pouco tempo: junte inovação com impacto e design com comunicação (3 jurados).
+Depois, o **moderador** agrega: tabela de notas, nota ponderada pelos pesos oficiais (ou `references/criteria.md`), deliberação, frase de defesa, três correções por ganho de nota por minuto e riscos da demo ao vivo.
 
-Depois, o **moderador** agrega: tabela de notas, nota ponderada pelos pesos oficiais (ou os padrões de `references/criteria.md`), deliberação, frase de defesa, três correções por ganho de nota por minuto e riscos da demo ao vivo.
+## Regras
 
-Regras:
-- Qualquer jurado que não entenda para quem/dor/ação em 5 s bloqueia o polimento visual: reescreva a abertura primeiro.
-- Registre as notas de cada rodada em `docs/STATUS.md` para comparar.
-- Após o congelamento, as correções só podem mexer em tela, demo e pitch.
+- Qualquer jurado que não entenda para quem/dor/ação em 5 s bloqueia polimento visual: reescreva a abertura primeiro.
+- Registre notas por rodada em `docs/STATUS.md`.
+- Após congelamento, correções só mexem em tela, demo e pitch.
+- Defeito apontado por 2+ jurados independentes é prioridade 1.
 
-Critérios e pesos mais comuns, com fontes: `references/criteria.md`.
+Critérios e pesos: `references/criteria.md`. Formato de banca: `references/panel.md`.

@@ -64,4 +64,4 @@ Mantenha os agentes simples: tarefas pequenas com arquivos definidos. Orquestra�
 
 ## Evidência
 
-Padrões repetidos entre vencedores e jurados (OpenAI Build Week 2026, TreeHacks 2025–26, Gemini API Competition, relatos de jurados): uma frase e uma pessoa concreta; demo ao vivo do caminho principal ("the single largest score differentiator"); os primeiros 30 s fixam a nota; escopo estreito que roda inteiro; IA essencial **com limites**; limites honestos; gravação de reserva; sem atrito de cadastro. Detalhes e fontes: `references/winning-patterns.md`.
+Padrões repetidos entre vencedores e jurados (OpenAI Build Week 2026, TreeHacks 2025–26, Gemini API Competition, relatos de jurados): uma frase e uma pessoa concreta; demo ao vivo do caminho principal ("the single largest score differentiator"); os primeiros 30 s fixam a nota; escopo estreito que roda inteiro; IA essencial **com limites**; limites honestos; gravação de reserva; sem atrito de cadastro. Detalhes e fontes: `references/winning-patterns.md`. Protocolo de drill: `references/drill-protocol.md`.
