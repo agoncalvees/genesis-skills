@@ -12,7 +12,7 @@ $THEME
 
 - Orçamento: 90 minutos de relógio (equivale a ~6 h comprimidas). Registre a hora de início e de cada marco em docs/STATUS.md.
 - Projeto do zero, neste diretório. Stack livre (sugestão: Vite + React + TypeScript). Sem serviços pagos e sem login.
-- Entregue: app rodando localmente, docs/CHALLENGE.md, docs/PRODUCT-BRIEF.md, docs/DEMO-SCRIPT.md, design/DESIGN.md, capturas em design/evidence/.
+- Comece pela descoberta. Em treino de entrega, após a equipe aprovar a direção, entregue app rodando localmente, docs/CHALLENGE.md, docs/PRODUCT-BRIEF.md, docs/DEMO-SCRIPT.md, design/DESIGN.md e capturas em design/evidence/.
 MD
 "$ROOT/scripts/install.sh" --project "$DIR" >/dev/null
 git add -A && git commit -qm "Treino $NAME: tema e skills"

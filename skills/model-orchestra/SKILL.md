@@ -45,7 +45,7 @@ Reservas: deepseek-v4.1-flash-free, nemotron-3.5-super-vl-free (visual quando di
 ## 4. Fluxo
 
 1. Smoke de modelos.
-2. Build (1 agente) usa skills de produto.
+2. Build (1 agente) usa as skills de produto após a direção ser aprovada pela equipe.
 3. Rode `verify.mjs` com `--profile demo`, `observe.mjs` com `--profile tool` ou `--profile landing` conforme a demo, e `judge-packet.mjs`.
 4. Banca paralela com `panel-pack.mjs`.
 5. Red-team com `red-team` skill.

@@ -23,7 +23,7 @@ Abra a pasta do projeto em **uma nova sessão do Codex** e descreva só a tarefa
 | Skill | Quando | Saída principal |
 |---|---|---|
 | `hackathon-day` | O evento começou: regras, linha do tempo, papéis, congelamento, entrega | `docs/CHALLENGE.md`, cronograma |
-| `problem-to-pain` | Tema revelado: dor concreta, 3 ideias, pontuação, one-liner | `docs/PRODUCT-BRIEF.md` |
+| `problem-to-pain` | Explorar oportunidades, investigar dores, comparar propostas diferenciadas e escolher visão + recorte | Evidência, hipóteses e decisão, com `docs/PRODUCT-BRIEF.md` quando útil |
 | `mechanism-integrity` | Definir e provar o mecanismo: IA real/regra/simulação, entrada ao vivo, evidência, fallback | `docs/MECHANISM.md` |
 | `pitch-structure` | Montar a tela e o pitch: estrutura padrão, `?demo=1`, roteiro de 3 min, templates | `docs/DEMO-SCRIPT.md`, templates |
 | `art-direction` | Definir ou revisar a identidade e a composição do produto | `design/DESIGN.md` quando houver decisões duráveis |
@@ -78,7 +78,7 @@ Mantenha esse checkout fora do catálogo de skills do agente e exclua `.genesis/
 Para trabalho fora de um evento, selecione só a skill de que a tarefa precisa. Em um hackathon, os passos abaixo são um roteiro de entrega ajustável ao regulamento e ao tempo disponível.
 
 1. `hackathon-day` — regras, tempo, entrega.
-2. `problem-to-pain` — dor, usuário, one-liner.
+2. `problem-to-pain` — exploração de oportunidades, evidência e hipóteses, visão de produto, recorte de hackathon e decisão antes de implementar.
 3. `mechanism-integrity` — mecanismo real, fronteira, entrada ao vivo.
 4. `pitch-structure` — primeira tela, `?demo=1`, antes/depois.
 5. `art-direction` — identidade visual. Use `design-engineering` conforme a necessidade da interação.

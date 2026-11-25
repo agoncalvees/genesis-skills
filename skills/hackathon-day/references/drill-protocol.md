@@ -6,12 +6,12 @@
 3. Rodar smoke de modelos e salvar `reports/models-smoke-YYYY-MM-DD.json`.
 
 ## Execução
-- Agente de build recebe apenas: tema, tempo, regra “use as skills disponíveis”.
+- A equipe informa tema e tempo. Para exercitar descoberta, registre o que sustenta a direção ou a próxima verificação. Em treino de entrega, a equipe precisa aprovar explicitamente a direção antes de acionar o agente de build. Se não houver aprovação, encerre a rodada na descoberta.
 - Sem copiar código de produtos anteriores.
-- Artefatos obrigatórios: `CHALLENGE.md`, `PRODUCT-BRIEF.md`, `MECHANISM.md`, `DEMO-SCRIPT.md`, `REHEARSAL.md`, `design/DESIGN.md`, `design/fidelity.json`, evidências.
+- Em treino de entrega após aprovação, reúna `CHALLENGE.md`, `PRODUCT-BRIEF.md`, `MECHANISM.md`, `DEMO-SCRIPT.md`, `REHEARSAL.md`, `design/DESIGN.md`, `design/fidelity.json` e evidências.
 
 ## Medições
-- Minutos até one-liner, mecanismo real/input ao vivo, demo ponta-a-ponta, verify ok, observe ok, judge packet, entrega.
+- Registre qualidade da evidência, incertezas sobre demanda e clareza do one-liner. Após aprovação e em treino de entrega, registre também tempos, funcionamento e evidências da demo.
 - `verify.mjs` exit 0.
 - `observe.mjs --profile tool` (ou `--profile landing`, conforme a demo) exit 0, sem gates P0.
 - `judge-packet.mjs` gerado.

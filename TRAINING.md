@@ -1,10 +1,10 @@
 # Treino das skills
 
-Uma skill só é considerada validada depois de passar por treinos com tema surpresa, repositório vazio e nota do juiz cego.
+Treinos de entrega usam tema surpresa, repositório vazio e avaliação de um juiz cego. Para descoberta, verifique como a equipe usa evidência, examina alternativas e decide se há base para seguir.
 
 ## Protocolo de um treino
 1. `scripts/new-drill.sh <nome> "<tema>"` cria `~/orca/drills/<nome>` vazio, com git, as skills instaladas e `THEME.md`.
-2. Um agente novo (sem contexto do Genesis) recebe só: o tema, o orçamento de tempo (90 min = 6 h comprimidas em 1/4) e a instrução "use as skills disponíveis". Projeto do zero, sem copiar código do Genesis além dos templates das skills.
+2. Um agente novo recebe tema, tempo e a instrução "use as skills disponíveis". O projeto começa do zero e a construção depende da aprovação explícita da equipe.
 3. Medir: minutos até o one-liner, até o caminho da demo rodar, até a entrega; resultado do `verify.mjs`.
 4. Juiz cego (subagente novo) com as capturas: respostas dos 5 s, notas, frase do júri, correções.
 5. Registrar abaixo. Cada falha vira correção em uma skill, com o motivo.
@@ -63,3 +63,11 @@ Pesos de `criteria.md`: técnica 25%, impacto 25%, inovação 20%, design 15%, c
 - Uma chamada sem caminho ao `claim-ledger.mjs` varria o diretório atual e podia imprimir trechos de arquivos de treino sem relação com o produto. O script agora exige um arquivo ou diretório explícito; teste de regressão primeiro reproduziu a impressão de um sentinela e depois passou.
 
 **Limites e retomada:** o tamanho da amostra é n=2 drills autorais e n=5 avaliações Codex por drill; não mede generalização, impacto real, uso por cozinhas/oficinas ou juízo humano. Os apps de treino continuam sem correções e devem permanecer bloqueados para uso operacional. O ledger ainda gera falsos positivos em valores sintéticos/constantes; reduzir o ruído sem ocultar claims de produto segue como tarefa futura.
+
+## Sonda de descoberta · 25/11/2026
+
+Dois agentes em contextos novos receberam o mesmo caso hipotético. Um hackathon de duas horas, um relato indireto sobre horários de atendimento desatualizados, um chatbot sugerido e nenhuma decisão do time. Com a skill anterior, o agente somou as notas e recomendou um cartão digital com base no relato e na facilidade de demonstrar. Com a revisão, o agente propôs confirmar o episódio com moradores e com quem publica os horários, comparar com corrigir o canal atual e aguardar evidência e aprovação. Esse teste verifica uma mudança de comportamento no cenário. A demanda por uma solução depende de verificação com as pessoas envolvidas.
+
+## Correção após a segunda simulação · 25/11/2026
+
+A equipe relatou melhora na clareza, fundamentação, pensamento crítico e hipóteses, mas ainda observou propostas incrementais e baixa ambição de produto. A auditoria identificou a convergência prematura em três lugares: a etapa de descoberta exigia sinais de adoção, ganho e viabilidade para aprovar; a comparação valorizava impacto mensurável e prova de demo; e a execução/pitch não separava com nitidez a visão completa do recorte construído. A revisão adiciona exploração de oportunidades por perspectiva, causa e alavanca, conserva até três propostas com visão/diferencial/experiência/recorte/riscos, permite prototipar sob incerteza declarada e mantém o demo como prova de uma fatia. A simulação seguinte ainda não foi iniciada; esta revisão segue candidata até nova avaliação.

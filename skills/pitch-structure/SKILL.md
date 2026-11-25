@@ -13,7 +13,7 @@ O jurado vê o app por segundos. Mostrar tudo é o mesmo que não mostrar nada.
 
 | Onde | Limite |
 |---|---|
-| Primeira tela (1440 px) | **até 60 palavras**, **1 número em destaque**, **1 ação principal** (no máximo 1 secundária) |
+| Primeira tela (1440 px) | **até 60 palavras**, **1 sinal de valor em destaque** (número quando esclarece), **1 ação principal** (no máximo 1 secundária) |
 | Primeira tela (360 px) | até 35 palavras |
 | Cada tela ou passo | **uma decisão ou uma ideia**; o resto fica recolhido |
 | Cada passo do `?demo=1` | título de até 10 palavras e uma frase de até 18 |
@@ -25,11 +25,13 @@ Como cortar: (1) o que não responde "para quem / dor / o que faço" sai da prim
 
 ## Padrões de mecanismo
 
-Consulte `references/mechanism-patterns.md` para escolher um mecanismo demonstrável (classificador com evidência, simulador contrafactual, extrator com citação, otimizador com restrições, copiloto humano-no-loop).
+Parta da direção de produto aprovada. Consulte `references/mechanism-patterns.md` se precisar demonstrar melhor o valor de uma solução definida.
+
+Na abertura, separe a promessa da visão de produto da fatia construída no hackathon. O roteiro pode ser estreito; não apresente um recurso como se fosse o produto inteiro. A clareza da demo explica a proposta, mas não cria diferenciação que ela não tenha.
 
 ## Estrutura padrão (nesta ordem de leitura)
 
-1. **Abertura, sem rolar, em 360 e 1440 px:** para quem (`audience`), título com o produto, **dor com um número** (`data-story="problem"`), promessa em uma frase (`data-story="promise"`) e **uma** ação principal (`data-story="action"`): "Ver em 60 segundos". Não é landing page separada: a experiência começa logo abaixo.
+1. **Abertura, sem rolar, em 360 e 1440 px:** para quem (`audience`), título com o produto, dor e relevância com evidência contextualizada — número se ajudar (`data-story="problem"`) —, promessa em uma frase (`data-story="promise"`) e **uma** ação principal (`data-story="action"`): "Ver em 60 segundos". Não é landing page separada: a experiência começa logo abaixo.
 2. **Experiência com exemplo pronto e entrada ao vivo:** o mecanismo abre já com dados de exemplo rotulados, ou com "Usar exemplo" a um clique. Sem login, sem formulário vazio, sem tela de configuração. **O jurado precisa poder alimentar o mecanismo:** um campo para colar/editar/enviar um caso próprio e ver o resultado mudar na hora. Mostre estado de carregamento, erro e um caso difícil. Sem input, o jurado técnico trata o app como demo pré-calculada.
 3. **Resultado com antes × depois** (`data-story="result"`): o número grande e a comparação no mesmo quadro.
 4. **Como funciona:** 3 ou 4 passos; diga **onde a IA age e onde a pessoa decide**.
@@ -53,8 +55,8 @@ Sem React ou sem permissão para copiar: reproduza a mesma estrutura à mão. O 
 
 | Tempo | Bloco | Na tela |
 |---|---|---|
-| 0:00–0:20 | **Dor**: uma pessoa, uma cena, um número | Abertura |
-| 0:20–0:35 | **Promessa**: o one-liner | Abertura → ação |
+| 0:00–0:20 | **Dor**: quem é afetado, a situação e a consequência relevante | Abertura |
+| 0:20–0:35 | **Promessa**: a mudança que o produto completo busca e a fatia que será demonstrada | Abertura → ação |
 | 0:35–1:50 | **Demo**: `?demo=1`, um único caminho, sem desvio | Tour: mesmos passos do roteiro, na mesma ordem |
 | 1:50–2:20 | **Como funciona e por que é difícil**: o mecanismo, a tecnologia, a fronteira da IA | Como funciona |
 | 2:20–2:45 | **Impacto e viabilidade**: quem adota, quanto melhora, próximo passo | Limites e próximo passo |

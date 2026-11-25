@@ -7,6 +7,8 @@ description: Garante que o mecanismo central do hackathon seja real, demonstráv
 
 Um jurado técnico trata "parece IA" sem evidência como simulação disfarçada. Esta skill impede isso.
 
+Para um produto novo, comece pela direção aprovada em `problem-to-pain`. Projete o mecanismo a partir do valor prometido, sem escolher a ideia apenas para caber numa API ou num padrão de demo. A prova de que o mecanismo funciona não prova, por si só, adoção ou valor duradouro.
+
 ## 1. Classifique o mecanismo (antes de codar)
 
 Escolha **um** rótulo e use o mesmo nome na tela, no pitch, no README e no `docs/MECHANISM.md`.

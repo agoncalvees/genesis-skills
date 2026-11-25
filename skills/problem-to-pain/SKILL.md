@@ -1,66 +1,37 @@
 ---
 name: problem-to-pain
-description: Transforma um tema ou "problema difícil" de hackathon numa dor concreta e demonstrável e escolhe a ideia com mais chance de vencer — método de descer três níveis, três ideias por ângulos diferentes, pontuação pela ótica do jurado, critérios de descarte e one-liner. Use logo após o tema ser revelado, quando houver várias ideias e for preciso escolher, ou quando o produto parecer amplo, genérico ou difícil de explicar. Gera docs/PRODUCT-BRIEF.md.
+description: Use para explorar oportunidades, descobrir problemas, gerar e comparar ideias e escolher uma direção de produto diferenciada, em hackathons ou em outros contextos.
 ---
 
-# Do problema difícil à dor
+# Descoberta e decisão de produto
 
-Um "problema difícil" costuma ser grande e abstrato. Vencedores atacam **um momento concreto de uma pessoa concreta**. Tempo total: 30 minutos.
+## 1. Explore oportunidades antes de escolher uma dor
 
-## 1. Desça três níveis (5 min)
+Extraia o objetivo do brief e separe restrições confirmadas de suposições. Antes de filtrar por facilidade, percorra públicos, momentos, causas e maneiras distintas de mudar o resultado. Use primeiros princípios e criatividade lateral para buscar oportunidades além de automatizar a etapa atual. Consulte `references/opportunity-exploration.md` para esse passe interno.
 
-Problema → **quem sofre mais** (papel, contexto) → **em que momento** do dia → **que decisão ou tarefa** essa pessoa faz mal ou devagar nesse momento.
+Mantenha perspectivas de produto diferentes durante a exploração. Só então investigue, para as oportunidades mais fortes, quem vive a dor, quem usa ou autoriza uma mudança, o que ocorre num episódio recente e como a situação é resolvida hoje. Inclua ferramentas, trabalho manual, ajuda humana e deixar como está; entenda tanto o que funciona quanto a lacuna.
 
-> Ex.: "saúde pública" → "coordenadora de unidade básica" → "no dia de montar a escala" → "distribui plantões sem ver a demanda por hora".
+Registre **fato** com fonte, contexto e alcance, **hipótese** com uma observação que a refutaria e **suposição** quando faltar base. Dados agregados indicam escala no universo medido; episódios recentes ajudam a investigar causas e consequências. Uma simulação ou relato isolado pode orientar a exploração, mas não prova demanda. Diferencie evidência do problema de evidência de adoção ou da solução.
 
-Faça isso para 2 ou 3 recortes do tema antes de escolher.
+## 2. Construa propostas com ambição e um recorte executável
 
-## 2. Ache a alavanca tecnológica (5 min)
+Para as oportunidades mais promissoras, considere tanto uma evolução simples quanto uma mudança significativa na experiência, no resultado ou em quem pode agir. Diferenciação é valor material frente às alternativas; novidade técnica, tamanho ou aparência de demo não a substituem. Viabilidade define o corte demonstrável e o caminho posterior, não o limite da imaginação.
 
-O que uma máquina faz aqui que a pessoa não faz: ver padrão em volume, simular antes de agir, perceber (visão, áudio, texto longo), traduzir, lembrar, comparar alternativas, agir em escala. A IA entra nessa alavanca **com fronteira**: a pessoa confirma; o cálculo crítico é determinístico; o modelo explica, sugere ou classifica, mas não decide sozinho o que é irreversível. Vencedores descrevem essa fronteira explicitamente.
+Apresente normalmente até três propostas, sem expor a matriz ou a lista completa de exploração. Para cada uma, descreva com simplicidade:
 
-**Se o tema exige IA**, decida já como ela roda na demo: API com chave (custo e rede no dia), modelo local, ou nenhum dos dois. Ideia cuja "IA" seria uma regra disfarçada perde nos critérios de inovação e técnica.
+1. **Dor real:** quem é afetado, em que situação e com qual consequência.
+2. **Visão de produto:** a mudança completa que a proposta busca tornar possível.
+3. **Diferencial:** por que alguém escolheria essa solução em vez do que faz hoje.
+4. **Experiência:** o que a pessoa faz e percebe ao usar o produto.
+5. **Recorte do hackathon:** a menor fatia que demonstra uma parte importante da promessa, sem se passar pelo produto inteiro.
+6. **Hipóteses e riscos:** o que ainda não sabemos sobre problema, adoção, impacto, dados ou execução.
 
-## 3. Três ideias por ângulos diferentes (5 min)
+Uma frase de 15 segundos pode testar clareza, não o tamanho nem a qualidade da visão. Marque a clareza pendente se ninguém externo a compreendeu; não reduza a ideia a um recurso só para caber na frase.
 
-Uma para **o profissional que decide**, uma para **o cidadão afetado**, uma para **o sistema** (gestão, dados, coordenação). Varie também a mídia: câmera, voz, mapa, simulação, conversa, jogo. Pensar fora da caixa é mudar o **ângulo**, não aumentar o **escopo**.
+## 3. Convirja por valor, diferença e aprendizado
 
-## 4. Pontue de 1 a 5 e escolha (10 min)
+Compare a importância da mudança para as pessoas, a diferença frente às alternativas, o potencial de adoção, o alinhamento ao desafio, o aprendizado que a equipe pode obter e a qualidade do recorte demonstrável. Use critérios oficiais como contexto, sem deixar pontuação ou apelo de demo compensar uma proposta sem valor distinto. Explicite o ganho, a objeção mais forte e a evidência que mudaria a escolha; sem evidência, declare a incerteza.
 
-| Critério | Pergunta |
-|---|---|
-| Frase | Cabe em "X para Y" sem jargão? |
-| Dor visível | Há um número ou uma cena que o jurado sente em 20 s? |
-| Demo no tempo | O caminho principal roda de ponta a ponta na metade do tempo? |
-| Wow na tela | Há um antes × depois que acontece na frente do jurado? |
-| Tecnologia essencial | Sem a tecnologia exigida, a solução perde a razão de existir? |
-| Aderência | Responde exatamente ao tema e aos critérios oficiais? |
+Não exija validação completa para explorar uma oportunidade promissora. Escolha uma verificação proporcional à incerteza que mais ameaça o valor — por exemplo, reconstituir um episódio, observar uma alternativa, testar uma mudança de comportamento ou investigar quem poderia adotar. Se faltar acesso, defina isso como risco e proponha como aprender depois; não transforme falta de acesso em prova contra a oportunidade. Combine ideias só se a visão e o valor ficarem mais claros.
 
-Some e escolha a maior; empate vai para a mais demonstrável. Se houver critérios oficiais com peso, multiplique cada nota (1-5) pelo peso do critério e registre a conta no brief. Cada nota precisa de evidência de 1 linha.
-
-**Descarte** a ideia que: precisa de dados que vocês não têm; depende de integração externa **não controlável** (sem mock, sem cache, sem conta de demo); só mostra valor depois de semanas de uso; exige login/cadastro para mostrar algo; é painel de indicadores sem decisão; é "plataforma para todos". API com chave é aceitável quando há fallback rotulado e plano B offline/vídeo.
-
-## 5. Escreva o brief (5 min)
-
-Crie `docs/PRODUCT-BRIEF.md`, uma linha por campo:
-
-```markdown
-One-liner: [Produto] ajuda [quem] a [resultado] sem [custo atual].
-Quem sofre:
-Momento da dor:
-Dor com um número (fonte ou "estimativa"):
-Custo da dor:
-Promessa mensurável:
-Prova na tela (o que o jurado vê acontecer):
-Alavanca tecnológica e fronteira (onde a IA age, onde a pessoa decide):
-Critérios oficiais → onde e quando são provados:
-Ideias descartadas e por quê:
-Limites e o que é fictício:
-```
-
-Se alguma linha não couber em uma frase, o produto ainda não está claro: volte ao passo 1.
-
-## Armadilhas observadas nos ensaios
-
-- Escolher pela beleza da visualização. Dois ensaios bonitos (simulação de incêndio, fila de saúde) exigiam explicação: a dor não estava na tela.
-- Mecanismo complexo sem pessoa: troque "um simulador de X" por "a [pessoa] decide Y em Z minutos em vez de W".
+**Antes de implementar**, obtenha aprovação explícita da equipe para a hipótese de produto e seu recorte. A equipe deve entender a dor, o valor distinto proposto, o que o protótipo pode provar e as incertezas aceitas. Evidência incompleta não bloqueia a exploração ou um protótipo reversível; uma alegação sem fundamento deve permanecer hipótese, e uma dependência que torne impossível demonstrar qualquer valor pode exigir outro recorte. Registre decisão, riscos e o que mudaria a escolha, na conversa ou em `docs/PRODUCT-BRIEF.md` quando for útil. Depois, use `mechanism-integrity` para demonstrar a promessa e `pitch-structure` para apresentar a visão e o recorte com honestidade.
