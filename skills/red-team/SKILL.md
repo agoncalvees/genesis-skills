@@ -20,6 +20,14 @@ O objetivo é quebrar a demo de propósito antes que a banca quebre sem querer.
 
 Registre em `docs/RED-TEAM.md` (template: `templates/RED-TEAM.md`): ataque, esperado, observado, severidade, correção, status.
 
+## Severidade
+
+| Severidade | Critério | Ação |
+|---|---|---|
+| Alta | mecanismo fake, segredo exposto, quebra total sem fallback, claim enganosa, dado sensível exposto | bloqueia entrega |
+| Média | degradação sem rótulo claro, erro confuso, a11y/mobile com workaround | corrige antes do ensaio final |
+| Baixa | polimento, copy, caso raro | registra |
+
 ## Regra
 
-Severidade alta em mecanismo, honestidade, segredo ou quebra total bloqueia entrega.
+Qualquer Alta bloqueia entrega. Correção deve ser re-testada e registrada no `docs/RED-TEAM.md`.

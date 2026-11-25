@@ -9,7 +9,9 @@ Um jurado técnico trata "parece IA" sem evidência como simulação disfarçada
 
 ## 1. Classifique o mecanismo (antes de codar)
 
-Escolha **um** rótulo e use o mesmo nome na tela, no pitch e no README:
+Escolha **um** rótulo e use o mesmo nome na tela, no pitch, no README e no `docs/MECHANISM.md`.
+
+**Critério de fronteira (híbrido):** IA pode sugerir, classificar, resumir ou extrair; decisão crítica/irreversível exige regra determinística ou confirmação humana. Se a saída final é sempre regra/score sem modelo no caminho da demo, é regra/heurística, não híbrido.
 
 | Rótulo | Quando usar | Prova mínima na demo |
 |---|---|---|
@@ -69,9 +71,9 @@ Na tela: não exponha segredo, token ou dado pessoal. Exponha procedência: "est
 
 ## Gate rápido
 
-- [ ] Rótulo do mecanismo é o mesmo na tela, fala e docs.
+- [ ] Rótulo do mecanismo é o mesmo na tela, fala, README e docs.
 - [ ] Jurado consegue inserir um caso próprio.
-- [ ] Resultado muda com a entrada.
+- [ ] Resultado muda com a entrada (teste antes/depois registrado).
 - [ ] Existe um caso difícil/erro tratado.
 - [ ] Limite principal está visível e será dito em voz alta.
 - [ ] Sem rede/chave, o app não quebra nem mente.

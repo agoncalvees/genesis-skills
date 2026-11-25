@@ -14,6 +14,7 @@ Skills para vencer hackathons com qualquer stack e qualquer agente que leia `SKI
 | `demo-rehearsal` | Congelar, ensaiar 3x, roteiro=tela, plano B e checklist final | `docs/REHEARSAL.md` |
 | `red-team` | Atacar a demo antes do jurado: inputs estranhos, offline, claims, segredos, mobile | `docs/RED-TEAM.md` |
 | `judge-and-verify` | Antes de entregar e a cada ensaio: verificação no navegador e juiz cego | `design/evidence`, `design/judging` |
+| `model-orchestra` | Coordenar modelos free em paralelo: smoke, papéis, banca, síntese | `reports/`, `design/judging/panel` |
 
 ## Scripts operacionais
 

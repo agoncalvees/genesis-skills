@@ -55,12 +55,12 @@ Sem React ou sem permissão para copiar: reproduza a mesma estrutura à mão. O 
 |---|---|---|
 | 0:00–0:20 | **Dor**: uma pessoa, uma cena, um número | Abertura |
 | 0:20–0:35 | **Promessa**: o one-liner | Abertura → ação |
-| 0:35–1:50 | **Demo**: `?demo=1`, um único caminho, sem desvio | Tour |
+| 0:35–1:50 | **Demo**: `?demo=1`, um único caminho, sem desvio | Tour: mesmos passos do roteiro, na mesma ordem |
 | 1:50–2:20 | **Como funciona e por que é difícil**: o mecanismo, a tecnologia, a fronteira da IA | Como funciona |
 | 2:20–2:45 | **Impacto e viabilidade**: quem adota, quanto melhora, próximo passo | Limites e próximo passo |
 | 2:45–3:00 | **Fecho**: repita o número do antes × depois | Resultado |
 
-Regras: diga o limite principal **em voz alta** no bloco "como funciona" (não deixe o jurado descobrir no rodapé); abra com "isto é [produto], que faz X para Y", nunca com contexto longo; não explique desafios técnicos que vocês enfrentaram; nomeie um limite com honestidade; nada que dependa de rede ou login sem plano B; grave um vídeo de 60 s com `?demo=1`; ensaie 3 vezes cronometrando.
+Regras: diga o limite principal **em voz alta** no bloco "como funciona" (não deixe o jurado descobrir no rodapé); abra com "isto é [produto], que faz X para Y", nunca com contexto longo; não explique desafios técnicos que vocês enfrentaram; nomeie um limite com honestidade; nada que dependa de rede ou login sem plano B; grave um vídeo de 60 s com `?demo=1`; ensaie 3 vezes cronometrando. O `?demo=1` deve executar os mesmos passos do roteiro falado; julgamento assíncrono abre o link sem apresentador.
 
 ## Teste dos 5 segundos
 

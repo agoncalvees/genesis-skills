@@ -36,9 +36,9 @@ Uma para **o profissional que decide**, uma para **o cidadão afetado**, uma par
 | Tecnologia essencial | Sem a tecnologia exigida, a solução perde a razão de existir? |
 | Aderência | Responde exatamente ao tema e aos critérios oficiais? |
 
-Some e escolha a maior; empate vai para a mais demonstrável. Pondere pelos critérios oficiais se existirem.
+Some e escolha a maior; empate vai para a mais demonstrável. Se houver critérios oficiais com peso, multiplique cada nota (1-5) pelo peso do critério e registre a conta no brief. Cada nota precisa de evidência de 1 linha.
 
-**Descarte** a ideia que: precisa de dados que vocês não têm; depende de integração externa ao vivo; só mostra valor depois de semanas de uso; exige login ou cadastro para mostrar algo; é um painel de indicadores sem decisão; é "plataforma para todos".
+**Descarte** a ideia que: precisa de dados que vocês não têm; depende de integração externa **não controlável** (sem mock, sem cache, sem conta de demo); só mostra valor depois de semanas de uso; exige login/cadastro para mostrar algo; é painel de indicadores sem decisão; é "plataforma para todos". API com chave é aceitável quando há fallback rotulado e plano B offline/vídeo.
 
 ## 5. Escreva o brief (5 min)
 

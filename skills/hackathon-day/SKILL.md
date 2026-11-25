@@ -26,13 +26,13 @@ Se o reaproveitamento estiver incerto, **não reaproveite código**. Estas skill
 | T+0:30–0:45 | **Mecanismo e pitch** (`mechanism-integrity`, `pitch-structure`) | `docs/MECHANISM.md` com rótulo/fronteira/fallback; `docs/DEMO-SCRIPT.md` antes do código |
 | T+0:45–1:15 | Direção e esqueleto (`art-direction`) | `design/DESIGN.md` curto; app com as seções da estrutura padrão |
 | T+1:15–3:00 | **Caminho da demo** | abertura + input ao vivo + mecanismo funcionando de ponta a ponta, feio se preciso |
-| T+3:00 | Teste dos 5 segundos (`judge-and-verify`) | juiz cego sobre a captura da primeira tela; densidade/axe/overflow |
+| T+3:00 | Teste dos 5 segundos (`judge-and-verify`) | `design/judging/observation.json` + packet; densidade/axe/overflow |
 | T+3:00–4:45 | Profundidade e beleza | antes × depois; caso difícil; tour `?demo=1`; capricho visual só no caminho da demo |
 | T+4:45 | **Congelamento** (`demo-rehearsal`) | nenhuma funcionalidade nova depois daqui |
-| T+4:45–5:15 | Endurecer | verify/observe, red-team, e2e do caminho, deploy/build local, vídeo 60 s |
+| T+4:45–5:15 | Endurecer (`red-team`) | `docs/RED-TEAM.md`, verify/observe sem gates P0, e2e do caminho, deploy/build local, vídeo 60 s |
 | T+5:15–6:00 | Ensaiar (`demo-rehearsal`) | 3 pitches cronometrados; ajuste a abertura, não o código |
 
-Para outra duração, mantenha as proporções: dor e pitch ≈ 12 % do tempo, direção ≈ 8 %, caminho da demo ≈ 30 %, profundidade ≈ 30 %, endurecer e ensaiar ≈ 20 %. Em treinos curtos (90 min), o ensaio e o vídeo continuam obrigatórios.
+Para outra duração, mantenha as proporções da tabela: dor ≈ 8 %, mecanismo+pitch ≈ 4 %, direção ≈ 8 %, caminho da demo ≈ 29 %, profundidade ≈ 29 %, congelamento/endurecer/ensaio ≈ 22 %. Em treinos curtos (90 min), ensaio e vídeo continuam obrigatórios.
 
 Regra: se na metade do tempo o caminho da demo não roda de ponta a ponta, **corte escopo até rodar**. Funcionalidade sem demo vale zero.
 

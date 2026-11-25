@@ -24,11 +24,13 @@ for (let i = 0; i < argv.length; i++) {
 }
 const url = pos[0];
 if (!url) {
-	console.error("Uso: node observe.mjs <url> [--out design/judging] [--steps 6] [--click <seletor>]");
+	console.error("Uso: node observe.mjs <url> [--out design/judging] [--steps 6] [--click <seletor>] [--profile tool|landing] [--no-require-input]");
 	process.exit(1);
 }
 const out = opt.out ?? "design/judging";
 const maxSteps = Number(opt.steps ?? 6);
+const profile = opt.profile ?? "tool";
+const requireInput = opt["require-input"] !== "false" && profile !== "landing";
 mkdirSync(out, { recursive: true });
 
 const require = createRequire(join(resolve(process.cwd()), "package.json"));
@@ -135,6 +137,8 @@ try {
 		await shot("pagina", true);
 
 		// Main action, as a curious judge would click.
+		const beforeUrl = page.url();
+		const beforeText = await page.evaluate(() => document.body.innerText.slice(0, 4000));
 		const target = opt.click
 			? page.locator(opt.click).first()
 			: page.locator("[data-story=action] button, [data-story=action] a, main button").first();
@@ -143,7 +147,10 @@ try {
 			await target.click({ timeout: 3000 }).catch((e) => errors.push(`clique: ${e.message.split("\n")[0]}`));
 			await page.waitForTimeout(900);
 			await shot("apos-acao");
-		} else v.mainAction = "nenhuma ação encontrada";
+			const afterUrl = page.url();
+			const afterText = await page.evaluate(() => document.body.innerText.slice(0, 4000));
+			v.actionOutcome = { urlChanged: beforeUrl !== afterUrl, textChanged: beforeText !== afterText };
+		} else { v.mainAction = "nenhuma ação encontrada"; v.actionOutcome = { urlChanged: false, textChanged: false }; }
 
 		// Guided demo.
 		const demoUrl = new URL(url);
@@ -176,7 +183,7 @@ try {
 		v.gates = [];
 		if (v.firstScreen.words > budget) v.gates.push(`densidade acima do orçamento (${v.firstScreen.words}>${budget})`);
 		for (const key of ["problem", "promise", "action"]) if (v.story[key] !== "na primeira tela") v.gates.push(`story:${key} ${v.story[key]}`);
-		if (v.firstScreen.liveInputs === 0) v.gates.push("sem input ao vivo");
+		if (requireInput && v.firstScreen.liveInputs === 0) v.gates.push("sem input ao vivo");
 		if (v.overflowPx > 0) v.gates.push(`overflow ${v.overflowPx}px`);
 		if (errors.length) v.gates.push(`${errors.length} erro(s) de console/page`);
 		report.viewports.push(v);
@@ -185,6 +192,8 @@ try {
 } finally {
 	await browser.close();
 }
+report.profile = profile;
+report.requireInput = requireInput;
 report.p0 = report.viewports.flatMap((v) => v.gates.map((g) => `${v.width}px: ${g}`));
 report.ok = report.p0.length === 0;
 writeFileSync(join(out, "observation.json"), `${JSON.stringify(report, null, 2)}\n`);

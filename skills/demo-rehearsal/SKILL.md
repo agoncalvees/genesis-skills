@@ -33,14 +33,16 @@ Cada afirmação da fala precisa ter um elemento correspondente visível. Se nã
 Registre em `docs/REHEARSAL.md` (template: `templates/REHEARSAL.md`):
 
 ```markdown
-| # | Data/hora | Duração | Onde travou | Ajuste feito (tela/fala) |
-|---|---|---:|---|---|
-| 1 | | | | |
+| # | Data/hora | Duração | Onde travou | Ajuste feito (tela/fala) | Plano B testado |
+|---|---|---:|---|---|---|
+| 1 | | | | | |
 ```
 
 Regras:
 - Cronometre de verdade. Passe do tempo = corte fala, não acelere.
-- Ensaio 1: encontra buracos. Ensaio 2: ajusta abertura/fecho. Ensaio 3: grava plano B.
+- Ensaio 1: encontra buracos e confirma teste dos 5s em julgamento assíncrono (link aberto sem apresentador).
+- Ensaio 2: ajusta abertura/fecho; roteiro falado = passos do `?demo=1`.
+- Ensaio 3: grava plano B e testa sem rede/API/login.
 - Se demo depender de rede/API, um ensaio deve ser com rede ruim/desligada.
 
 ## 4. Plano B
@@ -56,10 +58,11 @@ Regras:
 
 Use também `references/submission-checklist.md`.
 
-- [ ] `CHALLENGE.md`, `PRODUCT-BRIEF.md`, `MECHANISM.md`, `DEMO-SCRIPT.md`, `REHEARSAL.md` existem.
+- [ ] `CHALLENGE.md`, `PRODUCT-BRIEF.md`, `MECHANISM.md`, `DEMO-SCRIPT.md`, `REHEARSAL.md`, `RED-TEAM.md` existem.
 - [ ] `node <judge-and-verify>/scripts/verify.mjs <url> --spec design/fidelity.json --out design/evidence`.
 - [ ] `node <judge-and-verify>/scripts/observe.mjs <url> --out design/judging`.
-- [ ] Primeira tela passa 5s em 360/1440.
+- [ ] Tour `?demo=1` executa os mesmos passos do roteiro falado, sem rede/login.
+- [ ] Link aberto em janela anônima mostra primeira tela compreensível (julgamento assíncrono).
 - [ ] Input ao vivo funciona; caso difícil tratado.
 - [ ] Limite dito em voz alta.
 - [ ] Link, vídeo e repositório conferidos em janela anônima.
