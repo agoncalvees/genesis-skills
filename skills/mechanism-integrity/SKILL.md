@@ -63,6 +63,10 @@ Na tela: não exponha segredo, token ou dado pessoal. Exponha procedência: "est
 - Dados pessoais/sensíveis: mínimo necessário, fictícios na demo, aviso de privacidade/LGPD quando aplicável.
 - Antes/depois precisa usar a mesma base e deixar a unidade clara.
 
+## Referências
+- `references/claim-evidence.md` — procedência de números e claims.
+- `templates/MECHANISM.md` — doc do mecanismo.
+
 ## Gate rápido
 
 - [ ] Rótulo do mecanismo é o mesmo na tela, fala e docs.

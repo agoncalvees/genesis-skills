@@ -23,6 +23,10 @@ Como cortar: (1) o que não responde "para quem / dor / o que faço" sai da prim
 
 `scripts/observe.mjs` mede palavras, números e controles da primeira tela; acima do orçamento é defeito, não gosto.
 
+## Padrões de mecanismo
+
+Consulte `references/mechanism-patterns.md` para escolher um mecanismo demonstrável (classificador com evidência, simulador contrafactual, extrator com citação, otimizador com restrições, copiloto humano-no-loop).
+
 ## Estrutura padrão (nesta ordem de leitura)
 
 1. **Abertura, sem rolar, em 360 e 1440 px:** para quem (`audience`), título com o produto, **dor com um número** (`data-story="problem"`), promessa em uma frase (`data-story="promise"`) e **uma** ação principal (`data-story="action"`): "Ver em 60 segundos". Não é landing page separada: a experiência começa logo abaixo.

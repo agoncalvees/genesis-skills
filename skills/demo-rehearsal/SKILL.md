@@ -54,6 +54,8 @@ Regras:
 
 ## 5. Checklist final de entrega
 
+Use também `references/submission-checklist.md`.
+
 - [ ] `CHALLENGE.md`, `PRODUCT-BRIEF.md`, `MECHANISM.md`, `DEMO-SCRIPT.md`, `REHEARSAL.md` existem.
 - [ ] `node <judge-and-verify>/scripts/verify.mjs <url> --spec design/fidelity.json --out design/evidence`.
 - [ ] `node <judge-and-verify>/scripts/observe.mjs <url> --out design/judging`.

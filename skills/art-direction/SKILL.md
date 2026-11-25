@@ -69,4 +69,6 @@ Fade-in e stagger não são padrão. Anime `transform`, `opacity` e `clip-path`.
 
 ## Sinais de interface gerada por IA (evite)
 
+Veja também `references/visual-anti-slop.md` para cortes rápidos antes da banca.
+
 Hero centralizado com gradiente roxo/azul; grade de três cards com ícone; badges pill em tudo; `rounded-2xl` e sombra em todo painel; dashboard com sidebar e KPIs como resposta padrão; emoji como ícone; Inter/Geist sem decisão; "Unlock the power of…"; números redondos sem unidade; texto em inglês esquecido numa interface em português.

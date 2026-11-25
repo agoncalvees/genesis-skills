@@ -58,7 +58,7 @@ Gera um pacote único para banca cega: métricas, gates P0, capturas, passos do 
 node <skill>/scripts/claim-ledger.mjs .
 ```
 
-Varre números em código/docs e aponta claims sem procedência provável. Todo número mostrado ao jurado deve ter fonte, "estimativa" ou "dado de exemplo". Use antes do congelamento.
+Varre números em código/docs e aponta claims sem procedência provável. Todo número mostrado ao jurado deve ter fonte, "estimativa" ou "dado de exemplo". Use antes do congelamento. Guia: `../mechanism-integrity/references/claim-evidence.md`.
 
 ## 5. Banca de jurados
 
