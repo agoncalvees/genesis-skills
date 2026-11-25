@@ -3,9 +3,14 @@ import { readFileSync, readdirSync, statSync, writeFileSync, mkdirSync } from 'n
 import { join, resolve, dirname } from 'node:path';
 
 const argv = process.argv.slice(2);
+const usage = 'Uso: node claim-ledger.mjs <arquivo-ou-diretório> [--out <relatório>]';
 const opt = {}; const pos = [];
 for (let i=0;i<argv.length;i++) { if (argv[i].startsWith('--')) opt[argv[i].slice(2)] = argv[++i]; else pos.push(argv[i]); }
-const root = resolve(pos[0] ?? '.');
+if (pos.length === 0) {
+  console.error(`${usage}\nInforme o caminho do produto para limitar a análise ao escopo correto.`);
+  process.exit(64);
+}
+const root = resolve(pos[0]);
 const out = opt.out ? resolve(opt.out) : null;
 const exts = new Set(['.ts','.tsx','.js','.jsx','.md','.mdx','.html','.json']);
 const ignore = new Set(['node_modules','.git','dist','build','.next','.output','design/evidence','design/judging','reports','.vite','coverage']);
