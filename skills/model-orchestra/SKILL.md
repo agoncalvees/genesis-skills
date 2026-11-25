@@ -1,19 +1,27 @@
 ---
 name: model-orchestra
-description: Coordena vários modelos gratuitos em paralelo para construir, julgar, red-teamar e consolidar um hackathon — com papéis claros, mesmo input, smoke de disponibilidade, fallback por cota e síntese por evidência. Use quando houver mais de um agente/modelo disponível, quando quiser banca multi-modelo, ou quando precisar dividir trabalho sem perder consistência.
+description: Coordena sessões independentes para descobrir direções de produto ou avaliar uma demo de hackathon. Use com Claude Code, Codex ou outros agentes, com papéis claros, prazo e síntese por evidência.
 ---
 
-# Orquestra de modelos gratuitos
+# Orquestra de agentes
 
-Use modelos free como **painel especializado**, não como vozes aleatórias. O ganho vem de papéis distintos + mesmo input + síntese.
+## Descoberta antes da escolha
+
+Use o relógio de `problem-to-pain`. Com dois Claude Code e um Codex, envie a primeira lente abaixo a uma sessão nova de Claude Code e a segunda à outra. O Codex modera, consolida e conduz a decisão humana. Qualquer agente disponível pode ocupar esses papéis.
+
+1. Envie a cada sessão a mesma ficha curta com tema literal e fonte, regras, critérios, relógio, capacidades e até três fatos do contexto. Acrescente somente a lente da sessão, **experiência e acesso** ou **capacidade e sistema**, descritas na [referência de exploração](../problem-to-pain/references/opportunity-exploration.md). Mantenha preferências da equipe e resultados dos outros fora dessa entrada.
+2. Peça uma só resposta, com até três caminhos e 150 palavras no total, contendo ação, resultado, suposição e uma cena por caminho. Nenhuma sessão escreve em arquivos compartilhados ou abre nova rodada. O moderador concentra a checagem de regras e de evidência.
+3. Fixe o retorno um minuto antes do fim da exploração. A equipe pode colar as respostas de sessões separadas no moderador uma vez. No corte, use o que chegou e faça somente a lente ausente no minuto reservado. Na janela relâmpago, comece solo se os retornos já não estiverem disponíveis. Com um agente, faça os dois passes previstos em `problem-to-pain` e registre a cobertura solo. Atribua independência apenas às sessões que realmente rodaram.
+
+O moderador deduplica pelo mecanismo de valor e leva à equipe só as finalistas e a recomendação. As notas da banca pertencem à avaliação posterior.
+
+## Avaliação após a escolha
+
+Use os modelos disponíveis como painel especializado com papéis distintos, mesmo artefato e síntese.
 
 ## 1. Smoke e escalação
 
-Antes do drill:
-
-```sh
-node scripts/model-smoke.mjs --out reports/models-smoke-YYYY-MM-DD.json --set opencode/hy4-flash-free=ok ...
-```
+Antes da banca, faça uma chamada curta a cada sessão candidata e registre o resultado.
 
 - `ok`: usar. `quota`/`error`: reserva com backoff; não bloquear o drill.
 - Se um modelo falhar, substitua por outro `ok` do mesmo papel.

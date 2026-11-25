@@ -5,11 +5,11 @@ description: Organiza um hackathon da revelação do tema à entrega. Use para i
 
 # Dia de hackathon
 
-Ajuste a entrega às regras do evento. Para um produto novo, use `problem-to-pain` para explorar oportunidades e aprovar uma visão de produto com um recorte de hackathon antes de implementar.
+Ajuste a entrega às regras do evento. Para um produto novo, acione `problem-to-pain` assim que o tema chegar. A descoberta usa um único orçamento desde a revelação, normalmente 30 minutos, com triagem de regras e passagem ao brief incluídas. Combine a hora-limite e use a variante curta se o evento exigir.
 
-## 1. Regras (primeiros 15 min)
+## 1. Triagem de regras no início da descoberta
 
-Crie `docs/CHALLENGE.md` com: o tema **literal**, fonte e horário, critérios oficiais e pesos, duração e formato do pitch (ao vivo, link assíncrono, vídeo), forma de entrega (repositório, link, vídeo, deck) e restrições. Se faltar algo, liste as perguntas e leve à organização agora:
+Registre em `docs/CHALLENGE.md` o tema **literal**, fonte e horário, critérios oficiais e pesos publicados, prazo de submissão, duração e formato de pitch e entrega, e restrições. Comece pelo que pode eliminar um recorte. Se faltar algo, designe alguém para consultar a organização enquanto a exploração avança. Pesos ausentes ficam em aberto. Verifique:
 
 - Quais os critérios e pesos? Quanto dura o pitch? O julgamento é assíncrono, com o jurado abrindo o link sozinho?
 - **Há ferramenta obrigatória?** Um hackathon da Cognition em São Paulo aceitou só projetos feitos com Windsurf ou Devin e iniciados do zero no evento.
@@ -22,7 +22,7 @@ Se o reaproveitamento estiver incerto, **não reaproveite código**. Estas skill
 
 | Relógio | Bloco | Saída obrigatória |
 |---|---|---|
-| T+0:00–0:30 | Descoberta (`problem-to-pain`) | Oportunidades, propostas promissoras, visão, recorte demonstrável e decisão ou próximo aprendizado |
+| T+0:00–0:30 | Descoberta (`problem-to-pain`) | Direção e recorte aprovados com brief imediato, ou rodada encerrada sem aprovação |
 | T+0:30–0:45 | **Mecanismo e pitch** após a direção aprovada (`mechanism-integrity`, `pitch-structure`) | `docs/MECHANISM.md` com rótulo/fronteira/fallback; `docs/DEMO-SCRIPT.md` conecta a visão à fatia demonstrada |
 | T+0:45–1:15 | Direção e esqueleto (`art-direction`) | `design/DESIGN.md` curto; app com as seções da estrutura padrão |
 | T+1:15–3:00 | **Caminho da demo** | abertura + input ao vivo + mecanismo funcionando de ponta a ponta, feio se preciso |
@@ -32,9 +32,7 @@ Se o reaproveitamento estiver incerto, **não reaproveite código**. Estas skill
 | T+4:45–5:15 | Endurecer (`red-team`) | `docs/RED-TEAM.md`, verify/observe sem gates P0, e2e do caminho, deploy/build local, vídeo 60 s |
 | T+5:15–6:00 | Ensaiar (`demo-rehearsal`) | 3 pitches cronometrados; ajuste a abertura, não o código |
 
-Use os horários como referência. Se faltar uma evidência decisiva, ajuste o cronograma ou reduza o recorte com a equipe antes de avançar. Em treinos de entrega, reserve tempo para ensaio e vídeo.
-
-Use os horários como referência, não como motivo para estreitar a oportunidade antes de explorá-la. Se na metade do tempo o caminho não roda, corte o recorte demonstrável até provar uma parte central da promessa; preserve explícita a visão completa. Uma demo clara revela o valor da proposta, mas não substitui valor distinto para as pessoas.
+Planeje de trás para frente a partir da submissão e reserve tempo para ensaio e vídeo. Após o aceite, ponha primeiro no ar uma fatia completa que prove valor. Se na metade da construção o caminho não roda, aplique o primeiro corte do brief que preserve o núcleo e a honestidade da prova. Use a regra de reabertura de `problem-to-pain` se o corte afetar o valor central ou uma restrição oficial.
 
 ## Honestidade técnica (a banca verifica)
 
