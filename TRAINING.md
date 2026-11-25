@@ -37,7 +37,7 @@ Matriz completa: `skills/judge-and-verify/references/model-matrix.md`. Relatóri
 ## Drill d2-vias-20261124 (24/11/2026, simulado 90 min)
 
 - Tema: “Triagem de denúncias de buracos e riscos em vias urbanas com IA”.
-- Artefato: `/Users/arthurgoncalves/orca/drills/d2-vias-20261124` (Vite+React+TS, mecanismo híbrido local rotulado, dados fictícios).
+- Artefato: `~/orca/drills/d2-vias-20261124` (Vite+React+TS, mecanismo híbrido local rotulado, dados fictícios).
 - Gates: `verify.mjs` 4/4; `observe.mjs` ok sem P0 (360: 35 palavras/2 números/3 controles; 1440: 35/2/3); 0 overflow/0 erros; input ao vivo altera resultado.
 - Banca: pacote gerado; veredito simulado consolidado por `panel-collect.mjs` média 7.46/10 (impacto 7.8, técnico 7.2, inovação 6.8, design 7.6, comunicação 7.9).
 - Calibração: `claim-ledger` tinha ruído em lockfiles e bug de duplicação; corrigido para ignorar lockfiles e sair limpo. Gate de densidade forçou simplificação real da 1ª dobra.
