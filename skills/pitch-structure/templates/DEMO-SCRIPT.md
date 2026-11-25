@@ -9,7 +9,7 @@ Apresentador e quem opera a tela:
 | 0:35–1:50 | Demo (`?demo=1`) | | Passos do tour |
 | 1:50–2:20 | Como funciona | | Bloco do mecanismo |
 | 2:20–2:45 | Impacto e viabilidade | | Próximos passos |
-| 2:45–3:00 | Fecho com o número | | Momento-assinatura |
+| 2:45–3:00 | Fecho com a consequência demonstrada | | Resultado |
 
 Plano B (vídeo de 60 s / build local):
 Ensaios cronometrados (data, duração, ajuste):

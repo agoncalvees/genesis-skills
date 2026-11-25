@@ -10,9 +10,9 @@ const url = opt.url ?? 'http://127.0.0.1:3000/';
 const challenge = opt.challenge ?? 'docs/CHALLENGE.md';
 const packet = opt.packet ?? 'design/judging/packet.md';
 const roles = [
-  { id:'impact', name:'Jurado de impacto e problema', focus:'para quem, dor com número, resultado crível, adoção, limites' },
-  { id:'technical', name:'Jurado técnico', focus:'funciona ao vivo, input muda saída, mecanismo real/rotulado, erros, código' },
-  { id:'innovation', name:'Jurado de inovação e tecnologia', focus:'ângulo novo, tecnologia essencial, fronteira IA-humano' },
+  { id:'impact', name:'Jurado de impacto e problema', focus:'público, evidência da dor, efeito frente à prática atual, alcance da evidência e adoção' },
+  { id:'technical', name:'Jurado técnico', focus:'execução real, correção da decisão sob as restrições, caso difícil, limites e código' },
+  { id:'innovation', name:'Jurado de inovação e tecnologia', focus:'ganho distinto frente à melhor alternativa aplicável e contribuição verificável da tecnologia usada' },
   { id:'design', name:'Jurado de design e experiência', focus:'5s, hierarquia, densidade, acessibilidade, identidade, mobile' },
   { id:'communication', name:'Jurado de comunicação e demo', focus:'clareza em 3 min, roteiro=tela, limite em voz alta, frase de defesa' },
 ];
@@ -25,5 +25,5 @@ for (const r of roles) {
   manifest.roles.push({ ...r, prompt: file, output: join(outDir, `${r.id}.md`) });
 }
 writeFileSync(join(outDir, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
-writeFileSync(join(outDir, 'moderator.prompt.md'), `Você é o moderador da banca. Leia os 5 pareceres em ${outDir}/*.md e produza:\n1. Tabela jurado x nota x evidência x pior defeito\n2. Nota ponderada (ou pesos de ${challenge})\n3. Defeitos apontados por 2+ jurados (prioridade 1)\n4. Deliberação e frase de defesa\n5. 3 correções por ganho de nota por minuto (sem funcionalidade nova após congelamento)\n6. Riscos da demo ao vivo e plano B\n`);
+writeFileSync(join(outDir, 'moderator.prompt.md'), `Você é o moderador da banca. Leia os 5 pareceres em ${outDir}/*.md e produza:\n1. Tabela jurado x nota x evidência x pior defeito\n2. Nota ponderada (ou pesos de ${challenge})\n3. Defeitos apontados por 2+ jurados (prioridade 1)\n4. Deliberação e frase de defesa\n5. Correções prioritárias pelo efeito no uso, na prova e na entrega (sem funcionalidade nova após congelamento)\n6. Riscos da demo ao vivo e plano B\n`);
 console.log(`panel pack gerado em ${outDir}`);

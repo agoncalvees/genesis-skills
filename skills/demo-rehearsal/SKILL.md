@@ -19,12 +19,12 @@ Escreva `docs/DEMO-SCRIPT.md` com falas e alvo visual:
 
 | Tempo | Fala | Na tela | Prova |
 |---|---|---|---|
-| 0:00–0:20 | Dor com pessoa e número | `[data-story=problem]` | número com fonte/estimativa |
+| 0:00–0:20 | Dor e consequência para alguém | `[data-story=problem]` | episódio, fonte ou medida contextualizada |
 | 0:20–0:35 | One-liner | `[data-story=promise]` | frase curta |
-| 0:35–1:50 | Demo ao vivo | `?demo=1` / input real | resultado muda |
+| 0:35–1:50 | Demo ao vivo | `?demo=1` / input real | decisão ou resultado muda conforme o esperado |
 | 1:50–2:20 | Como funciona + limite | mecanismo/fronteira | IA real/regra rotulada |
 | 2:20–2:45 | Impacto e adoção | resultado/next | próximo passo concreto |
-| 2:45–3:00 | Fecho | antes × depois | mesmo número |
+| 2:45–3:00 | Fecho | antes × depois | mesma consequência demonstrada |
 
 Cada afirmação da fala precisa ter um elemento correspondente visível. Se não tiver, corte a fala.
 

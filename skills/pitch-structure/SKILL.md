@@ -5,27 +5,27 @@ description: Estrutura a abertura, a demonstração guiada e o pitch de um hacka
 
 # Estrutura do app e do pitch
 
-O jurado não explora o app. Em julgamento assíncrono, ele abre o link sozinho; no palco, vê 3 minutos. A estrutura abaixo funciona para qualquer ideia: **escreva o conteúdo antes de desenhar**.
+Em julgamento assíncrono, a pessoa abre o link sozinha. No palco, adapte a história ao tempo concedido. Use a estrutura abaixo como roteiro de apresentação da ideia escolhida.
 
 ## Referências de densidade para a abertura da demo
 
 O jurado vê o app por segundos. Mostrar tudo é o mesmo que não mostrar nada.
 
-| Onde | Limite |
+| Onde | Referência para a demo |
 |---|---|
 | Primeira tela (1440 px) | **até 60 palavras**, **1 sinal de valor em destaque** (número quando esclarece), **1 ação principal** (no máximo 1 secundária) |
 | Primeira tela (360 px) | até 35 palavras |
-| Cada tela ou passo | **uma decisão ou uma ideia**; o resto fica recolhido |
+| Cada passo do tour | **uma decisão ou uma ideia** com o contexto necessário |
 | Cada passo do `?demo=1` | título de até 10 palavras e uma frase de até 18 |
-| Resultado | **um** número grande; o detalhe aparece ao clicar ou expandir |
+| Resultado | destaque a consequência e o indicador quando houver medida útil |
 
-Como cortar: (1) o que não responde "para quem / dor / o que faço" sai da primeira tela; (2) **revelação progressiva**: legenda, fórmulas, listas longas e "como funciona" ficam atrás de um clique ou abaixo da dobra; (3) mostre **um caso** (uma pessoa, um aluno, um pedido), não a tabela inteira, e deixe "ver todos" para depois; (4) um número com unidade vale mais que cinco sem contexto; (5) texto de apoio só onde o usuário vai agir; (6) pergunte de cada elemento "se eu tirar isto, o jurado perde a história?". Se a resposta for não, tire.
+Para enxugar a apresentação, destaque público, dor e ação. Use revelação progressiva para detalhes que podem esperar. Mantenha visíveis as relações que explicam o resultado, como duas turmas disputando as mesmas vagas. Ajuste a densidade da interface operacional à tarefa de quem usa o produto.
 
 `scripts/observe.mjs` mede palavras, números e controles da primeira tela. Use os valores como pistas para testar a clareza da abertura, considerando o tempo da banca e a tarefa. Investigue a causa com uma captura ou observação de uso antes de propor o corte.
 
 ## Padrões de mecanismo
 
-Parta da direção de produto aprovada. Consulte `references/mechanism-patterns.md` se precisar demonstrar melhor o valor de uma solução definida.
+Parta da direção de produto aprovada. Consulte `references/mechanism-patterns.md` para escolher como mostrar uma intervenção já definida. Comece pelo instante em que a ação ou o desfecho muda frente à prática atual.
 
 Na abertura, separe a promessa da visão de produto da fatia construída no hackathon. O roteiro pode ser estreito; não apresente um recurso como se fosse o produto inteiro. A clareza da demo explica a proposta, mas não cria diferenciação que ela não tenha.
 
@@ -33,7 +33,7 @@ Na abertura, separe a promessa da visão de produto da fatia construída no hack
 
 1. **Abertura, sem rolar, em 360 e 1440 px:** para quem (`audience`), título com o produto, dor e relevância com evidência contextualizada — número se ajudar (`data-story="problem"`) —, promessa em uma frase (`data-story="promise"`) e **uma** ação principal (`data-story="action"`): "Ver em 60 segundos". Não é landing page separada: a experiência começa logo abaixo.
 2. **Experiência com exemplo pronto e entrada ao vivo:** o mecanismo abre já com dados de exemplo rotulados, ou com "Usar exemplo" a um clique. Sem login, sem formulário vazio, sem tela de configuração. **O jurado precisa poder alimentar o mecanismo:** um campo para colar/editar/enviar um caso próprio e ver o resultado mudar na hora. Mostre estado de carregamento, erro e um caso difícil. Sem input, o jurado técnico trata o app como demo pré-calculada.
-3. **Resultado com antes × depois** (`data-story="result"`): o número grande e a comparação no mesmo quadro.
+3. **Resultado com antes × depois** (`data-story="result"`): a consequência observável e a base da comparação no mesmo quadro. Mostre o número quando for informativo.
 4. **Como funciona:** 3 ou 4 passos; diga **onde a IA age e onde a pessoa decide**.
 5. **Limites e próximo passo:** o que é fictício, o que quebra primeiro, quem adota.
 6. **`?demo=1`:** tour de 3 a 5 passos que percorre 1→3 sozinho, executando as ações (clicar, carregar, comparar) e destacando o elemento de cada fala. Funciona com teclado e passador de slides (PageDown/PageUp).
@@ -60,10 +60,10 @@ Sem React ou sem permissão para copiar: reproduza a mesma estrutura à mão. O 
 | 0:35–1:50 | **Demo**: `?demo=1`, um único caminho, sem desvio | Tour: mesmos passos do roteiro, na mesma ordem |
 | 1:50–2:20 | **Como funciona e por que é difícil**: o mecanismo, a tecnologia, a fronteira da IA | Como funciona |
 | 2:20–2:45 | **Impacto e viabilidade**: quem adota, quanto melhora, próximo passo | Limites e próximo passo |
-| 2:45–3:00 | **Fecho**: repita o número do antes × depois | Resultado |
+| 2:45–3:00 | **Fecho**: retome a consequência mostrada | Resultado |
 
 Regras: diga o limite principal **em voz alta** no bloco "como funciona" (não deixe o jurado descobrir no rodapé); abra com "isto é [produto], que faz X para Y", nunca com contexto longo; não explique desafios técnicos que vocês enfrentaram; nomeie um limite com honestidade; nada que dependa de rede ou login sem plano B; grave um vídeo de 60 s com `?demo=1`; ensaie 3 vezes cronometrando. O `?demo=1` deve executar os mesmos passos do roteiro falado; julgamento assíncrono abre o link sem apresentador.
 
 ## Teste dos 5 segundos
 
-Antes de polir, mostre a captura da primeira tela por 5 segundos (a uma pessoa de fora ou ao juiz da skill `judge-and-verify`): **para quem é? qual a dor? o que eu faço agora?** Qualquer "não sei" bloqueia todo o resto até a abertura ser reescrita.
+Antes de polir a apresentação, mostre a captura da primeira tela por 5 segundos a uma pessoa de fora ou ao juiz da skill `judge-and-verify`. Pergunte para quem é, qual é a dor e o que fazer agora. Use a resposta para corrigir a abertura.

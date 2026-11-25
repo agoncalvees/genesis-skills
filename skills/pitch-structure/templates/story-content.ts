@@ -1,14 +1,13 @@
 /**
- * The product story — fill this first (docs/product/PITCH-PROTOCOL.md).
- * Every field is visible to judges; keep each to one line.
+ * Product story for the demo. Keep the opening short and give the comparison enough context.
  */
 export const story = {
 	/** Who suffers, concretely. */
 	audience: "Para [quem sofre, com papel e contexto]",
 	/** Product name + promise in a few words (h1). */
 	title: "[Nome]: [promessa em poucas palavras]",
-	/** The pain with one number (and its source or "estimativa"). */
-	problem: "[A dor de hoje, com um número que o jurado sente em 20 segundos.]",
+	/** The pain and its consequence, with a source or a measure when available. */
+	problem: "[Quem sofre a perda, em que situação e com qual consequência.]",
 	/** One-liner: "[Produto] ajuda [quem] a [resultado] sem [custo atual]." */
 	promise: "[Produto] ajuda [quem] a [resultado] sem [custo atual].",
 	/** The single primary action. */
@@ -20,10 +19,10 @@ export const story = {
 		{ title: "Entrada", body: "[O que entra: dado real ou exemplo rotulado.]" },
 		{
 			title: "Mecanismo",
-			body: "[O que a tecnologia faz que a pessoa não faria.]",
+			body: "[Qual é a parte difícil e como a solução a resolve.]",
 		},
 		{ title: "Decisão", body: "[O que a pessoa confirma ou escolhe.]" },
-		{ title: "Resultado", body: "[O antes × depois, com o número.]" },
+		{ title: "Resultado", body: "[A consequência no antes × depois e a base da comparação.]" },
 	],
 	/** Honest limits: what is fictitious, what breaks first. */
 	limits: "[Dados fictícios / modelo didático / o que quebra primeiro.]",

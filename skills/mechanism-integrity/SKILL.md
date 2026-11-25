@@ -1,13 +1,18 @@
 ---
 name: mechanism-integrity
-description: Garante que o mecanismo central do hackathon seja real, demonstrável e honesto — IA/regra/simulação com fronteira clara, entrada ao vivo do jurado, evidência de execução, fallback rotulado com o mesmo nome, e claims com procedência. Use quando o tema exigir IA, quando o app parecer "demo pré-calculada", antes de apresentar, ou ao revisar mecanismo, dados, limites e plano B. Gera docs/MECHANISM.md.
+description: Use quando for preciso projetar ou testar o mecanismo de um produto, comparar formas de resolver a parte difícil, verificar a contribuição da IA ou provar a execução e os limites de uma demo.
 ---
 
 # Integridade do mecanismo
 
-Um jurado técnico trata "parece IA" sem evidência como simulação disfarçada. Esta skill impede isso.
+Parta do resultado que o produto promete. Durante a ideação, use a seção de projeto quando o mecanismo puder mudar a escolha. No build ou na revisão de uma demo, use as verificações seguintes. Separe evidência de execução, ganho na tarefa e adoção.
 
-Para um produto novo, comece pela direção aprovada em `problem-to-pain`. Projete o mecanismo a partir do valor prometido, sem escolher a ideia apenas para caber numa API ou num padrão de demo. A prova de que o mecanismo funciona não prova, por si só, adoção ou valor duradouro.
+## Projete o mecanismo
+
+1. Identifique a ação mais difícil que precisa funcionar para entregar o resultado. Explique o que entra, de onde vem, quais condições precisam ser respeitadas, o que sai e quem pode agir sobre a saída.
+2. Compare a opção mais direta com uma alternativa quando houver um problema concreto, como decisões que competem pelo mesmo recurso, dados que mudam durante a execução ou volume que inviabiliza revisão manual. Uma regra ou um processo direto serve quando entrega o mesmo resultado. Adicione capacidade na parte que resolve a diferença e descreva o custo ou a contrapartida.
+3. Em mecanismos com IA, mostre qual leitura, previsão, busca ou decisão depende do modelo e como é verificada. Compare com uma alternativa sem o modelo quando isso ajudar a verificar a contribuição da IA. Em fluxos com decisões que interagem, teste uma alteração que mude mais de uma escolha, além de um caso em que não haja solução válida.
+4. Defina a menor prova que preserve o problema. Use o mesmo caso para a melhor alternativa atual e o mecanismo proposto, com a mesma unidade e restrições. Mostre a ação ou o resultado que muda e como saber se a variação foi correta. Use o template para registrar isso quando houver construção ou revisão técnica.
 
 ## 1. Classifique o mecanismo (antes de codar)
 
@@ -19,10 +24,10 @@ Escolha **um** rótulo e use o mesmo nome na tela, no pitch, no README e no `doc
 |---|---|---|
 | **IA real** | Chamada a modelo/API/modelo local no caminho da demo | Entrada do jurado muda saída; mostra modelo/latência ou evidência de execução |
 | **Regra/heurística** | Léxico, regex, árvore, score determinístico | Diga "regra/heurística", não "IA"; mostre por que acertou |
-| **Simulação/modelo didático** | Dados sintéticos ou modelo simplificado | Rotule "simulação/dados fictícios" em todo lugar; mostre limites |
+| **Simulação/modelo didático** | A lógica da demo representa de forma simplificada ou substitui a operação prometida | Rotule "simulação" em todo lugar e mostre limites |
 | **Híbrido** | IA sugere/classifica, regra/cálculo decide parte crítica | Desenhe a fronteira: onde IA age, onde pessoa/regra decide |
 
-Se o tema/critério exigir IA e você só tem regra, **não chame de IA**. Suba a nota pela honestidade e por tornar a regra auditável.
+Rotule a procedência dos dados separadamente. Um modelo ou algoritmo pode rodar de verdade sobre dados fictícios. Se o tema exigir IA e o caminho só usa regras, identifique o mecanismo como regra e registre a exigência pendente.
 
 ## 2. Entrada ao vivo obrigatória
 
@@ -75,7 +80,7 @@ Na tela: não exponha segredo, token ou dado pessoal. Exponha procedência: "est
 
 - [ ] Rótulo do mecanismo é o mesmo na tela, fala, README e docs.
 - [ ] Jurado consegue inserir um caso próprio.
-- [ ] Resultado muda com a entrada (teste antes/depois registrado).
+- [ ] Uma mudança relevante de entrada produz o resultado esperado e a prova compara o desfecho com a alternativa aplicável.
 - [ ] Existe um caso difícil/erro tratado.
 - [ ] Limite principal está visível e será dito em voz alta.
 - [ ] Sem rede/chave, o app não quebra nem mente.

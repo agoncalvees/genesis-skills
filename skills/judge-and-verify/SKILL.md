@@ -77,7 +77,7 @@ Depois, gere a consolidação inicial e peça ao moderador para completar:
 node <skill>/scripts/panel-collect.mjs design/judging/panel
 ```
 
-O **moderador** usa `verdict.md/panel.json`: tabela de notas, nota ponderada pelos pesos oficiais (ou `references/criteria.md`), deliberação, frase de defesa, três correções por ganho de nota por minuto e riscos da demo ao vivo.
+O **moderador** usa `verdict.md/panel.json` para reunir notas, evidências, riscos e correções. Registre separadamente a evidência de que o mecanismo rodou, a evidência de ganho na tarefa e a clareza da apresentação. Antes do congelamento, priorize falhas que invalidam o resultado ou a prova.
 
 ## Regras da banca em hackathon
 

@@ -2,7 +2,7 @@
 
 ## Link abre frio
 - [ ] Abre em janela anônima sem login.
-- [ ] Primeira tela mostra para quem, dor com número e ação.
+- [ ] Primeira tela mostra para quem, dor com consequência e ação.
 - [ ] Exemplo pré-carregado visível.
 - [ ] Input ao vivo acessível.
 

@@ -14,19 +14,19 @@ Levantamento de 24/11/2026 em 14 fontes: regulamentos e anúncios oficiais (Open
 | **Wow factor** | 2 | wow factor, uniqueness | ~10 % |
 | Aprendizado | 1 (MLH, orientação) | learning | — |
 
-Quando o regulamento não publica pesos, use: técnica 25 %, impacto 25 %, inovação 20 %, design/UX 15 %, comunicação 15 %. Viabilidade entra como pergunta da banca de impacto.
+Para uma banca de treino sem pesos oficiais, use técnica 25 %, impacto 25 %, inovação 20 %, design/UX 15 % e comunicação 15 %. Viabilidade entra como pergunta da banca de impacto.
 
 ## Escala comum (âncoras)
 
 - **0–3:** não atinge o básico. Não funciona, ou o time não consegue explicar.
 - **4–6:** o esperado de um projeto de hackathon. Funciona no nível da demo.
-- **7–8:** acima da média. Profundidade técnica ou criatividade genuína.
+- **7–8:** acima da média. Resolve uma dificuldade relevante de modo convincente ou mostra uma intervenção original com ganho plausível.
 - **9–10:** seria finalista num evento grande. Use raramente.
 
 Âncoras por família (Reskilll e outros):
-- Inovação baixa: "mais um app de tarefas", "mais um chatbot". Alta: um problema que ninguém tratou assim.
-- Técnica baixa: só telas, mockups ou slides. Alta: "funciona; a demo ao vivo não quebra".
-- Impacto baixo: "seria útil para a sociedade" (vago). Alto: usuário específico e efeito quantificado.
+- Inovação baixa: a experiência muda de formato e o resultado permanece. Alta: intervenção com ganho distinto frente à melhor alternativa aplicável.
+- Técnica baixa: resultado pré-escrito ou mecanismo que falha na condição central. Alta: o mecanismo preserva as restrições e produz decisões corretas no caso comum e numa variação difícil. Julgue a adequação da técnica ao problema.
+- Impacto baixo: promessa vaga de utilidade. Alto: consequência relevante para um público específico, com evidência compatível com o alcance da afirmação.
 
 ## Fontes
 - https://developers.openai.com/blog/build-week-winners

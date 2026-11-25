@@ -23,8 +23,8 @@ Abra a pasta do projeto em **uma nova sessão do Codex** e descreva só a tarefa
 | Skill | Quando | Saída principal |
 |---|---|---|
 | `hackathon-day` | O evento começou: regras, linha do tempo, papéis, congelamento, entrega | `docs/CHALLENGE.md`, cronograma |
-| `problem-to-pain` | Explorar oportunidades, investigar dores, comparar propostas diferenciadas e escolher visão + recorte | Evidência, hipóteses e decisão, com `docs/PRODUCT-BRIEF.md` quando útil |
-| `mechanism-integrity` | Definir e provar o mecanismo: IA real/regra/simulação, entrada ao vivo, evidência, fallback | `docs/MECHANISM.md` |
+| `problem-to-pain` | Colar um tema, pedir ou evoluir uma ideia, ou conduzir a escolha de produto | Uma recomendação explicada no chat, com cena de uso, ganho e primeiro teste. Em descoberta aprofundada, `docs/DISCOVERY.md` registra a análise e `docs/PRODUCT-BRIEF.md` consolida o recorte aprovado. |
+| `mechanism-integrity` | Projetar a parte difícil da solução e verificar se a implementação entrega o efeito esperado | `docs/MECHANISM.md` com lógica, condições, contribuição da IA quando usada, comparação e limites |
 | `pitch-structure` | Montar a tela e o pitch: estrutura padrão, `?demo=1`, roteiro de 3 min, templates | `docs/DEMO-SCRIPT.md`, templates |
 | `art-direction` | Definir ou revisar a identidade e a composição do produto | `design/DESIGN.md` quando houver decisões duráveis |
 | `design-engineering` | Implementar ou revisar interação, motion, mobile, protótipos e correções de gosto | Referência contextual e evidência do trabalho quando aplicável |

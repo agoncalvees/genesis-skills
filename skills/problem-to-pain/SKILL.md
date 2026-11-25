@@ -1,17 +1,31 @@
 ---
 name: problem-to-pain
-description: Use para explorar oportunidades, descobrir problemas, gerar e comparar ideias e escolher uma direção de produto diferenciada, em hackathons ou em outros contextos.
+description: Use quando a pessoa trouxer um tema ou desafio, pedir ou quiser evoluir uma ideia de produto, comparar propostas ou escolher o que construir, em hackathons ou fora deles.
 ---
 
 # Descoberta e decisão de produto
 
-Em hackathons, conduza a escolha pelo protocolo abaixo, no relógio de `hackathon-day`. Em descoberta sem prazo de evento, use os mesmos princípios de exploração e comparação e combine com a equipe o tempo para pesquisar e decidir.
+## Quando chegar só o tema ou um pedido de ideia
 
-Se a equipe trouxer só o tema, explore alternativas e devolva uma proposta concreta com um dossiê de descoberta no primeiro contato. Explique o resultado buscado e apresente a proposta como hipótese onde faltar evidência. Siga com as informações disponíveis e indique as lacunas que podem mudar a escolha.
+Entregue **uma ideia recomendada no chat, na primeira resposta**. Isso vale também para um tema identificado como hackathon ou acompanhado de restrições avulsas. Explore alternativas internamente. Apresente comparação quando a pessoa pedir opções. Reserve o dossiê, a arquitetura detalhada e a rodada de aceite para pedidos de aprofundamento ou de condução da decisão de uma equipe. Use as restrições informadas e declare a suposição que mais pesa na escolha. Quando o prazo for desconhecido, proponha uma primeira versão pequena sem presumir um relógio de evento.
+
+Antes de escolher, dê um passe curto pela [exploração de oportunidades](references/opportunity-exploration.md). Em temas amplos, ancore a favorita em um episódio real do contexto. Use relatos, registros operacionais ou fontes primárias disponíveis. Avance como hipótese quando faltar acesso e cite precisamente o que ainda precisa de evidência.
+
+Abra com uma frase em linguagem comum que explique **quem faz o quê e o que melhora**. Desenvolva a ideia em três partes.
+
+- **Dor e consequência.** Mostre o que aconteceu, quem arcou com a perda e como o trabalho é feito hoje. Diga o que sustenta a existência da dor e por que intervir naquele ponto pode mudar o resultado.
+- **Como funciona.** Use uma cena para mostrar a intervenção completa. Explique as entradas, a parte difícil que o sistema resolve, a ação que passa a ser possível e o que acontece quando falta um recurso ou uma condição muda. Se o tema pede IA, mostre uma entrada que muda a decisão por causa do modelo e como o sistema verifica a saída.
+- **O que dá para construir primeiro.** Recorte a quantidade de casos, usuários ou integrações preservando o trabalho mais valioso da solução. Descreva a dependência decisiva e um teste com a mesma tarefa para a proposta e a prática atual. Meça um resultado ligado à dor e mostre um caso difícil em que a solução precisa recalcular, mudar a ação ou reconhecer um impasse.
+
+Mantenha a profundidade necessária para a pessoa entender e decidir. Siga para a seção de descoberta de hackathon quando o pedido for conduzir a escolha da equipe ou organizar a execução do evento.
+
+## Quando a pessoa já tem uma ideia
+
+Use a [referência de evolução de ideias](references/evolve-idea.md) quando pedirem para melhorar, aprofundar ou consertar uma proposta, inclusive depois de rejeitarem uma sugestão. Identifique o resultado e as escolhas que a pessoa quer preservar. Diagnostique onde a versão atual perde valor e compare maneiras de vencer esse gargalo. Responda com a versão recomendada, a mudança que faz diferença, o custo ou limite que ela introduz e o primeiro teste que separa ganho real de melhoria aparente. Se o mecanismo for o gargalo, use a seção de projeto de `mechanism-integrity` em apoio a essa decisão. Se a dificuldade estiver na experiência, na entrega ou na adoção, evolua essa parte.
 
 ## 1. Explore oportunidades antes de escolher uma dor
 
-Extraia o objetivo do brief e separe restrições confirmadas de suposições. Antes de filtrar por facilidade, percorra públicos, momentos, causas e maneiras distintas de mudar o resultado. Use primeiros princípios e criatividade lateral para buscar oportunidades além de automatizar a etapa atual. Consulte `references/opportunity-exploration.md` para esse passe interno.
+Extraia o resultado que o tema pede e separe restrições confirmadas de suposições. Explore alguns episódios e maneiras distintas de mudar o resultado antes de escolher. Se os caminhos estiverem parecidos ou o tema estiver amplo demais, use as lentes de [exploração de oportunidades](references/opportunity-exploration.md) num passe interno.
 
 Explore resultados e mecanismos de valor diferentes antes de investigar a fundo. Para as oportunidades mais fortes, identifique quem vive a dor, quem pode agir e o que faz hoje, inclusive trabalho manual, ajuda humana ou deixar como está. Capture um episódio quando houver acesso. Procure um ganho observável frente à melhor alternativa atual.
 
@@ -19,13 +33,18 @@ Registre **fato** com fonte, contexto e alcance, **hipótese** com uma observaç
 
 ## 2. Compare propostas com ambição e um recorte executável
 
-Para cada proposta, desenvolva a mudança significativa na experiência, no resultado ou em quem pode agir. Diferenciação exige um ganho material frente à prática atual. Use viabilidade para escolher uma parte demonstrável dessa mudança e registrar o caminho além do evento.
+Escolha pela combinação de **consequência relevante, intervenção que muda o desfecho e caminho até o primeiro uso**. Antes de recomendar, compare internamente a favorita com uma intervenção em outro ponto da causa. A ambição está no tamanho da mudança para a pessoa. Prefira a menor versão de uma intervenção forte.
+
+- **Elimine propostas genéricas.** Se trocar o público ou o tema deixa o fluxo praticamente igual e perde-se pouco valor, volte à cena e encontre uma ação que resolva uma dificuldade daquele contexto. Uma interface familiar serve quando a ação que ela viabiliza muda o resultado.
+- **Elimine promessas frágeis.** Percorra o primeiro uso e confira quem fornece cada entrada, quem pode agir sobre a saída e o que acontece depois. Se a primeira entrega depende de adesão em escala, dados inéditos, parceria ou acesso sem caminho plausível, redesenhe usando um recurso ao alcance da pessoa. Se perder o ganho nesse recorte, escolha outra proposta.
+- **Teste a força da intervenção.** Compare com o melhor substituto que a pessoa já tem, como uma mensagem, planilha, regra simples, software existente ou ajuda humana. Se o substituto chega ao mesmo desfecho sob as mesmas restrições e com esforço parecido, volte ao problema. Um alerta ou resumo passa quando muda materialmente o resultado, por exemplo quando evita que uma janela de ação se feche. Se a consequência permanece e o produto apenas a descreve melhor, procure uma intervenção com mais efeito.
+- **Decida pelo uso.** Entre ideias viáveis, favoreça a que muda de forma mais valiosa o resultado de um episódio sustentado por evidência. Facilidade de codar e efeito de palco ajudam a desempatar. Um protótipo com dados fictícios testa o fluxo e o mecanismo. Para afirmar ganho no uso, compare com a prática atual.
 
 Compare **valor e aderência** ao objetivo, **diferenciação** frente à alternativa, **clareza** da experiência e **viabilidade** de demonstrar o núcleo. No hackathon, use os pesos oficiais quando existirem e indique que a comparação é provisória. Elimine recortes que violem uma regra ou que não possam demonstrar valor distinto no tempo disponível. Antes de descartar a direção, procure outro recorte que preserve o núcleo.
 
 ### Dossiê de descoberta para a equipe
 
-Entregue a proposta desenvolvida em `docs/DISCOVERY.md` antes de pedir aceite. Se só houver conversa, entregue o dossiê na própria resposta. Abra com tema literal, objetivo, recomendação, público, resultado e relógio quando conhecido. Trate essa abertura como entrada para o documento completo. Desenvolva a análise até dar à equipe informações suficientes para escolher, começar a construir e verificar se a solução funcionou. Use tabelas, fluxos e cenas concretas para orientar a leitura.
+Quando a equipe pedir descoberta aprofundada ou condução da escolha, entregue a proposta desenvolvida em `docs/DISCOVERY.md` antes de pedir aceite. Se só houver conversa, entregue o dossiê na própria resposta. Abra com a recomendação em linguagem comum, o tema literal e o relógio quando conhecido. Desenvolva a análise até dar à equipe informações suficientes para escolher, começar a construir e verificar se a solução funcionou. Use tabelas, fluxos e cenas concretas para orientar a leitura.
 
 1. **Problema e oportunidade.** Descreva quem vive a dor, em que momento trava, o que já tenta, o custo da falha e quem pode mudar o resultado. Identifique a evidência de cada ponto, as premissas em aberto e como investigá-las.
 2. **Alternativas e escolha.** Para cada finalista, explique como funciona, o valor que entrega, a melhor alternativa atual, o diferencial e o maior risco. Compare pelos critérios da banca. Justifique a vencedora pela mudança que ela torna possível, pela força da evidência e pela capacidade de prová-la na demo. Diga o que faria você mudar de ideia.
@@ -58,6 +77,6 @@ Use minutos decorridos desde a revelação. A equipe pode ajustar o orçamento i
 
 ## 4. Trate fatos novos sem reiniciar a ideação
 
-Reabra só quando houver fonte e consequência decisivas: regra ou critério oficial confirmado que torna o plano inelegível ou muda a escolha, evidência que refuta a premissa central, ou falha comprovada que inviabiliza a demonstração do núcleo. Preferências, empate antigo, pedidos de mais opções e dificuldades já aceitas ficam registrados para depois.
+Durante a execução de um evento, reabra por regra oficial, evidência que refute a premissa central ou falha que inviabilize o núcleo. Se a pessoa pedir para evoluir a ideia ou reconsiderar uma decisão, use a seção de evolução respeitando o escopo do pedido e o estágio da entrega.
 
 Suspenda qualquer parte invalidada por uma regra. Proponha primeiro um recorte compatível que preserve o núcleo. Se isso falhar, compare com a melhor alternativa já considerada. Em até cinco minutos ou no saldo menor disponível, leve o fato, o efeito e a recomendação à mesma autoridade humana em uma mensagem de escolha. Registre o aceite e atualize o brief. Sem aceite, use o registro de encerramento para a parte afetada. Reabra a direção inteira apenas se as opções de recorte deixarem de preservar o valor central.

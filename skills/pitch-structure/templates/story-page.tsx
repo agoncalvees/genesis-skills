@@ -60,7 +60,7 @@ export function StoryPage() {
 			</section>
 
 			<section data-story="result" aria-label="Resultado">
-				<p className="opacity-70">[Antes × depois com o número grande.]</p>
+				<p className="opacity-70">[Antes × depois, com a consequência e a base da comparação.]</p>
 			</section>
 
 			<section

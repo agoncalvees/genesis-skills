@@ -71,3 +71,23 @@ Dois agentes em contextos novos receberam o mesmo caso hipotético. Um hackathon
 ## Correção após a segunda simulação · 25/11/2026
 
 A equipe relatou melhora na clareza, fundamentação, pensamento crítico e hipóteses, mas ainda observou propostas incrementais e baixa ambição de produto. A auditoria identificou a convergência prematura em três lugares: a etapa de descoberta exigia sinais de adoção, ganho e viabilidade para aprovar; a comparação valorizava impacto mensurável e prova de demo; e a execução/pitch não separava com nitidez a visão completa do recorte construído. A revisão adiciona exploração de oportunidades por perspectiva, causa e alavanca, conserva até três propostas com visão/diferencial/experiência/recorte/riscos, permite prototipar sob incerteza declarada e mantém o demo como prova de uma fatia. A simulação seguinte ainda não foi iniciada; esta revisão segue candidata até nova avaliação.
+
+### Sonda de primeira resposta · 25/11/2026
+
+Dois agentes em contextos separados responderam aos mesmos temas fictícios, desperdício em feiras livres e quebra de equipamento em pequenos comércios com demo offline de 90 segundos. A cópia instalada de `4bd9d7a` listou finalistas e pediu aceite num relógio sugerido nos dois casos. A revisão recomendou, respectivamente, vender sobras em sacolas para clientes da banca e replanejar offline a fila de uma gráfica após uma pane. Nas duas respostas, mostrou a cena, o primeiro fluxo e um teste contra a prática atual. Na demo offline, mudar o prazo de um pedido alterou a ação sugerida. A sonda avalia as respostas de ideação com leitura explícita da skill. A validação das hipóteses depende de uso real.
+
+Uma sessão nova do Codex CLI recebeu apenas o tema da feira. O log confirmou a leitura da cópia instalada de `problem-to-pain`. A sessão escolheu uma ideia, descreveu a reserva e a retirada das sacolas e propôs medir o descarte. A recomendação chegou na primeira resposta, sem rodada de aceite.
+
+### Sonda de dor e mecanismo · 25/11/2026
+
+No tema de cidades resilientes do Hack IA Brasil, duas propostas anteriores, avisar desvios de ônibus e juntar interdições de obras, foram rejeitadas pelo usuário por falta de profundidade e ligação com uma dor real. A revisão usa um episódio documentado, compara o desfecho com a prática atual e preserva a intervenção principal ao reduzir o MVP.
+
+A nova simulação parte da realocação escolar após as enchentes de maio de 2024, documentada pela [SMED de Porto Alegre](https://legislacao.portoalegre.rs.gov.br/norma/49310). A [política da Seduc-RS](https://educacao.rs.gov.br/upload/arquivos/202505/06152419-politica-de-protecao-a-trajetoria-do-estudante.pdf) descreve realocação e transporte até o local temporário. Numa sonda sintética em Python, a alocação conjunta de duas turmas respeitou capacidade e opções de transporte e atendeu 48 estudantes. A regra de proximidade aplicada em ordem de chegada atendeu 24. Ao retirar um local do cenário, a alocação conjunta caiu para 24. A sonda confirma o comportamento do exemplo de alocação. A extração com IA e a comparação com o processo de uma secretaria ainda precisam ser testadas.
+
+Um agente em contexto separado leu a revisão e recebeu o tema com as fontes públicas, sem a proposta. Recomendou recalcular vagas e transporte em conjunto, identificou a confirmação operacional como dependência e propôs medir tempo até o plano e estudantes com vaga e transporte. Essa sonda avalia a escolha com evidência fornecida.
+
+### Sonda de evolução de ideias · 25/11/2026
+
+Dois agentes em contextos separados aplicaram a versão anterior e a revisada a pedidos de evolução com dados fictícios. As duas versões chegaram a uma prorrogação de reserva por mensagem e planilha quando o livro não tem fila e a um remanejamento de turmas que combina IA para interpretar comunicados com alocação que respeita vagas e transporte. A revisão também recebeu um piloto fictício no qual o zelador já priorizava bem e a maior parte dos atrasos vinha de falta de acesso ao imóvel. A resposta preservou o formulário, transferiu a intervenção para a confirmação de acesso antes da saída do técnico e propôs medir visitas perdidas, tempo até o reparo e esforço da portaria.
+
+Em uma sessão nova do Codex CLI com o mesmo piloto fictício, o log confirmou a seleção de `problem-to-pain` e a leitura de `references/evolve-idea.md` da instalação local. A sessão chegou à mesma mudança de intervenção e condicionou a IA a um eventual gargalo de triagem. As sondas verificam escolha de abordagem e roteamento. Ainda falta observar impacto em uso real.

@@ -6,6 +6,9 @@
 - Exemplo pré-carregado: 
 
 ## Como funciona
+- Resultado prometido e ação mais difícil:
+- Prática atual e hipótese de ganho:
+- Origem das entradas e condições obrigatórias:
 - Processo (modelo/API/regra/algoritmo, versão): 
 - Onde a tecnologia age: 
 - Onde a pessoa decide: 
@@ -15,8 +18,9 @@
 ## Evidência
 - Como provar que rodou: 
 - Latência/custo/limite observado: 
-- Caso difícil tratado: 
-- Teste antes/depois com input do jurado: 
+- Caso difícil, resultado esperado e observado:
+- Comparação na mesma tarefa, com unidade e base:
+- Procedência dos dados e alcance da prova:
 
 ## Fallback e limites
 - Sem rede/chave/cota (mesmo rótulo/aviso): 

@@ -17,6 +17,7 @@ Selecione as superfícies que correspondem ao fluxo e às promessas que a tarefa
 6. **Claims frágeis**: rodar `claim-ledger.mjs`; todo número visível precisa de fonte/estimativa/dado de exemplo.
 7. **Mobile/teclado**: em tamanhos e dispositivos pertinentes, confira foco visível, ações sem hover obrigatório, overflow indevido, resultado perceptível e recuperação.
 8. **Segredos/privacidade**: buscar token/chave no bundle/repo/log; dados pessoais só fictícios.
+9. **Decisão sob restrições**. Quando a solução distribuir recursos, coordenar decisões ou replanejar, teste o encontro de condições plausíveis. Inclua um caso em que uma escolha local prejudique o resultado do conjunto e um caso sem saída válida. Confira se o sistema preserva as restrições, explica o impasse e indica o próximo passo. Se houver promessa de ganho, compare a tarefa com a prática atual sob as mesmas condições.
 
 ## Robustez visual e dados
 

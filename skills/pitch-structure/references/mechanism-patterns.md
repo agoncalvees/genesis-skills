@@ -1,6 +1,6 @@
 # Padrões de mecanismo demonstrável
 
-Escolha um padrão que gere resultado visível com input real em <30 min.
+Use os exemplos para demonstrar a proposição escolhida. Combine padrões quando o valor depender de mais de um passo. A prova pode mostrar, por exemplo, uma extração cuja confirmação leva a recalcular uma alocação. Escolha a menor cena que preserve a consequência.
 
 ## 1. Classificador com evidência
 - **Entrada**: texto/foto/formulário colado pelo jurado.

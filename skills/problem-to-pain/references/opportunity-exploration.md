@@ -1,6 +1,12 @@
 # Exploração de oportunidades
 
-Use este passe antes de comparar soluções. Ele organiza a exploração interna; não produza um inventário longo para a equipe.
+Use este passe antes de comparar soluções para um tema ou problema aberto. Para melhorar uma proposta existente, siga [evolução de ideias](evolve-idea.md). Mantenha a exploração interna e leve à equipe o que afeta a decisão.
+
+## Ancorar a dor
+
+Para um tema amplo, parta de episódios documentados de perda de acesso, renda, capacidade, tempo crítico ou outro resultado relevante ao contexto. Um relato direto ou registro de operação ajuda a reconstruir a sequência. Um dado agregado dimensiona o problema no universo medido. Use cada fonte para a afirmação que ela sustenta. Um incidente documentado pode comprovar a interrupção e ainda deixar sua causa operacional, a disposição de usar o produto e o ganho esperado em aberto.
+
+Reconstrua a prática atual até localizar onde a pessoa perde uma opção, fica sem recurso ou toma uma decisão com informação ou tempo insuficiente. Examine uma intervenção que muda o que acontece a partir dali. Para testar o mecanismo, compare as duas abordagens com os mesmos dados iniciais e introduza uma mudança que afete o desfecho. Mostre qual ação passa a ser possível, quem pode executá-la e qual consequência observável justificaria trocar de método.
 
 ## Abrir o espaço
 

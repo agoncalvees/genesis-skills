@@ -5,7 +5,7 @@ description: Organiza um hackathon da revelação do tema à entrega. Use para i
 
 # Dia de hackathon
 
-Ajuste a entrega às regras do evento. Para um produto novo, acione `problem-to-pain` assim que o tema chegar. A descoberta usa um único orçamento desde a revelação, normalmente 30 minutos, com triagem de regras e passagem ao brief incluídas. Combine a hora-limite e use a variante curta se o evento exigir.
+Ajuste a entrega às regras do evento. Se a pessoa enviar só o tema ou pedir uma ideia, use a primeira resposta de `problem-to-pain`: uma recomendação explicada no chat. Quando o pedido for organizar o evento ou conduzir a escolha da equipe, use um único orçamento desde a revelação, normalmente 30 minutos, com triagem de regras e passagem ao brief incluídas. Combine a hora-limite e use a variante curta se o evento exigir.
 
 ## 1. Triagem de regras no início da descoberta
 
@@ -23,7 +23,7 @@ Se o reaproveitamento estiver incerto, **não reaproveite código**. Estas skill
 | Relógio | Bloco | Saída obrigatória |
 |---|---|---|
 | T+0:00–0:30 | Descoberta (`problem-to-pain`) | Direção e recorte aprovados com brief imediato, ou rodada encerrada sem aprovação |
-| T+0:30–0:45 | **Mecanismo e pitch** após a direção aprovada (`mechanism-integrity`, `pitch-structure`) | `docs/MECHANISM.md` com rótulo/fronteira/fallback; `docs/DEMO-SCRIPT.md` conecta a visão à fatia demonstrada |
+| T+0:30–0:45 | **Prova inicial do mecanismo e pitch** após a direção aprovada (`mechanism-integrity`, `pitch-structure`) | Primeiro teste da parte que cria valor ou da dependência mais incerta, mesmo fora da interface. Mecanismo e roteiro registram a fatia demonstrada |
 | T+0:45–1:15 | Direção e esqueleto (`art-direction`) | `design/DESIGN.md` curto; app com as seções da estrutura padrão |
 | T+1:15–3:00 | **Caminho da demo** | abertura + input ao vivo + mecanismo funcionando de ponta a ponta, feio se preciso |
 | T+3:00 | Teste dos 5 segundos (`judge-and-verify`) | `design/judging/observation.json` + packet; densidade/axe/overflow |
@@ -32,14 +32,14 @@ Se o reaproveitamento estiver incerto, **não reaproveite código**. Estas skill
 | T+4:45–5:15 | Endurecer (`red-team`) | `docs/RED-TEAM.md`, verify/observe sem gates P0, e2e do caminho, deploy/build local, vídeo 60 s |
 | T+5:15–6:00 | Ensaiar (`demo-rehearsal`) | 3 pitches cronometrados; ajuste a abertura, não o código |
 
-Planeje de trás para frente a partir da submissão e reserve tempo para ensaio e vídeo. Após o aceite, ponha primeiro no ar uma fatia completa que prove valor. Se na metade da construção o caminho não roda, aplique o primeiro corte do brief que preserve o núcleo e a honestidade da prova. Use a regra de reabertura de `problem-to-pain` se o corte afetar o valor central ou uma restrição oficial.
+Planeje de trás para frente a partir da submissão e reserve tempo para ensaio e vídeo. Após o aceite, priorize uma fatia completa que prove valor. Ajuste o cronograma se o primeiro teste indicar que o núcleo exige mais tempo. Se precisar cortar, reduza integrações, volume ou interface antes de retirar a condição que torna a solução útil. Use a regra de reabertura de `problem-to-pain` se o corte afetar o valor central ou uma restrição oficial.
 
 ## Honestidade técnica (a banca verifica)
 
 - **IA para construir e IA no produto são decisões distintas.** Dentro das regras do evento, use agentes para acelerar pesquisa, código, testes e ensaio. Só inclua um modelo no produto quando a proposta depender dele ou o regulamento pedir.
-- **A tecnologia exigida pelo tema precisa ser real no caminho da demo.** Se o tema pede IA, a IA roda de verdade (API ou modelo local), com plano B rotulado. Simulação (regras, léxico, resposta fixa) só se a tela e a fala disserem isso **em todo lugar**, com o mesmo nome. Use `mechanism-integrity` para registrar rótulo, fronteira e evidência em `docs/MECHANISM.md`.
+- **A tecnologia exigida pelo tema precisa ser real no caminho da demo.** Se o tema pede IA, a IA roda de verdade (API ou modelo local), com plano B rotulado. Identifique regras, comportamento simulado e dados fictícios conforme a [integridade do mecanismo](../mechanism-integrity/SKILL.md).
 - **Entrada ao vivo.** O jurado precisa poder testar um caso próprio. Sem input, a demo vira resultado pré-calculado.
-- **Não termine cedo.** Se o caminho da demo ficou pronto antes da metade, o tempo restante vai para tornar o mecanismo real e testável, não para polimento.
+- **Use o tempo que sobrar na maior incerteza.** Priorize um caso difícil, uma comparação com a prática atual ou uma falha que prejudique a tarefa. Quando o núcleo estiver bem demonstrado, melhore a experiência e a apresentação conforme a necessidade.
 - **Textos e números são calculados/rastreados, não escritos à mão.** Todo número tem fonte, "estimativa" ou "dado de exemplo". Se os dados mudam, a frase muda.
 - **Dados de exemplo não podem ser armados.** Inclua casos difíceis (negação, sinônimos, falso positivo) e mostre um em que o sistema erra e a pessoa decide.
 

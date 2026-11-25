@@ -60,9 +60,9 @@ lines.push('## Avaliação rápida');
 lines.push('');
 if (demo) {
   lines.push('- [ ] 5s: para quem / dor / ação');
-  if (obs.requireInput !== false) lines.push('- [ ] Entrada ao vivo muda resultado');
+  if (obs.requireInput !== false) lines.push('- [ ] Entrada ao vivo produz a decisão ou o resultado esperado');
   lines.push('- [ ] Mecanismo rotulado com honestidade');
-  lines.push('- [ ] Antes/depois com número e procedência');
+  lines.push('- [ ] Antes/depois com consequência observável e procedência da evidência');
   lines.push('- [ ] Limite visível e dito em voz alta');
 } else {
   lines.push('- [ ] A pessoa encontra a informação e conclui a tarefa principal');
