@@ -23,6 +23,7 @@ Skills para vencer hackathons com qualquer stack e qualquer agente que leia `SKI
 - `skills/judge-and-verify/scripts/judge-packet.mjs` — pacote único para banca cega (inclui MECHANISM/REHEARSAL/claims).
 - `skills/judge-and-verify/scripts/claim-ledger.mjs` — claims/números sem procedência provável.
 - `skills/judge-and-verify/scripts/panel-pack.mjs` — gera prompts idênticos para banca multi-modelo.
+- `skills/judge-and-verify/scripts/panel-collect.mjs` — consolida notas/pareceres em `verdict.md`/`panel.json`.
 - `scripts/model-smoke.mjs` — registra disponibilidade de modelos gratuitos.
 - `scripts/skill-lint.mjs` — lint estrutural do pack.
 

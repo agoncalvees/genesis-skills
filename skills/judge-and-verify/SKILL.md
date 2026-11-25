@@ -74,7 +74,13 @@ Cada jurado:
 - **usa o app por 5 minutos** com Playwright e, no caso do técnico, lê o repositório;
 - dá nota 0–10 com evidência e uma correção.
 
-Depois, o **moderador** agrega: tabela de notas, nota ponderada pelos pesos oficiais (ou `references/criteria.md`), deliberação, frase de defesa, três correções por ganho de nota por minuto e riscos da demo ao vivo.
+Depois, gere a consolidação inicial e peça ao moderador para completar:
+
+```sh
+node <skill>/scripts/panel-collect.mjs design/judging/panel
+```
+
+O **moderador** usa `verdict.md/panel.json`: tabela de notas, nota ponderada pelos pesos oficiais (ou `references/criteria.md`), deliberação, frase de defesa, três correções por ganho de nota por minuto e riscos da demo ao vivo.
 
 ## Regras
 
