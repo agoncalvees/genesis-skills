@@ -1,6 +1,6 @@
 ---
 name: hackathon-day
-description: Conduz um hackathon cronometrado da revelação do tema ao pitch (regras, linha do tempo, papéis, congelamento, ensaio) e chama as outras skills Genesis na ordem certa (problem-to-pain, pitch-structure, art-direction, judge-and-verify). Use quando um hackathon ou desafio com tempo começar, quando o tema for revelado ou quando perguntarem "o que fazemos agora" durante o evento. Funciona em qualquer repositório e stack. Triggers: hackathon, tema revelado, começou o desafio, cronograma do evento, pitch final.
+description: Organiza um hackathon da revelação do tema à entrega. Use para interpretar regras do evento, definir cronograma e papéis, organizar o congelamento, preparar o ensaio ou decidir o próximo passo durante a competição.
 ---
 
 # Dia de hackathon

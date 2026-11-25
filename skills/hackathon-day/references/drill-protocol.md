@@ -13,7 +13,7 @@
 ## Medições
 - Minutos até one-liner, mecanismo real/input ao vivo, demo ponta-a-ponta, verify ok, observe ok, judge packet, entrega.
 - `verify.mjs` exit 0.
-- `observe.mjs` exit 0 (sem gates P0).
+- `observe.mjs --profile tool` (ou `--profile landing`, conforme a demo) exit 0, sem gates P0.
 - `judge-packet.mjs` gerado.
 - `claim-ledger.mjs` sem claims suspeitas no caminho da demo.
 

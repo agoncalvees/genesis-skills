@@ -21,7 +21,7 @@ Escala para todos (0–10): 0–3 não atinge o básico; 4–6 o esperado de um 
 ## 2. Jurado técnico (execução e implementação)
 **Pergunta central:** funciona ou é slide? O mecanismo é real?
 - Percorra o caminho principal sem a demo guiada: clique na ação, use o exemplo, mude uma entrada e veja se o resultado muda de forma coerente. Tente uma entrada inesperada (vazia, extrema).
-- Confira `observation.json`: `firstScreen.liveInputs`, erros, overflow, densidade e gates P0. Sem input ao vivo, trate como demo pré-calculada.
+- Confira erros, overflow e gates P0. Use `firstScreen.liveInputs` para localizar um possível ponto de entrada. Julgue o mecanismo pelo efeito de mudar a entrada real, inclusive por seleção, importação ou outro controle pertinente.
 - Erros no console, telas quebradas, tempo de carregamento (`observation.json`).
 - Leia o repositório por 2 minutos: onde está o mecanismo, o que é calculado de verdade e o que é texto fixo; a IA é chamada de fato ou simulada (se simulada, está rotulada em tela/fala/docs?); há testes do caminho principal?
 - Âncoras: baixo = telas estáticas, resultado pré-escrito ou "IA" simulada; alto = funciona ao vivo, reage a entradas diferentes, tem limite honesto e não quebra.
@@ -35,10 +35,10 @@ Escala para todos (0–10): 0–3 não atinge o básico; 4–6 o esperado de um 
 
 ## 4. Jurado de design e experiência
 **Pergunta central:** alguém usaria sem treinamento, e a tela tem identidade?
-- **Densidade:** use `firstScreen.words/numbers/controls` de `observation.json`. Mais de 60 palavras (1440 px) ou 35 (360 px), mais de 1 número em destaque ou mais de 2 ações na primeira tela é defeito: a nota de design não passa de 6. Cada tela deve pedir uma decisão; despejo de informação ("vomitar dados") é o erro mais comum.
+- **Densidade:** use `firstScreen.words/numbers/controls` de `observation.json` para orientar a inspeção. Ancore a nota em legibilidade, localização de informação e conclusão da tarefa. Explique o efeito observado da densidade no contexto da tela.
 - Primeira tela em 360 e 1440 px: hierarquia, legibilidade, uma ação óbvia. Página inteira: o olho sabe para onde ir?
 - Interaja: estados vazio, carregando, erro e resultado existem? Foco visível, teclado, contraste (`axe` em `observation.json`)?
-- Identidade: parece feito para este problema ou parece um template genérico (gradiente roxo, grade de cards, dashboard padrão)?
+- Identidade: as escolhas de composição, conteúdo e interação ajudam a pessoa a reconhecer os estados, entender os dados e operar o produto?
 - Âncoras: baixo = confuso ou genérico; alto = claro de primeira e memorável. Polimento além do legível não sobe a nota sozinho.
 
 ## 5. Jurado de comunicação e demo

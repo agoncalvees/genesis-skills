@@ -10,7 +10,7 @@ const skillDirs = readdirSync(skillsDir).filter(d => statSync(join(skillsDir,d))
 for (const dir of skillDirs) {
   const skillPath = join(skillsDir, dir, 'SKILL.md');
   if (!existsSync(skillPath)) { errors.push(`${dir}: missing SKILL.md`); continue; }
-  const text = readFileSync(skillPath, 'utf8');
+  const text = readFileSync(skillPath, 'utf8').replace(/\r\n/g, '\n');
   const fm = text.match(/^---\n([\s\S]*?)\n---\n/);
   if (!fm) { errors.push(`${dir}: missing YAML frontmatter`); }
   else {
@@ -27,7 +27,7 @@ for (const dir of skillDirs) {
   const linkRe = /`([^`]+\.(?:md|mjs|ts|tsx|css|json|sh))`|\(([^)]+\.(?:md|mjs|ts|tsx|css|json|sh))\)/g;
   for (const m of text.matchAll(linkRe)) {
     const ref = (m[1]||m[2]).trim();
-    if (ref.startsWith('http') || ref.startsWith('<') || ref.includes('*')) continue;
+    if (ref.startsWith('http') || ref.startsWith('<') || ref.startsWith('~/') || ref.includes('*')) continue;
     if (ref.startsWith('docs/') || ref.startsWith('design/') || ['CHALLENGE.md','PRODUCT-BRIEF.md','MECHANISM.md','DEMO-SCRIPT.md','REHEARSAL.md','RED-TEAM.md','STATUS.md','fidelity.json','observation.json','verdict.md','panel.json','observe.mjs','verify.mjs','claim-ledger.mjs','judge-packet.mjs','panel-pack.mjs','panel-collect.mjs'].includes(ref) || ref.endsWith('/observe.mjs') || ref.endsWith('/verify.mjs') || ref == 'verdict.md/panel.json') continue;
     const candidates = [join(skillsDir,dir,ref), join(root,ref), join(dirname(skillPath),ref)];
     if (!candidates.some(c=>existsSync(c))) warnings.push(`${dir}: referenced file not found nearby: ${ref}`);

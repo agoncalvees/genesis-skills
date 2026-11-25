@@ -14,7 +14,7 @@
 
 ## Evidência
 - [ ] `verify.mjs` exit 0.
-- [ ] `observe.mjs` exit 0, sem gates P0.
+- [ ] `observe.mjs` com perfil de demo apropriado exit 0, sem gates P0.
 - [ ] `judge-packet.mjs` gerado.
 - [ ] `claim-ledger.mjs` revisado.
 - [ ] Capturas 360/1440 salvas.

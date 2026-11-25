@@ -27,6 +27,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { join, resolve } from "node:path";
+import { firstViewportSelectors } from "./visual-policy.mjs";
 
 const argv = process.argv.slice(2);
 const options = {};
@@ -36,19 +37,15 @@ for (let i = 0; i < argv.length; i++) {
 	else positional.push(argv[i]);
 }
 const specPath = options.spec ?? "design/fidelity.json";
+const profile = options.profile ?? "product";
+if (!["product", "demo"].includes(profile)) throw new Error(`Perfil inválido: ${profile}`);
+if (options.spec && !existsSync(specPath)) throw new Error(`Spec não encontrada: ${specPath}`);
 const spec = existsSync(specPath)
 	? JSON.parse(readFileSync(specPath, "utf8"))
-	: {
-			firstViewport: [
-				"[data-story=problem]",
-				"[data-story=promise]",
-				"[data-story=action]",
-			],
-			probes: [],
-		};
+	: {};
 const url = positional[0] ?? spec.url;
 if (!url) {
-	console.error("Uso: node verify.mjs <url> [--spec design/fidelity.json]");
+	console.error("Uso: node verify.mjs <url> [--profile product|demo] [--spec design/fidelity.json]");
 	process.exit(1);
 }
 const out = options.out ?? "design/evidence";
@@ -135,13 +132,14 @@ try {
 		const errors = [];
 		page.on("pageerror", (e) => errors.push(e.message));
 		const load = async () => {
-			await page.goto(url, { waitUntil: "networkidle" });
+			const response = await page.goto(url, { waitUntil: "networkidle" });
+			if (response?.status() >= 400) issues.push(`${width}px: HTTP ${response.status()}`);
 			await page.evaluate(() => document.fonts.ready);
 			if (spec.waitFor) await page.waitForSelector(spec.waitFor);
 		};
 		await load();
 
-		for (const selector of spec.firstViewport ?? []) {
+		for (const selector of firstViewportSelectors(spec, profile)) {
 			const state = await page.evaluate((q) => {
 				const el = document.querySelector(q);
 				if (!el) return "ausente";
@@ -163,11 +161,6 @@ try {
 		for (const font of spec.fonts ?? [])
 			if (!loaded.some((f) => f.startsWith(font.toLowerCase())))
 				issues.push(`${width}px: fonte não carregada: ${font}`);
-		const overflow = await page.evaluate(
-			() => document.documentElement.scrollWidth - innerWidth,
-		);
-		if (overflow > 0) issues.push(`${width}px: overflow horizontal de ${overflow}px`);
-
 		for (const state of [{ name: "inicial", actions: [] }, ...(spec.states ?? [])]) {
 			if (state.name !== "inicial") {
 				await load();
@@ -177,6 +170,8 @@ try {
 				}
 				await page.waitForTimeout(700);
 			}
+			const overflow = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
+			if (overflow > 0) issues.push(`${width}px [${state.name}]: overflow horizontal de ${overflow}px`);
 			await page.screenshot({ path: join(out, `${state.name}-${width}.png`), fullPage: true });
 			for (const probe of spec.probes ?? []) {
 				if (probe.viewports && !probe.viewports.includes(width)) continue;

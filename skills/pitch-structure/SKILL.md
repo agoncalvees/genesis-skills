@@ -1,13 +1,13 @@
 ---
 name: pitch-structure
-description: Estrutura padrão de app de hackathon que faz o jurado entender a dor em segundos e o roteiro de pitch de 3 minutos — abertura (para quem, dor com número, promessa, uma ação), experiência com exemplo pré-carregado sem login, antes × depois, como funciona, limites e demonstração guiada ?demo=1 (PitchTour). Use ao montar a tela principal, ao escrever o pitch, quando o app "não se explica sozinho" ou antes de entregar. Inclui templates React copiáveis.
+description: Estrutura a abertura, a demonstração guiada e o pitch de um hackathon. Use para comunicar público, dor, ação e resultado à banca. Inclui roteiro e templates copiáveis de React.
 ---
 
 # Estrutura do app e do pitch
 
 O jurado não explora o app. Em julgamento assíncrono, ele abre o link sozinho; no palco, vê 3 minutos. A estrutura abaixo funciona para qualquer ideia: **escreva o conteúdo antes de desenhar**.
 
-## Orçamento de informação (regra dura)
+## Referências de densidade para a abertura da demo
 
 O jurado vê o app por segundos. Mostrar tudo é o mesmo que não mostrar nada.
 
@@ -21,7 +21,7 @@ O jurado vê o app por segundos. Mostrar tudo é o mesmo que não mostrar nada.
 
 Como cortar: (1) o que não responde "para quem / dor / o que faço" sai da primeira tela; (2) **revelação progressiva**: legenda, fórmulas, listas longas e "como funciona" ficam atrás de um clique ou abaixo da dobra; (3) mostre **um caso** (uma pessoa, um aluno, um pedido), não a tabela inteira, e deixe "ver todos" para depois; (4) um número com unidade vale mais que cinco sem contexto; (5) texto de apoio só onde o usuário vai agir; (6) pergunte de cada elemento "se eu tirar isto, o jurado perde a história?". Se a resposta for não, tire.
 
-`scripts/observe.mjs` mede palavras, números e controles da primeira tela; acima do orçamento é defeito, não gosto.
+`scripts/observe.mjs` mede palavras, números e controles da primeira tela. Use os valores como pistas para testar a clareza da abertura, considerando o tempo da banca e a tarefa. Investigue a causa com uma captura ou observação de uso antes de propor o corte.
 
 ## Padrões de mecanismo
 

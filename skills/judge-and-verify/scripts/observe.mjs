@@ -14,23 +14,31 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { join, resolve } from "node:path";
+import { parseArgs } from "node:util";
+import { observationPolicy } from "./visual-policy.mjs";
 
-const argv = process.argv.slice(2);
-const opt = {};
-const pos = [];
-for (let i = 0; i < argv.length; i++) {
-	if (argv[i].startsWith("--")) opt[argv[i].slice(2)] = argv[++i];
-	else pos.push(argv[i]);
-}
+const { values: opt, positionals: pos } = parseArgs({
+	allowPositionals: true,
+	options: {
+		out: { type: "string" },
+		steps: { type: "string" },
+		click: { type: "string" },
+		profile: { type: "string", default: "product" },
+		"require-input": { type: "string" },
+		"no-require-input": { type: "boolean" },
+	},
+});
 const url = pos[0];
 if (!url) {
-	console.error("Uso: node observe.mjs <url> [--out design/judging] [--steps 6] [--click <seletor>] [--profile tool|landing] [--no-require-input]");
+	console.error("Uso: node observe.mjs <url> [--out design/judging] [--steps 6] [--click <seletor>] [--profile product|tool|landing] [--require-input true|false] [--no-require-input]");
 	process.exit(1);
 }
 const out = opt.out ?? "design/judging";
 const maxSteps = Number(opt.steps ?? 6);
-const profile = opt.profile ?? "tool";
-const requireInput = opt["require-input"] !== "false" && profile !== "landing";
+const profile = opt.profile;
+if (!["product", "tool", "landing"].includes(profile)) throw new Error(`Perfil inválido: ${profile}`);
+const requireInput = !opt["no-require-input"] &&
+	(opt["require-input"] === undefined ? profile === "tool" : opt["require-input"] === "true");
 mkdirSync(out, { recursive: true });
 
 const require = createRequire(join(resolve(process.cwd()), "package.json"));
@@ -130,8 +138,6 @@ try {
 			}
 			return { words, numbers, controls, liveInputs };
 		});
-		const budget = width < 600 ? 35 : 60;
-		v.density = v.firstScreen.words > budget ? `ACIMA do orçamento (${v.firstScreen.words} > ${budget} palavras)` : "ok";
 		v.liveInput = v.firstScreen.liveInputs > 0 ? "ok" : "ausente";
 		v.overflowPx = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
 		await shot("pagina", true);
@@ -141,8 +147,9 @@ try {
 		const beforeText = await page.evaluate(() => document.body.innerText.slice(0, 4000));
 		const target = opt.click
 			? page.locator(opt.click).first()
-			: page.locator("[data-story=action] button, [data-story=action] a, main button").first();
-		if (await target.count()) {
+			: profile === "product" ? null
+				: page.locator("[data-story=action] button, [data-story=action] a, main button").first();
+		if (target && await target.count()) {
 			v.mainAction = (await target.innerText().catch(() => "")).trim();
 			await target.click({ timeout: 3000 }).catch((e) => errors.push(`clique: ${e.message.split("\n")[0]}`));
 			await page.waitForTimeout(900);
@@ -150,16 +157,21 @@ try {
 			const afterUrl = page.url();
 			const afterText = await page.evaluate(() => document.body.innerText.slice(0, 4000));
 			v.actionOutcome = { urlChanged: beforeUrl !== afterUrl, textChanged: beforeText !== afterText };
-		} else { v.mainAction = "nenhuma ação encontrada"; v.actionOutcome = { urlChanged: false, textChanged: false }; }
+		} else {
+			v.mainAction = target ? "nenhuma ação encontrada" : "não selecionada";
+			if (opt.click) errors.push(`clique: seletor não encontrado: ${opt.click}`);
+			v.actionOutcome = { urlChanged: false, textChanged: false };
+		}
 
 		// Guided demo.
-		const demoUrl = new URL(url);
-		demoUrl.searchParams.set("demo", "1");
-		await page.goto(demoUrl.toString(), { waitUntil: "networkidle" }).catch(() => {});
-		await page.waitForTimeout(800);
-		const dialog = page.getByRole("dialog");
-		v.demo = { found: (await dialog.count()) > 0, steps: [] };
-		if (v.demo.found) {
+		v.demo = { found: false, steps: [], checked: profile !== "product" };
+		if (v.demo.checked) {
+			const demoUrl = new URL(url);
+			demoUrl.searchParams.set("demo", "1");
+			await page.goto(demoUrl.toString(), { waitUntil: "networkidle" }).catch(() => {});
+			await page.waitForTimeout(800);
+			const dialog = page.getByRole("dialog");
+			v.demo.found = (await dialog.count()) > 0;
 			for (let i = 1; i <= maxSteps && (await dialog.count()); i++) {
 				await page.waitForTimeout(500);
 				const text = (await dialog.first().innerText().catch(() => "")).replace(/\s+/g, " ").trim();
@@ -180,12 +192,7 @@ try {
 			}
 		} else v.axe = "axe não instalado (@axe-core/playwright)";
 		v.errors = errors;
-		v.gates = [];
-		if (v.firstScreen.words > budget) v.gates.push(`densidade acima do orçamento (${v.firstScreen.words}>${budget})`);
-		for (const key of ["problem", "promise", "action"]) if (v.story[key] !== "na primeira tela") v.gates.push(`story:${key} ${v.story[key]}`);
-		if (requireInput && v.firstScreen.liveInputs === 0) v.gates.push("sem input ao vivo");
-		if (v.overflowPx > 0) v.gates.push(`overflow ${v.overflowPx}px`);
-		if (errors.length) v.gates.push(`${errors.length} erro(s) de console/page`);
+		Object.assign(v, observationPolicy(v, profile, requireInput));
 		report.viewports.push(v);
 		await context.close();
 	}

@@ -1,20 +1,6 @@
-# Anti-slop visual (hackathon)
+# Revisão visual
 
-## Cortar rápido
-- Hero centralizado genérico com gradiente roxo/azul.
-- 3 cards com ícone arredondado e texto vago.
-- Dashboard KPI sem decisão.
-- Números sem unidade, fonte ou base.
-- Seção "Como funciona" com passos abstratos.
-- Texto longo antes do mecanismo.
-
-## Trocar por
-- Uma metáfora visual do domínio.
-- Um protagonista: o mecanismo/dado/objeto real.
-- Uma cor de sinal para ação/resultado.
-- Tipografia com voz e hierarquia extrema.
-- Estado vazio útil com exemplo real.
-- Evidência visual: antes/depois, citação, trace, diff, mapa, simulação.
-
-## Regra de 5 segundos
-Se a captura da primeira tela não responde "para quem, qual dor, o que faço", a direção falhou, mesmo que esteja bonita.
+- A hierarquia ajuda a pessoa a localizar o dado e agir? Em telas densas, meça o esforço para comparar ou localizar itens relevantes.
+- Cada card, resumo e elemento de navegação tem uma função clara? Rotule medidas com unidade e origem conforme o contexto.
+- Os espaços, os estados vazios e as imagens orientam o próximo passo? A composição ainda funciona com conteúdo real, no zoom, em telas estreitas e no tema suportado?
+- Em uma demo, use a captura de cinco segundos para testar se público, dor e ação foram compreendidos. Em um produto em uso, teste se a pessoa encontra o que precisa para concluir a tarefa.

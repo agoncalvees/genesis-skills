@@ -1,6 +1,6 @@
 ---
 name: demo-rehearsal
-description: Congela o produto de hackathon e transforma o que existe em demo defendível — roteiro igual à tela, ?demo=1, ensaios cronometrados, plano B (vídeo/build local/dados), checklist de entrega e verificação final. Use no congelamento, antes de submeter, quando o roteiro divergir da tela, ou quando houver risco de rede/login/API. Gera docs/REHEARSAL.md.
+description: Prepara e ensaia a demo de um hackathon para a submissão. Use para alinhar roteiro e tela, cronometrar o pitch, verificar o tour e preparar contingência para falhas durante a apresentação.
 ---
 
 # Ensaio e entrega
@@ -59,8 +59,8 @@ Regras:
 Use também `references/submission-checklist.md`.
 
 - [ ] `CHALLENGE.md`, `PRODUCT-BRIEF.md`, `MECHANISM.md`, `DEMO-SCRIPT.md`, `REHEARSAL.md`, `RED-TEAM.md` existem.
-- [ ] `node <judge-and-verify>/scripts/verify.mjs <url> --spec design/fidelity.json --out design/evidence`.
-- [ ] `node <judge-and-verify>/scripts/observe.mjs <url> --out design/judging`.
+- [ ] `node <judge-and-verify>/scripts/verify.mjs <url> --profile demo --out design/evidence`. Use `--spec` se o projeto declarar a spec em outro caminho.
+- [ ] `node <judge-and-verify>/scripts/observe.mjs <url> --profile tool --out design/judging`. Use `--profile landing` para demo sem interação ao vivo.
 - [ ] Tour `?demo=1` executa os mesmos passos do roteiro falado, sem rede/login.
 - [ ] Link aberto em janela anônima mostra primeira tela compreensível (julgamento assíncrono).
 - [ ] Input ao vivo funciona; caso difícil tratado.

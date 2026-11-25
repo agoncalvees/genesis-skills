@@ -7,3 +7,8 @@
 | Claim sem fonte | número removido/rotulado | | | | |
 | 360px | sem overflow, resultado visível | | | | |
 | Segredo no bundle | nenhum segredo | | | | |
+
+## Robustez visual
+
+| Caso/schema | Fronteira e fixture | Viewport/ação | Esperado | Observado/evidência | Funcional, usabilidade ou decisão de design |
+|---|---|---|---|---|---|

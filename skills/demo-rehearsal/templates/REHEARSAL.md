@@ -16,6 +16,6 @@
 - [ ] Input ao vivo testado
 - [ ] Limite dito em voz alta
 - [ ] verify.mjs ok
-- [ ] observe.mjs ok (sem gates P0)
+- [ ] observe.mjs com perfil de demo apropriado (sem gates P0)
 - [ ] Vídeo 60–90s gravado
 - [ ] Build local/deploy conferido em janela anônima
