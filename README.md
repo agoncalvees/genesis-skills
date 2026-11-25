@@ -6,8 +6,10 @@ Skills para vencer hackathons com qualquer stack e qualquer agente que leia `SKI
 |---|---|
 | `hackathon-day` | O evento começou: regras, linha do tempo, papéis, congelamento, entrega |
 | `problem-to-pain` | Tema revelado: dor concreta, 3 ideias, pontuação, one-liner |
+| `mechanism-integrity` | Definir e provar o mecanismo: IA real/regra/simulação, entrada ao vivo, evidência, fallback |
 | `pitch-structure` | Montar a tela e o pitch: estrutura padrão, `?demo=1`, roteiro de 3 min, templates |
 | `art-direction` | Antes de desenhar: direção, conceito, DESIGN.md, motion |
+| `demo-rehearsal` | Congelar, ensaiar 3x, roteiro=tela, plano B e checklist final de entrega |
 | `judge-and-verify` | Antes de entregar e a cada ensaio: verificação no navegador e juiz cego |
 
 ## Instalar

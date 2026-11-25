@@ -115,14 +115,22 @@ try {
 				numbers += (text.match(/\d+[.,]?\d*/g) || []).length;
 			}
 			let controls = 0;
-			for (const el of document.querySelectorAll("button, a[href], input, select, textarea, [role=slider], [role=tab]")) {
+			let liveInputs = 0;
+			for (const el of document.querySelectorAll("button, a[href], input, select, textarea, [role=slider], [role=tab], [contenteditable=true]")) {
 				const box = el.getBoundingClientRect();
 				if (box.bottom > 0 && box.top < innerHeight && box.height > 0) controls++;
 			}
-			return { words, numbers, controls };
+			for (const el of document.querySelectorAll("input:not([type=hidden]):not([type=button]):not([type=submit]):not([type=reset]):not([type=checkbox]):not([type=radio]), textarea, [contenteditable=true]")) {
+				const box = el.getBoundingClientRect();
+				const style = getComputedStyle(el);
+				if (box.bottom <= 0 || box.height === 0 || style.visibility === "hidden" || style.display === "none") continue;
+				liveInputs++;
+			}
+			return { words, numbers, controls, liveInputs };
 		});
 		const budget = width < 600 ? 35 : 60;
 		v.density = v.firstScreen.words > budget ? `ACIMA do orçamento (${v.firstScreen.words} > ${budget} palavras)` : "ok";
+		v.liveInput = v.firstScreen.liveInputs > 0 ? "ok" : "ausente";
 		v.overflowPx = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
 		await shot("pagina", true);
 
@@ -165,16 +173,25 @@ try {
 			}
 		} else v.axe = "axe não instalado (@axe-core/playwright)";
 		v.errors = errors;
+		v.gates = [];
+		if (v.firstScreen.words > budget) v.gates.push(`densidade acima do orçamento (${v.firstScreen.words}>${budget})`);
+		for (const key of ["problem", "promise", "action"]) if (v.story[key] !== "na primeira tela") v.gates.push(`story:${key} ${v.story[key]}`);
+		if (v.firstScreen.liveInputs === 0) v.gates.push("sem input ao vivo");
+		if (v.overflowPx > 0) v.gates.push(`overflow ${v.overflowPx}px`);
+		if (errors.length) v.gates.push(`${errors.length} erro(s) de console/page`);
 		report.viewports.push(v);
 		await context.close();
 	}
 } finally {
 	await browser.close();
 }
+report.p0 = report.viewports.flatMap((v) => v.gates.map((g) => `${v.width}px: ${g}`));
+report.ok = report.p0.length === 0;
 writeFileSync(join(out, "observation.json"), `${JSON.stringify(report, null, 2)}\n`);
 for (const v of report.viewports) {
 	console.log(
-		`${v.width}px: status ${v.status}, conteúdo ${v.domContentLoadedMs} ms, rede ociosa ${v.networkIdleMs} ms, overflow ${v.overflowPx}px, erros ${v.errors.length}, densidade ${v.firstScreen.words} palavras/${v.firstScreen.numbers} números/${v.firstScreen.controls} controles (${v.density}), demo ${v.demo.found ? `${v.demo.steps.length} passos` : "ausente"}, story ${JSON.stringify(v.story)}`,
+		`${v.width}px: status ${v.status}, conteúdo ${v.domContentLoadedMs} ms, rede ociosa ${v.networkIdleMs} ms, overflow ${v.overflowPx}px, erros ${v.errors.length}, densidade ${v.firstScreen.words} palavras/${v.firstScreen.numbers} números/${v.firstScreen.controls} controles (${v.density}), input ${v.liveInput}, demo ${v.demo.found ? `${v.demo.steps.length} passos` : "ausente"}, story ${JSON.stringify(v.story)}, gates ${v.gates.length ? v.gates.join("; ") : "ok"}`,
 	);
 }
 console.log(`Evidências em ${out}/ (observation.json + capturas)`);
+if (!report.ok) { console.error(`P0 falhou: ${report.p0.join(" | ")}`); process.exit(2); }

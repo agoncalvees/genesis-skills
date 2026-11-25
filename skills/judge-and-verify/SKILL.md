@@ -13,7 +13,7 @@ Testes aprovados não significam que o jurado entende. Rode as três etapas, com
 node <skill>/scripts/verify.mjs http://127.0.0.1:3000/ [--spec design/fidelity.json] [--out design/evidence]
 ```
 
-Requer Playwright no projeto (`bun add -d @playwright/test && bunx playwright install chromium`). Sem `fidelity.json`, verifica só a primeira tela (`[data-story=problem|promise|action]`), overflow e erros.
+Requer Playwright no projeto (`bun add -d @playwright/test && bunx playwright install chromium`). Sem `fidelity.json`, verifica só a primeira tela (`[data-story=problem|promise|action]`), overflow e erros. Se `@axe-core/playwright` estiver instalado, roda axe WCAG 2A/2AA e falha em violações críticas/sérias.
 
 ```json
 {
@@ -40,7 +40,9 @@ Requer Playwright no projeto (`bun add -d @playwright/test && bunx playwright in
 node <skill>/scripts/observe.mjs http://127.0.0.1:3000/ [--out design/judging] [--click "text=Usar exemplo"]
 ```
 
-Em 360 e 1440 px: tempo até o conteúdo, a tela aos 5 s, a página inteira, a ação principal clicada, cada passo do `?demo=1`, erros, overflow, texto visível da primeira tela e violações do axe (se `@axe-core/playwright` estiver instalado). Gera `observation.json` e capturas, que são a evidência comum da banca.
+Em 360 e 1440 px: tempo até o conteúdo, a tela aos 5 s, a página inteira, a ação principal clicada, cada passo do `?demo=1`, erros, overflow, texto visível da primeira tela, densidade (palavras/números/controles), marcadores `data-story`, presença de input ao vivo e violações do axe (se `@axe-core/playwright` estiver instalado). Gera `observation.json` e capturas, que são a evidência comum da banca.
+
+O script também marca **gates P0**: densidade acima do orçamento, ausência de `problem/promise/action`, ausência de input ao vivo, erros de console/page e overflow. Gate falhando é defeito de entrega, não preferência estética.
 
 **Olhe as capturas você mesmo**, em especial durante a interação: nos ensaios, defeitos como um mecanismo "pixelado" ou uma comparação que sumia só apareceram nelas.
 

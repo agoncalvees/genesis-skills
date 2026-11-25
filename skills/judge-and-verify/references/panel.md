@@ -21,9 +21,10 @@ Escala para todos (0–10): 0–3 não atinge o básico; 4–6 o esperado de um 
 ## 2. Jurado técnico (execução e implementação)
 **Pergunta central:** funciona ou é slide? O mecanismo é real?
 - Percorra o caminho principal sem a demo guiada: clique na ação, use o exemplo, mude uma entrada e veja se o resultado muda de forma coerente. Tente uma entrada inesperada (vazia, extrema).
+- Confira `observation.json`: `firstScreen.liveInputs`, erros, overflow, densidade e gates P0. Sem input ao vivo, trate como demo pré-calculada.
 - Erros no console, telas quebradas, tempo de carregamento (`observation.json`).
-- Leia o repositório por 2 minutos: onde está o mecanismo, o que é calculado de verdade e o que é texto fixo; a IA é chamada de fato ou simulada (se simulada, está rotulada?); há testes do caminho principal?
-- Âncoras: baixo = telas estáticas ou resultado pré-escrito; alto = funciona ao vivo, reage a entradas diferentes e não quebra.
+- Leia o repositório por 2 minutos: onde está o mecanismo, o que é calculado de verdade e o que é texto fixo; a IA é chamada de fato ou simulada (se simulada, está rotulada em tela/fala/docs?); há testes do caminho principal?
+- Âncoras: baixo = telas estáticas, resultado pré-escrito ou "IA" simulada; alto = funciona ao vivo, reage a entradas diferentes, tem limite honesto e não quebra.
 
 ## 3. Jurado de inovação e uso da tecnologia
 **Pergunta central:** isso é novo, e a tecnologia é essencial?

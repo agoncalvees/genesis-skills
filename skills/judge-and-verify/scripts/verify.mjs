@@ -123,6 +123,9 @@ function compare(property, actual, exp, expected) {
 
 const rows = [];
 const issues = [];
+let AxeBuilder = null;
+try { AxeBuilder = createRequire(join(resolve(process.cwd()), "package.json"))("@axe-core/playwright").default; } catch {}
+
 const browser = await chromium.launch();
 try {
 	for (const width of spec.viewports ?? [360, 768, 1440]) {
@@ -234,6 +237,16 @@ try {
 			}
 		}
 		for (const message of errors) issues.push(`${width}px: erro de página: ${message}`);
+		if (AxeBuilder) {
+			try {
+				const axe = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze();
+				for (const v of axe.violations.filter((x) => ["critical", "serious"].includes(x.impact))) {
+					issues.push(`${width}px: axe ${v.id} (${v.impact}, ${v.nodes.length} nós)`);
+				}
+			} catch (e) {
+				issues.push(`${width}px: axe falhou: ${e.message.split("\n")[0]}`);
+			}
+		}
 		await page.close();
 	}
 } finally {

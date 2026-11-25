@@ -26,8 +26,7 @@ Como cortar: (1) o que não responde "para quem / dor / o que faço" sai da prim
 ## Estrutura padrão (nesta ordem de leitura)
 
 1. **Abertura, sem rolar, em 360 e 1440 px:** para quem (`audience`), título com o produto, **dor com um número** (`data-story="problem"`), promessa em uma frase (`data-story="promise"`) e **uma** ação principal (`data-story="action"`): "Ver em 60 segundos". Não é landing page separada: a experiência começa logo abaixo.
-2. **Experiência com exemplo pronto:** o mecanismo abre já com dados de exemplo rotulados, ou com "Usar exemplo" a um clique. Sem login, sem formulário vazio, sem tela de configuração.
-   **O jurado precisa poder alimentar o mecanismo:** um campo para colar ou editar um caso próprio (uma anotação, uma foto, um texto, um número) e ver o resultado mudar na hora. Sem isso, o jurado técnico trata o app como demo pré-calculada (treino 1: "0 inputs na página").
+2. **Experiência com exemplo pronto e entrada ao vivo:** o mecanismo abre já com dados de exemplo rotulados, ou com "Usar exemplo" a um clique. Sem login, sem formulário vazio, sem tela de configuração. **O jurado precisa poder alimentar o mecanismo:** um campo para colar/editar/enviar um caso próprio e ver o resultado mudar na hora. Mostre estado de carregamento, erro e um caso difícil. Sem input, o jurado técnico trata o app como demo pré-calculada.
 3. **Resultado com antes × depois** (`data-story="result"`): o número grande e a comparação no mesmo quadro.
 4. **Como funciona:** 3 ou 4 passos; diga **onde a IA age e onde a pessoa decide**.
 5. **Limites e próximo passo:** o que é fictício, o que quebra primeiro, quem adota.

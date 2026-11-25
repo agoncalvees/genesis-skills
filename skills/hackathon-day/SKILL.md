@@ -23,13 +23,13 @@ Se o reaproveitamento estiver incerto, **não reaproveite código**. Estas skill
 | Relógio | Bloco | Saída obrigatória |
 |---|---|---|
 | T+0:00–0:30 | Dor → ideia (`problem-to-pain`) | 3 ideias pontuadas → 1; one-liner; dor com número |
-| T+0:30–0:45 | **Pitch primeiro** (`pitch-structure`) | `docs/DEMO-SCRIPT.md` escrito antes do código; momento-assinatura escolhido |
+| T+0:30–0:45 | **Mecanismo e pitch** (`mechanism-integrity`, `pitch-structure`) | `docs/MECHANISM.md` com rótulo/fronteira/fallback; `docs/DEMO-SCRIPT.md` antes do código |
 | T+0:45–1:15 | Direção e esqueleto (`art-direction`) | `design/DESIGN.md` curto; app com as seções da estrutura padrão |
-| T+1:15–3:00 | **Caminho da demo** | abertura + mecanismo funcionando de ponta a ponta num exemplo pré-carregado, feio se preciso |
-| T+3:00 | Teste dos 5 segundos (`judge-and-verify`) | juiz cego sobre a captura da primeira tela |
-| T+3:00–4:45 | Profundidade e beleza | antes × depois; tour `?demo=1`; capricho visual só no caminho da demo |
-| T+4:45 | **Congelamento** | nenhuma funcionalidade nova depois daqui |
-| T+4:45–5:30 | Endurecer | script de verificação, e2e do caminho, deploy ou build local, vídeo de 60 s (plano B) |
+| T+1:15–3:00 | **Caminho da demo** | abertura + input ao vivo + mecanismo funcionando de ponta a ponta, feio se preciso |
+| T+3:00 | Teste dos 5 segundos (`judge-and-verify`) | juiz cego sobre a captura da primeira tela; densidade/axe/overflow |
+| T+3:00–4:45 | Profundidade e beleza | antes × depois; caso difícil; tour `?demo=1`; capricho visual só no caminho da demo |
+| T+4:45 | **Congelamento** (`demo-rehearsal`) | nenhuma funcionalidade nova depois daqui |
+| T+4:45–5:30 | Endurecer | verify/observe, e2e do caminho, deploy ou build local, vídeo de 60 s (plano B) |
 | T+5:30–6:00 | Ensaiar | 3 pitches cronometrados; ajuste a abertura, não o código |
 
 Para outra duração, mantenha as proporções: dor e pitch ≈ 12 % do tempo, direção ≈ 8 %, caminho da demo ≈ 30 %, profundidade ≈ 30 %, endurecer e ensaiar ≈ 20 %. Em treinos curtos (90 min), o ensaio e o vídeo continuam obrigatórios.
@@ -38,9 +38,10 @@ Regra: se na metade do tempo o caminho da demo não roda de ponta a ponta, **cor
 
 ## Honestidade técnica (a banca verifica)
 
-- **A tecnologia exigida pelo tema precisa ser real no caminho da demo.** Se o tema pede IA, a IA roda de verdade (API ou modelo local), com um plano B rotulado. Simulação (regras, léxico, resposta fixa) só se a tela e a fala disserem isso **em todo lugar**, com o mesmo nome. No treino 1, três jurados independentes acharam a mesma coisa: a tela dizia "a IA lê" e o código era uma lista de 6 expressões regulares.
-- **Não termine cedo.** Se o caminho da demo ficou pronto antes da metade, o tempo restante vai para tornar o mecanismo real e testável, não para polimento. O treino 1 entregou em 10 dos 90 minutos e perdeu nota exatamente aí.
-- **Textos da tela são calculados, não escritos à mão** ("1 já tinha voltado", "3 invisíveis"). Se os dados mudam, a frase muda.
+- **A tecnologia exigida pelo tema precisa ser real no caminho da demo.** Se o tema pede IA, a IA roda de verdade (API ou modelo local), com plano B rotulado. Simulação (regras, léxico, resposta fixa) só se a tela e a fala disserem isso **em todo lugar**, com o mesmo nome. Use `mechanism-integrity` para registrar rótulo, fronteira e evidência em `docs/MECHANISM.md`.
+- **Entrada ao vivo.** O jurado precisa poder testar um caso próprio. Sem input, a demo vira resultado pré-calculado.
+- **Não termine cedo.** Se o caminho da demo ficou pronto antes da metade, o tempo restante vai para tornar o mecanismo real e testável, não para polimento.
+- **Textos e números são calculados/rastreados, não escritos à mão.** Todo número tem fonte, "estimativa" ou "dado de exemplo". Se os dados mudam, a frase muda.
 - **Dados de exemplo não podem ser armados.** Inclua casos difíceis (negação, sinônimos, falso positivo) e mostre um em que o sistema erra e a pessoa decide.
 
 ## 3. Papéis (3 ou 4 pessoas, um agente principal por pessoa)
