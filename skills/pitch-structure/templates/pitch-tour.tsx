@@ -16,6 +16,8 @@ export interface PitchStep {
 	body?: ReactNode;
 	/** Runs when the step becomes active (e.g. perform the demo action). */
 	enter?: () => void;
+	/** Where to scroll the target: "center" (default) or "start" for tall targets. */
+	block?: ScrollLogicalPosition;
 }
 
 export interface PitchTourMessages {
@@ -110,7 +112,7 @@ export function PitchTour({
 			if (!element) return;
 			element.setAttribute("data-pitch-active", "");
 			element.scrollIntoView({
-				block: "center",
+				block: step.block ?? "center",
 				behavior: reducedMotion() ? "auto" : "smooth",
 			});
 		});

@@ -1,23 +1,19 @@
 ---
 name: judge-and-verify
-description: Valida a tela de um app de hackathon como um jurado faria — verificação no navegador (primeira tela com dor/promessa/ação visíveis em 360/768/1440 px, overflow, fontes carregadas, erros, estilos computados contra design/fidelity.json, capturas por estado) e juiz-agente cego (teste dos 5 segundos, notas por critério, frase que o júri lembraria, três correções). Use antes de entregar, depois de cada mudança na abertura, em ensaios e quando perguntarem "está bom?", "um jurado entenderia?" ou "qual a nota?".
+description: Avalia um app de hackathon como uma banca real — verificação no navegador (primeira tela com dor/promessa/ação em 360/768/1440 px, overflow, fontes, erros, estilos por estado) e banca de jurados especialistas que usam o app via Playwright (impacto, técnico, inovação, design, comunicação, patrocinador), com notas 0–10 ancoradas nos critérios mais usados em hackathons, deliberação e três correções. Use antes de entregar, após mudanças na abertura ou na demo, em ensaios, e quando perguntarem "está bom?", "qual seria a nota?" ou "o que um jurado diria?".
 ---
 
 # Verificar e julgar
 
-Testes automatizados aprovados não significam interface que se explica. Rode as duas etapas.
+Testes aprovados não significam que o jurado entende. Rode as três etapas, com o app rodando.
 
-## 1. Verificação no navegador
-
-Com o app rodando:
+## 1. Verificação de regras (`scripts/verify.mjs`)
 
 ```sh
 node <skill>/scripts/verify.mjs http://127.0.0.1:3000/ [--spec design/fidelity.json] [--out design/evidence]
 ```
 
 Requer Playwright no projeto (`bun add -d @playwright/test && bunx playwright install chromium`). Sem `fidelity.json`, verifica só a primeira tela (`[data-story=problem|promise|action]`), overflow e erros.
-
-`design/fidelity.json` (5 a 10 regras que expressam a identidade e costumam escapar):
 
 ```json
 {
@@ -28,24 +24,41 @@ Requer Playwright no projeto (`bun add -d @playwright/test && bunx playwright in
   "states": [{ "name": "resultado", "actions": [{ "click": "text=Usar exemplo" }] }],
   "probes": [
     { "name": "Título", "selector": "h1", "viewports": [1440], "expect": { "font-size": ">= 64px" } },
-    { "name": "Números", "selector": "[data-reading]", "all": true, "expect": { "font-variant-numeric": "~tabular-nums" } },
-    { "name": "Sinal", "selector": "[data-signal]", "expect": { "color": "{--signal}" } }
+    { "name": "Resultado", "selector": "[data-story=result]", "states": ["resultado"], "expect": { "font-variant-numeric": "~tabular-nums" } },
+    { "name": "Aviso", "selector": "[data-alert]", "optional": true, "expect": { "color": "{--signal}" } }
   ]
 }
 ```
 
-Valores: `{--var}` lê a variável CSS do `:root`; `>= 64px`, `<= 300ms`, `= 0px` comparam números; `~texto` exige que contenha; o resto é igualdade (cores normalizadas). Inclua em `states` o resultado e o antes × depois: o que o jurado verá na demo também precisa passar.
+- Valores: `{--var}` (ou `{var}`) lê a variável CSS do `:root`; `>= 64px`, `<= 300ms`, `= 0px` comparam números (px↔rem, s↔ms); `~texto` exige que contenha; o resto é igualdade (cores normalizadas).
+- `viewports` e `states` numa regra a restringem a esses tamanhos e estados; `optional: true` aceita elemento ausente; `all: true` verifica todos os elementos, não só o primeiro.
+- Inclua em `states` o resultado e o antes × depois: o que a banca verá também precisa passar.
 
-**Depois, abra as capturas** (`design/evidence/*.png`) e olhe de verdade, em especial **durante a interação**: o verificador não julga a qualidade da camada do mecanismo (nos ensaios, um fogo "pixelado" e uma comparação que colapsava só apareceram nas capturas).
+## 2. Observação como jurado (`scripts/observe.mjs`)
 
-## 2. Juiz-agente cego
+```sh
+node <skill>/scripts/observe.mjs http://127.0.0.1:3000/ [--out design/judging] [--click "text=Usar exemplo"]
+```
 
-O juiz **não pode ter visto o código nem a conversa**. No Claude Code, rode um subagente novo (sem fork) passando só as capturas e os critérios; no Codex, uma sessão limpa. Prompt completo em `references/judge-prompt.md`. Resumo:
+Em 360 e 1440 px: tempo até o conteúdo, a tela aos 5 s, a página inteira, a ação principal clicada, cada passo do `?demo=1`, erros, overflow, texto visível da primeira tela e violações do axe (se `@axe-core/playwright` estiver instalado). Gera `observation.json` e capturas, que são a evidência comum da banca.
 
-1. **5 segundos**, só com a captura da primeira tela: para quem é? qual dor? o que faço agora? que número ficou?
-2. **Notas** de 0 a 10 por critério oficial (ou: impacto, execução técnica, originalidade, design/UX, uso de IA, comunicação), justificadas pelo que está visível.
-3. **A frase** que um jurado usaria para defender o projeto na deliberação.
-4. **Três correções** de maior impacto na tela ou no pitch, sem funcionalidades novas.
-5. **Riscos** da demo ao vivo.
+**Olhe as capturas você mesmo**, em especial durante a interação: nos ensaios, defeitos como um mecanismo "pixelado" ou uma comparação que sumia só apareceram nelas.
 
-Qualquer "não sei" na etapa 1 bloqueia o polimento visual: reescreva a abertura primeiro. Registre notas e frases a cada rodada para comparar.
+## 3. Banca de jurados
+
+Monte a banca descrita em `references/panel.md`: **impacto, técnico, inovação, design, comunicação** (e **patrocinador**, se o evento exigir uma tecnologia). Cada jurado:
+- é um agente separado, sem acesso à conversa nem às intenções do time;
+- recebe a URL, `docs/CHALLENGE.md`, a saída do `observe.mjs` e o seu papel;
+- **usa o app por 5 minutos** com Playwright (clica, muda entradas, abre a demo, tira prints) e, no caso do técnico, lê o repositório;
+- dá uma nota de 0 a 10 com evidência e uma correção.
+
+Claude Code: dispare os jurados em paralelo como subagentes novos (sem fork), um por papel. Codex ou outro agente: uma sessão limpa por jurado, ou em sequência. Pouco tempo: junte inovação com impacto e design com comunicação (3 jurados).
+
+Depois, o **moderador** agrega: tabela de notas, nota ponderada pelos pesos oficiais (ou os padrões de `references/criteria.md`), deliberação, frase de defesa, três correções por ganho de nota por minuto e riscos da demo ao vivo.
+
+Regras:
+- Qualquer jurado que não entenda para quem/dor/ação em 5 s bloqueia o polimento visual: reescreva a abertura primeiro.
+- Registre as notas de cada rodada em `docs/STATUS.md` para comparar.
+- Após o congelamento, as correções só podem mexer em tela, demo e pitch.
+
+Critérios e pesos mais comuns, com fontes: `references/criteria.md`.

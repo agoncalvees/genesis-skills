@@ -177,6 +177,7 @@ try {
 			await page.screenshot({ path: join(out, `${state.name}-${width}.png`), fullPage: true });
 			for (const probe of spec.probes ?? []) {
 				if (probe.viewports && !probe.viewports.includes(width)) continue;
+				if (probe.states && !probe.states.includes(state.name)) continue;
 				const entries = Object.entries(probe.expect).map(([property, raw]) => ({
 					property,
 					raw,

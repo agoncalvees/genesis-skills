@@ -32,6 +32,8 @@ Se o reaproveitamento estiver incerto, **não reaproveite código**. Estas skill
 | T+4:45–5:30 | Endurecer | script de verificação, e2e do caminho, deploy ou build local, vídeo de 60 s (plano B) |
 | T+5:30–6:00 | Ensaiar | 3 pitches cronometrados; ajuste a abertura, não o código |
 
+Para outra duração, mantenha as proporções: dor e pitch ≈ 12 % do tempo, direção ≈ 8 %, caminho da demo ≈ 30 %, profundidade ≈ 30 %, endurecer e ensaiar ≈ 20 %. Em treinos curtos (90 min), o ensaio e o vídeo continuam obrigatórios.
+
 Regra: se na metade do tempo o caminho da demo não roda de ponta a ponta, **corte escopo até rodar**. Funcionalidade sem demo vale zero.
 
 ## 3. Papéis (3 ou 4 pessoas, um agente principal por pessoa)
