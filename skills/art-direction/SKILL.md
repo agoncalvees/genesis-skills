@@ -57,6 +57,12 @@ Defina os tokens como variáveis CSS em `:root` (ex.: `--signal`, `--paper`) e c
 
 Fade-in e stagger não são padrão. Anime `transform`, `opacity` e `clip-path`. Com `prefers-reduced-motion`, mostre o estado final; o estado nunca depende de animação.
 
+## Acabamento que a banca cobrou
+
+- Elementos esmaecidos (fora do destaque) mantêm contraste ≥ 4,5:1: use cor, não `opacity` baixa sobre texto.
+- `:focus-visible` próprio, na paleta, com 2–3 px e `outline-offset`; nunca o azul padrão do navegador sobre fundo escuro.
+- No celular, toda ação que muda o resultado rola até o resultado (`scrollIntoView`); senão "parece que nada aconteceu".
+
 ## Sinais de interface gerada por IA (evite)
 
 Hero centralizado com gradiente roxo/azul; grade de três cards com ícone; badges pill em tudo; `rounded-2xl` e sombra em todo painel; dashboard com sidebar e KPIs como resposta padrão; emoji como ícone; Inter/Geist sem decisão; "Unlock the power of…"; números redondos sem unidade; texto em inglês esquecido numa interface em português.

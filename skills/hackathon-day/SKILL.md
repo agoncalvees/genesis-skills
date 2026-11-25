@@ -36,6 +36,13 @@ Para outra duração, mantenha as proporções: dor e pitch ≈ 12 % do tempo, d
 
 Regra: se na metade do tempo o caminho da demo não roda de ponta a ponta, **corte escopo até rodar**. Funcionalidade sem demo vale zero.
 
+## Honestidade técnica (a banca verifica)
+
+- **A tecnologia exigida pelo tema precisa ser real no caminho da demo.** Se o tema pede IA, a IA roda de verdade (API ou modelo local), com um plano B rotulado. Simulação (regras, léxico, resposta fixa) só se a tela e a fala disserem isso **em todo lugar**, com o mesmo nome. No treino 1, três jurados independentes acharam a mesma coisa: a tela dizia "a IA lê" e o código era uma lista de 6 expressões regulares.
+- **Não termine cedo.** Se o caminho da demo ficou pronto antes da metade, o tempo restante vai para tornar o mecanismo real e testável, não para polimento. O treino 1 entregou em 10 dos 90 minutos e perdeu nota exatamente aí.
+- **Textos da tela são calculados, não escritos à mão** ("1 já tinha voltado", "3 invisíveis"). Se os dados mudam, a frase muda.
+- **Dados de exemplo não podem ser armados.** Inclua casos difíceis (negação, sinônimos, falso positivo) e mostre um em que o sistema erra e a pessoa decide.
+
 ## 3. Papéis (3 ou 4 pessoas, um agente principal por pessoa)
 
 - **Produto/pitch:** dono da dor, do one-liner, do roteiro e da apresentação. Ensaia a partir da metade do tempo.

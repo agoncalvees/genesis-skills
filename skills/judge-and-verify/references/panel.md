@@ -53,6 +53,7 @@ Verifica o uso real e visível da ferramenta, API ou modelo obrigatório. Sem us
 
 ## Moderador (agrega a banca)
 1. Monte a tabela: jurado × nota × evidência × pior defeito apontado.
+   **Defeito apontado por dois ou mais jurados de forma independente é prioridade 1**, acima de qualquer nota individual.
 2. Aplique os pesos oficiais de `CHALLENGE.md` (ou os padrões de `criteria.md`) e calcule a nota ponderada.
 3. **Deliberação:** onde os jurados discordam, e por quê. A frase de defesa mais forte.
 4. **Três correções** em ordem de ganho de nota por minuto de trabalho, todas na tela, na demo ou no pitch. Funcionalidades novas são proibidas depois do congelamento.

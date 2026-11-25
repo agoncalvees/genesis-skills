@@ -19,6 +19,8 @@ Faça isso para 2 ou 3 recortes do tema antes de escolher.
 
 O que uma máquina faz aqui que a pessoa não faz: ver padrão em volume, simular antes de agir, perceber (visão, áudio, texto longo), traduzir, lembrar, comparar alternativas, agir em escala. A IA entra nessa alavanca **com fronteira**: a pessoa confirma; o cálculo crítico é determinístico; o modelo explica, sugere ou classifica, mas não decide sozinho o que é irreversível. Vencedores descrevem essa fronteira explicitamente.
 
+**Se o tema exige IA**, decida já como ela roda na demo: API com chave (custo e rede no dia), modelo local, ou nenhum dos dois. Ideia cuja "IA" seria uma regra disfarçada perde nos critérios de inovação e técnica.
+
 ## 3. Três ideias por ângulos diferentes (5 min)
 
 Uma para **o profissional que decide**, uma para **o cidadão afetado**, uma para **o sistema** (gestão, dados, coordenação). Varie também a mídia: câmera, voz, mapa, simulação, conversa, jogo. Pensar fora da caixa é mudar o **ângulo**, não aumentar o **escopo**.
