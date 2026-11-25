@@ -8,11 +8,12 @@ for (let i=0;i<argv.length;i++) { if (argv[i].startsWith('--')) opt[argv[i].slic
 const root = resolve(pos[0] ?? '.');
 const out = opt.out ? resolve(opt.out) : null;
 const exts = new Set(['.ts','.tsx','.js','.jsx','.md','.mdx','.html','.json']);
-const ignore = new Set(['node_modules','.git','dist','build','.next','.output','design/evidence','design/judging','reports']);
+const ignore = new Set(['node_modules','.git','dist','build','.next','.output','design/evidence','design/judging','reports','.vite','coverage']);
+const ignoreFiles = new Set(['package-lock.json','pnpm-lock.yaml','yarn.lock','bun.lockb']);
 const files = [];
 function walk(p) {
   for (const e of readdirSync(p)) {
-    if (ignore.has(e)) continue;
+    if (ignore.has(e) || ignoreFiles.has(e)) continue;
     const fp = join(p,e); const st = statSync(fp);
     if (st.isDirectory()) walk(fp); else if (exts.has(fp.slice(fp.lastIndexOf('.')))) files.push(fp);
   }
