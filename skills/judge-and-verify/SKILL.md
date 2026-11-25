@@ -62,9 +62,15 @@ Varre números em código/docs e aponta claims sem procedência provável. Todo 
 
 ## 5. Banca de jurados
 
-Monte a banca descrita em `references/panel.md`: **impacto, técnico, inovação, design, comunicação** (e **patrocinador**, se o evento exigir uma tecnologia). Cada jurado:
+Monte a banca descrita em `references/panel.md`: **impacto, técnico, inovação, design, comunicação** (e **patrocinador**, se o evento exigir uma tecnologia). Use `scripts/panel-pack.mjs` para gerar prompts idênticos por papel:
+
+```sh
+node <skill>/scripts/panel-pack.mjs --url http://127.0.0.1:3000/ --challenge docs/CHALLENGE.md --packet design/judging/packet.md --out design/judging/panel
+```
+
+Cada jurado:
 - é um agente separado, sem acesso à conversa nem às intenções do time;
-- recebe URL, `docs/CHALLENGE.md`, `design/judging/packet.md` (ou observation+capturas) e o seu papel;
+- recebe URL, `docs/CHALLENGE.md`, `design/judging/packet.md` e o prompt do seu papel;
 - **usa o app por 5 minutos** com Playwright e, no caso do técnico, lê o repositório;
 - dá nota 0–10 com evidência e uma correção.
 
