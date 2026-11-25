@@ -124,7 +124,7 @@ function compare(property, actual, exp, expected) {
 const rows = [];
 const issues = [];
 let AxeBuilder = null;
-try { AxeBuilder = createRequire(join(resolve(process.cwd()), "package.json"))("@axe-core/playwright").default; } catch {}
+try { AxeBuilder = require("@axe-core/playwright").default; } catch {}
 
 const browser = await chromium.launch();
 try {
