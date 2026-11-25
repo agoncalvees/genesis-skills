@@ -28,7 +28,7 @@ for (const dir of skillDirs) {
   for (const m of text.matchAll(linkRe)) {
     const ref = (m[1]||m[2]).trim();
     if (ref.startsWith('http') || ref.startsWith('<') || ref.includes('*')) continue;
-    if (ref.startsWith('docs/') || ref.startsWith('design/') || ['CHALLENGE.md','PRODUCT-BRIEF.md','MECHANISM.md','DEMO-SCRIPT.md','REHEARSAL.md','STATUS.md','fidelity.json','observation.json','observe.mjs','verify.mjs'].includes(ref) || ref.endsWith('/observe.mjs') || ref.endsWith('/verify.mjs')) continue;
+    if (ref.startsWith('docs/') || ref.startsWith('design/') || ['CHALLENGE.md','PRODUCT-BRIEF.md','MECHANISM.md','DEMO-SCRIPT.md','REHEARSAL.md','RED-TEAM.md','STATUS.md','fidelity.json','observation.json','observe.mjs','verify.mjs','claim-ledger.mjs','judge-packet.mjs'].includes(ref) || ref.endsWith('/observe.mjs') || ref.endsWith('/verify.mjs')) continue;
     const candidates = [join(skillsDir,dir,ref), join(root,ref), join(dirname(skillPath),ref)];
     if (!candidates.some(c=>existsSync(c))) warnings.push(`${dir}: referenced file not found nearby: ${ref}`);
   }

@@ -29,7 +29,7 @@ case "${1:-}" in
       cat >> "$DIR/AGENTS.md" <<'MD'
 
 ## Hackathon (genesis-skills)
-Siga as skills em `.claude/skills/` (mesmo conteúdo em `.codex/skills/`), nesta ordem: `hackathon-day` → `problem-to-pain` → `mechanism-integrity` → `pitch-structure` → `art-direction` → `demo-rehearsal` → `judge-and-verify`. Agentes sem suporte a skills: leia os arquivos `SKILL.md` diretamente.
+Siga as skills em `.claude/skills/` (mesmo conteúdo em `.codex/skills/`), nesta ordem: `hackathon-day` → `problem-to-pain` → `mechanism-integrity` → `pitch-structure` → `art-direction` → `demo-rehearsal` → `red-team` → `judge-and-verify`. Agentes sem suporte a skills: leia os arquivos `SKILL.md` diretamente.
 MD
     fi
     echo "Skills copiadas para $DIR"

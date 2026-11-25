@@ -12,6 +12,7 @@ Skills para vencer hackathons com qualquer stack e qualquer agente que leia `SKI
 | `pitch-structure` | Montar a tela e o pitch: estrutura padrão, `?demo=1`, roteiro de 3 min, templates | `docs/DEMO-SCRIPT.md`, templates |
 | `art-direction` | Antes de desenhar: direção, conceito, DESIGN.md, motion, anti-slop | `design/DESIGN.md` |
 | `demo-rehearsal` | Congelar, ensaiar 3x, roteiro=tela, plano B e checklist final | `docs/REHEARSAL.md` |
+| `red-team` | Atacar a demo antes do jurado: inputs estranhos, offline, claims, segredos, mobile | `docs/RED-TEAM.md` |
 | `judge-and-verify` | Antes de entregar e a cada ensaio: verificação no navegador e juiz cego | `design/evidence`, `design/judging` |
 
 ## Scripts operacionais
@@ -38,7 +39,8 @@ scripts/install.sh --project /caminho   # dentro de um projeto
 4. `pitch-structure` — primeira tela, `?demo=1`, antes/depois.
 5. `art-direction` — identidade visual e motion com intenção.
 6. `demo-rehearsal` — congelar, ensaiar, plano B.
-7. `judge-and-verify` — verify, observe, judge packet, banca.
+7. `red-team` — quebrar demo antes do jurado.
+8. `judge-and-verify` — verify, observe, judge packet, banca.
 
 ## Treino
 

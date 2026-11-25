@@ -8,9 +8,17 @@ const pos = [];
 for (let i=0;i<argv.length;i++) { if (argv[i].startsWith('--')) opt[argv[i].slice(2)] = argv[++i]; else pos.push(argv[i]); }
 const judgingDir = resolve(opt.in ?? pos[0] ?? 'design/judging');
 const out = resolve(opt.out ?? join(judgingDir, 'packet.md'));
+const root = resolve(opt.root ?? process.cwd());
 const obsPath = join(judgingDir, 'observation.json');
 if (!existsSync(obsPath)) { console.error(`observation.json não encontrado em ${judgingDir}. Rode observe.mjs primeiro.`); process.exit(1); }
 const obs = JSON.parse(readFileSync(obsPath,'utf8'));
+const read = (p) => existsSync(p) ? readFileSync(p,'utf8').trim() : null;
+const snippet = (p, max=1200) => { const t = read(p); if (!t) return null; return t.length > max ? t.slice(0,max) + '\n...[truncado]' : t; };
+const mechanism = snippet(join(root,'docs/MECHANISM.md'));
+const rehearsal = snippet(join(root,'docs/REHEARSAL.md'));
+const script = snippet(join(root,'docs/DEMO-SCRIPT.md'), 800);
+const claimsPath = join(judgingDir,'claim-ledger.txt');
+const claims = read(claimsPath);
 const lines = [];
 lines.push(`# Judge Packet`);
 lines.push('');
@@ -18,6 +26,7 @@ lines.push(`- URL: ${obs.url}`);
 lines.push(`- Observado em: ${obs.observedAt}`);
 lines.push(`- Gates P0: ${obs.ok ? 'PASS' : 'FAIL'}`);
 if (obs.p0?.length) { lines.push(`- Falhas P0:`); for (const f of obs.p0) lines.push(`  - ${f}`); }
+for (const doc of [['MECHANISM.md',!!mechanism],['DEMO-SCRIPT.md',!!script],['REHEARSAL.md',!!rehearsal]]) lines.push(`- ${doc[0]}: ${doc[1] ? 'presente' : 'ausente'}`);
 lines.push('');
 for (const v of obs.viewports ?? []) {
   lines.push(`## Viewport ${v.width}px`);
@@ -32,13 +41,16 @@ for (const v of obs.viewports ?? []) {
   lines.push(`- Story: problem=${v.story?.problem}, promise=${v.story?.promise}, action=${v.story?.action}, result=${v.story?.result}`);
   lines.push(`- Demo: ${v.demo?.found ? `${v.demo.steps.length} passos` : 'ausente'}`);
   lines.push(`- Axe: ${Array.isArray(v.axe) ? (v.axe.length ? v.axe.join(', ') : '0 violações') : v.axe}`);
-  if (v.gates?.length) { lines.push(`- Gates: ${v.gates.join('; ')}`); }
+  if (v.gates?.length) lines.push(`- Gates: ${v.gates.join('; ')}`);
   lines.push('');
-  const shots = v.shots || {};
-  for (const [name, p] of Object.entries(shots)) lines.push(`![${name} ${v.width}](${p})`);
+  for (const [name, p] of Object.entries(v.shots || {})) lines.push(`![${name} ${v.width}](${p})`);
   for (const step of v.demo?.steps || []) lines.push(`- demo ${step.step}: ${step.text}\n\n![demo ${step.step} ${v.width}](${step.shot})`);
   lines.push('');
 }
+if (mechanism) { lines.push('## MECHANISM.md'); lines.push(''); lines.push('```md'); lines.push(mechanism); lines.push('```'); lines.push(''); }
+if (script) { lines.push('## DEMO-SCRIPT.md (trecho)'); lines.push(''); lines.push('```md'); lines.push(script); lines.push('```'); lines.push(''); }
+if (rehearsal) { lines.push('## REHEARSAL.md'); lines.push(''); lines.push('```md'); lines.push(rehearsal); lines.push('```'); lines.push(''); }
+if (claims) { lines.push('## Claim ledger'); lines.push(''); lines.push('```text'); lines.push(claims.slice(0,2000)); lines.push('```'); lines.push(''); }
 lines.push('## Avaliação rápida');
 lines.push('');
 lines.push('- [ ] 5s: para quem / dor / ação');

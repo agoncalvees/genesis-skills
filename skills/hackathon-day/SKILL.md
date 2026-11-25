@@ -29,8 +29,8 @@ Se o reaproveitamento estiver incerto, **não reaproveite código**. Estas skill
 | T+3:00 | Teste dos 5 segundos (`judge-and-verify`) | juiz cego sobre a captura da primeira tela; densidade/axe/overflow |
 | T+3:00–4:45 | Profundidade e beleza | antes × depois; caso difícil; tour `?demo=1`; capricho visual só no caminho da demo |
 | T+4:45 | **Congelamento** (`demo-rehearsal`) | nenhuma funcionalidade nova depois daqui |
-| T+4:45–5:30 | Endurecer | verify/observe, e2e do caminho, deploy ou build local, vídeo de 60 s (plano B) |
-| T+5:30–6:00 | Ensaiar | 3 pitches cronometrados; ajuste a abertura, não o código |
+| T+4:45–5:15 | Endurecer | verify/observe, red-team, e2e do caminho, deploy/build local, vídeo 60 s |
+| T+5:15–6:00 | Ensaiar (`demo-rehearsal`) | 3 pitches cronometrados; ajuste a abertura, não o código |
 
 Para outra duração, mantenha as proporções: dor e pitch ≈ 12 % do tempo, direção ≈ 8 %, caminho da demo ≈ 30 %, profundidade ≈ 30 %, endurecer e ensaiar ≈ 20 %. Em treinos curtos (90 min), o ensaio e o vídeo continuam obrigatórios.
 
