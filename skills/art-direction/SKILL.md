@@ -36,6 +36,10 @@ Assets: de 1 a 3, estratégicos (ilustração, textura, mapa, fotografia context
 
 Defina os tokens como variáveis CSS em `:root` (ex.: `--signal`, `--paper`) e cite-os pelo nome. Escreva também `design/fidelity.json` com as 5 a 10 regras que não podem divergir (ver `judge-and-verify`).
 
+## Menos informação, mais direção
+
+Nos ensaios, toda interface despejou informação demais (a primeira tela do Senha tinha 163 palavras e 39 números; a do Lupa, 247 palavras). Regras: um protagonista por tela e **tudo o mais recuado** (menor, mais claro, recolhido); espaço em branco é hierarquia; legendas, filtros e detalhes só aparecem quando o usuário os pede; no máximo 3 níveis tipográficos visíveis ao mesmo tempo; se a tela precisa de legenda para ser entendida, o gráfico está errado. O orçamento numérico está em `pitch-structure`.
+
 ## Princípios que funcionaram nos ensaios
 
 1. **Um protagonista por tela:** o mecanismo ocupa a maior área; os controles orbitam.

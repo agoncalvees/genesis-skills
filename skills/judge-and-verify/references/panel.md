@@ -34,6 +34,7 @@ Escala para todos (0–10): 0–3 não atinge o básico; 4–6 o esperado de um 
 
 ## 4. Jurado de design e experiência
 **Pergunta central:** alguém usaria sem treinamento, e a tela tem identidade?
+- **Densidade:** use `firstScreen.words/numbers/controls` de `observation.json`. Mais de 60 palavras (1440 px) ou 35 (360 px), mais de 1 número em destaque ou mais de 2 ações na primeira tela é defeito: a nota de design não passa de 6. Cada tela deve pedir uma decisão; despejo de informação ("vomitar dados") é o erro mais comum.
 - Primeira tela em 360 e 1440 px: hierarquia, legibilidade, uma ação óbvia. Página inteira: o olho sabe para onde ir?
 - Interaja: estados vazio, carregando, erro e resultado existem? Foco visível, teclado, contraste (`axe` em `observation.json`)?
 - Identidade: parece feito para este problema ou parece um template genérico (gradiente roxo, grade de cards, dashboard padrão)?

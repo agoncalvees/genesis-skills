@@ -98,6 +98,31 @@ try {
 				}),
 			),
 		);
+		v.firstScreen = await page.evaluate(() => {
+			let words = 0;
+			let numbers = 0;
+			const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+			while (walker.nextNode()) {
+				const node = walker.currentNode;
+				const el = node.parentElement;
+				if (!el) continue;
+				const box = el.getBoundingClientRect();
+				const style = getComputedStyle(el);
+				if (box.bottom <= 0 || box.top >= innerHeight || box.height === 0 || style.visibility === "hidden" || style.display === "none") continue;
+				const text = node.textContent.trim();
+				if (!text) continue;
+				words += text.split(/\s+/).length;
+				numbers += (text.match(/\d+[.,]?\d*/g) || []).length;
+			}
+			let controls = 0;
+			for (const el of document.querySelectorAll("button, a[href], input, select, textarea, [role=slider], [role=tab]")) {
+				const box = el.getBoundingClientRect();
+				if (box.bottom > 0 && box.top < innerHeight && box.height > 0) controls++;
+			}
+			return { words, numbers, controls };
+		});
+		const budget = width < 600 ? 35 : 60;
+		v.density = v.firstScreen.words > budget ? `ACIMA do orçamento (${v.firstScreen.words} > ${budget} palavras)` : "ok";
 		v.overflowPx = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
 		await shot("pagina", true);
 
@@ -149,7 +174,7 @@ try {
 writeFileSync(join(out, "observation.json"), `${JSON.stringify(report, null, 2)}\n`);
 for (const v of report.viewports) {
 	console.log(
-		`${v.width}px: status ${v.status}, conteúdo ${v.domContentLoadedMs} ms, rede ociosa ${v.networkIdleMs} ms, overflow ${v.overflowPx}px, erros ${v.errors.length}, demo ${v.demo.found ? `${v.demo.steps.length} passos` : "ausente"}, story ${JSON.stringify(v.story)}`,
+		`${v.width}px: status ${v.status}, conteúdo ${v.domContentLoadedMs} ms, rede ociosa ${v.networkIdleMs} ms, overflow ${v.overflowPx}px, erros ${v.errors.length}, densidade ${v.firstScreen.words} palavras/${v.firstScreen.numbers} números/${v.firstScreen.controls} controles (${v.density}), demo ${v.demo.found ? `${v.demo.steps.length} passos` : "ausente"}, story ${JSON.stringify(v.story)}`,
 	);
 }
 console.log(`Evidências em ${out}/ (observation.json + capturas)`);
