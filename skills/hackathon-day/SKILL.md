@@ -1,11 +1,11 @@
 ---
 name: hackathon-day
-description: Organiza um hackathon da revelação do tema à entrega. Use para interpretar regras do evento, definir cronograma e papéis, organizar o congelamento, preparar o ensaio ou decidir o próximo passo durante a competição.
+description: Use when organizing an active hackathon and the user needs rules interpreted, a timeline or build roles, scope freeze, rehearsal, or a delivery plan. For the product idea itself, use problem-to-pain.
 ---
 
 # Dia de hackathon
 
-Ajuste a entrega às regras do evento. Se a pessoa enviar só o tema ou pedir uma ideia, use a primeira resposta de `problem-to-pain`: uma recomendação explicada no chat. Quando o pedido for organizar o evento ou conduzir a escolha da equipe, use um único orçamento desde a revelação, normalmente 30 minutos, com triagem de regras e passagem ao brief incluídas. Combine a hora-limite e use a variante curta se o evento exigir.
+A skill de hackathon organiza regras, relógio e entrega. Para decidir o que construir, encaminhe a descoberta a `problem-to-pain`, que é a fonte única do método. Use `model-orchestra` só para distribuir a pesquisa entre sessões independentes. Não repita aqui o brainstorm, a pontuação ou os prompts de pesquisa.
 
 ## 1. Triagem de regras no início da descoberta
 
@@ -18,21 +18,21 @@ Registre em `docs/CHALLENGE.md` o tema **literal**, fonte e horário, critérios
 
 Se o reaproveitamento estiver incerto, **não reaproveite código**. Estas skills são processo; os templates só são copiados quando permitido.
 
-## 2. Linha do tempo (ajuste às horas reais; exemplo para ~6 h de construção)
+## 2. Linha do tempo (ajuste às horas reais; exemplo para seis horas)
 
 | Relógio | Bloco | Saída obrigatória |
 |---|---|---|
-| T+0:00–0:30 | Descoberta (`problem-to-pain`) | Direção e recorte aprovados com brief imediato, ou rodada encerrada sem aprovação |
-| T+0:30–0:45 | **Prova inicial do mecanismo e pitch** após a direção aprovada (`mechanism-integrity`, `pitch-structure`) | Primeiro teste da parte que cria valor ou da dependência mais incerta, mesmo fora da interface. Mecanismo e roteiro registram a fatia demonstrada |
-| T+0:45–1:15 | Direção e esqueleto (`art-direction`) | `design/DESIGN.md` curto; app com as seções da estrutura padrão |
-| T+1:15–3:00 | **Caminho da demo** | abertura + input ao vivo + mecanismo funcionando de ponta a ponta, feio se preciso |
-| T+3:00 | Teste dos 5 segundos (`judge-and-verify`) | `design/judging/observation.json` + packet; densidade/axe/overflow |
-| T+3:00–4:45 | Profundidade e beleza | antes × depois; caso difícil; tour `?demo=1`; capricho visual só no caminho da demo |
+| T+0:00–0:15 | Regras e recomendação (`hackathon-day`, `problem-to-pain`) | `CHALLENGE.md` e tese recomendada pelo método de descoberta |
+| T+0:15–0:30 | **Prova inicial do mecanismo e pitch** (`mechanism-integrity`, `pitch-structure`) | Primeiro teste da ação que cria valor ou da dependência mais incerta. Mecanismo e roteiro registram a parte demonstrada |
+| T+0:30–0:55 | Direção e esqueleto (`art-direction`) | `design/DESIGN.md` curto; app com as seções da estrutura padrão |
+| T+0:55–2:45 | **Caminho funcional principal** | abertura + input ao vivo + mecanismo funcionando de ponta a ponta |
+| T+2:45 | Teste dos 5 segundos (`judge-and-verify`) | `design/judging/observation.json` + packet; densidade/axe/overflow |
+| T+2:45–4:45 | Profundidade e experiência | antes × depois; caso difícil; tour `?demo=1`; refinamento das partes usadas no pitch |
 | T+4:45 | **Congelamento** (`demo-rehearsal`) | nenhuma funcionalidade nova depois daqui |
 | T+4:45–5:15 | Endurecer (`red-team`) | `docs/RED-TEAM.md`, verify/observe sem gates P0, e2e do caminho, deploy/build local, vídeo 60 s |
 | T+5:15–6:00 | Ensaiar (`demo-rehearsal`) | 3 pitches cronometrados; ajuste a abertura, não o código |
 
-Planeje de trás para frente a partir da submissão e reserve tempo para ensaio e vídeo. Após o aceite, priorize uma fatia completa que prove valor. Ajuste o cronograma se o primeiro teste indicar que o núcleo exige mais tempo. Se precisar cortar, reduza integrações, volume ou interface antes de retirar a condição que torna a solução útil. Use a regra de reabertura de `problem-to-pain` se o corte afetar o valor central ou uma restrição oficial.
+Planeje de trás para frente a partir da submissão e reserve tempo para ensaio e vídeo. A descoberta entrega uma recomendação e encerra a ideação; reabra a direção só quando uma regra ou evidência nova invalidar a premissa central. Depois, teste cedo o mecanismo e distribua a implementação entre as pessoas e sessões disponíveis. Preserve a ambição do produto e identifique com clareza o que o protótipo conseguiu demonstrar no prazo.
 
 ## Honestidade técnica (a banca verifica)
 
@@ -43,14 +43,14 @@ Planeje de trás para frente a partir da submissão e reserve tempo para ensaio 
 - **Textos e números são calculados/rastreados, não escritos à mão.** Todo número tem fonte, "estimativa" ou "dado de exemplo". Se os dados mudam, a frase muda.
 - **Dados de exemplo não podem ser armados.** Inclua casos difíceis (negação, sinônimos, falso positivo) e mostre um em que o sistema erra e a pessoa decide.
 
-## 3. Papéis (3 ou 4 pessoas, um agente principal por pessoa)
+## 3. Papéis depois da escolha
 
 - **Produto/pitch:** dono da dor, do one-liner, do roteiro e da apresentação. Ensaia a partir da metade do tempo.
 - **Mecanismo:** dono do caminho da demo (lógica, dados, IA) e dos testes dele.
 - **Experiência:** abertura, momento-assinatura, tour guiado, verificação visual.
 - **Integração e plano B (4ª pessoa):** deploy, vídeo de reserva, checklist de entrega.
 
-Mantenha os agentes simples: tarefas pequenas com arquivos definidos. Orquestração pesada com vários agentes falha por cota no meio do evento.
+Para dividir implementação entre modelos, use `model-orchestra`. Mantenha uma pessoa integradora responsável pelas interfaces e pela verificação final.
 
 ## 4. Checklist de entrega
 
@@ -63,4 +63,4 @@ Mantenha os agentes simples: tarefas pequenas com arquivos definidos. Orquestra�
 
 ## Evidência
 
-Padrões repetidos entre vencedores e jurados (OpenAI Build Week 2026, TreeHacks 2025–26, Gemini API Competition, relatos de jurados): uma frase e uma pessoa concreta; demo ao vivo do caminho principal ("the single largest score differentiator"); os primeiros 30 s fixam a nota; escopo estreito que roda inteiro; IA essencial **com limites**; limites honestos; gravação de reserva; sem atrito de cadastro. Detalhes e fontes: `references/winning-patterns.md`. Protocolo de drill: `references/drill-protocol.md`.
+Use `references/winning-patterns.md` como biblioteca de precedentes com fontes por caso, não como fórmula de vitória. Não repita alegações sobre peso de demo, primeiros segundos, Wi-Fi ou preferência de jurados sem evidência publicada pelo evento. Para o pitch, torne pessoa, ação e prova compreensíveis; para a demo, ensaie o fluxo e um plano B conforme as condições reais do evento. Protocolo de drill: `references/drill-protocol.md`.

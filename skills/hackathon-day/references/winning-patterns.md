@@ -1,47 +1,31 @@
-# O que os vencedores têm em comum
+# Casos de temas e projetos vencedores
 
-Pesquisa de 24/11/2026: anúncios oficiais de vencedores (OpenAI Build Week 2026, TreeHacks 2025 e 2026, Gemini API Developer Competition), relatos de jurados e guias de plataformas. Devpost bloqueou a leitura automática; os padrões abaixo vêm de cerca de 20 projetos premiados e de 5 relatos de julgamento. Quando um item é inferência, está marcado.
+Atualizado em 26/11/2026. Esta é uma biblioteca de precedentes para comparação, não uma pesquisa estatística sobre “o que faz vencer”. As fontes abaixo confirmam tema, resultado e descrição pública do projeto; elas não autorizam inferir a razão do prêmio. Registre sempre o que é proposta, protótipo, piloto ou uso medido.
 
-## Padrões que se repetem (3 ou mais fontes)
+## Casos documentados
 
-1. **Uma frase, uma pessoa.** "Isto é uma ferramenta que faz X para Y." Os vencedores nomeiam alguém concreto: pessoas com disartria, a recepção de uma clínica veterinária que passou de três veterinários para um, a equipe de reanimação de um hospital no Cairo, quem aprende os tons do vietnamita. Ninguém vence com "plataforma para todos".
-2. **Demo ao vivo do caminho principal.** Segundo um jurado, foi "the single largest score differentiator". Slides não mudaram notas; o único slide útil é uma captura da coisa funcionando, como plano B.
-3. **Os primeiros 30 segundos fixam a nota.** Quem gasta o começo contextualizando perde um terço do tempo antes de o jurado saber o que está vendo.
-4. **Escopo estreito que roda de ponta a ponta** vale mais que uma "plataforma em 36 horas". Corte escopo até algo rodar inteiro.
-5. **Superfície visível e imediata.** Áudio em tempo real, uma curva de entonação sobreposta à referência, máquinas 3D desmontáveis, uma bengala que guia. O jurado vê o efeito acontecer.
-6. **IA essencial, mas com limites.** Todos os 8 vencedores do OpenAI Build Week descrevem uma fronteira. O usuário confirma antes de agir. Código determinístico calcula e a IA explica. O modelo "não toma a decisão médica" e "não pode inventar" ações. Isso convence mais que "a IA faz tudo".
-7. **Acessibilidade, saúde e situações de risco** concentram prêmios de impacto (inferência sobre a amostra, não regra).
-8. **Limites ditos com honestidade** aumentaram a nota em vez de reduzi-la ("o que quebra primeiro em escala?").
-9. **Plano B gravado.** Uma captura de 60 s; o Wi-Fi falha na maioria dos eventos.
-10. **Sem atrito de entrada.** Pule criação de conta e fluxos triviais; se houver login, entregue uma conta pronta. Quem precisa de uma tela de marketing antes do app perde tempo de julgamento.
+| Evento, ano e desafio | Projeto reconhecido e mecanismo descrito | O que a fonte comprova — e o limite |
+|---|---|---|
+| [Hackathon Dataprev/MEC 2025](https://dataprev.gov.br/central-de-conteudos/noticias/projeto-de-ia-para-apoiar-estudantes-da-eja-vence-hackathon-2025) — “Inovação e inteligência artificial na educação”; 33 horas. | **SEJA+** foca em pessoas aptas à EJA: integraria bases educacionais, apoiaria a busca ativa, facilitaria a matrícula e acompanharia a qualificação. | A fonte publica primeiro lugar e critérios (criatividade, inovação, UX, qualidade do protótipo/documentação e viabilidade de negócio). Diz que o MEC ainda poderia avaliar a viabilidade depois. É proposta vencedora, não impacto medido. |
+| [HSIL Hackathon 2026, etapa brasileira](https://portal.tcu.gov.br/imprensa/noticias/tcu-vence-etapa-brasileira-de-maratona-de-inovacao-global-em-saude) — inovação em sistemas de saúde. | **TCU/UFRN** usa bases públicas do SUS (CNES, SIA e SIH) para apoiar gestores locais a identificar fragilidades e definir prioridades de planejamento. | O TCU confirma primeiro lugar e protótipo funcional em estágio avançado. A notícia não informa implantação municipal nem resultado medido. |
+| [TruthTell Hackathon 2025](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2119864&lang=2&reg=48) — combater desinformação e mídia manipulada. | Foram anunciados cinco vencedores. **Live Truth**, por exemplo, combina modelo local, APIs de checagem, pontuação de credibilidade e validação comunitária por SMS/GPS; **Anvesha** analisa texto, imagem e vídeo. | O Ministério da Informação da Índia confirma que os 25 finalistas demonstraram protótipos funcionais. A publicação não fornece medição de precisão, falsos positivos ou adoção posterior. Os vencedores formam um grupo reconhecido; não há um único campeão geral nessa notícia. |
+| [UNESCO Youth Hackathon 2026](https://www.unesco.org/en/articles/meet-winners-unescos-2026-youth-hackathon-media-and-information-literacy) — alfabetização midiática e informacional. | Quatro equipes venceram entre 2.028 submissões. **Lucide** dirige-se a pessoas idosas, inclusive com baixa alfabetização: combina verificação assistida por IA, atividades educativas, WhatsApp e apoio intergeracional. Os outros projetos focam crianças e pais, bolhas de recomendação para jovens ou um jogo de mistério sobre conteúdo manipulado. | A UNESCO confirma o tema, os quatro projetos e avaliação por 130 especialistas. Os projetos descrevem objetivos e experiências; a página não comprova mudança de comportamento ou implantação. |
+| [AI x City Climate Action Hackathon 2026](https://www.globalcovenantofmayors.org/press/ai-disaster-response-solution-wins-the-2026-ai-x-city-climate-action-hackathon/) — problemas urbanos de clima, incluindo enchentes, calor e desinformação. | **TRACE**, primeiro lugar entre 75 projetos: transforma conversas registradas, inclusive em línguas regionais, em dados acionáveis para ajudar cidades a identificar famílias afetadas e quem ainda não foi alcançado. | A fonte informa 11 finalistas e anuncia que TRACE avançará para explorar um piloto com uma cidade. Não relata piloto executado nem impacto medido. |
+| [Singapore–India Hackathon 2026](https://news.smu.edu.sg/sites/news.smu.edu.sg/files/smu/news_room/SMU%20Press%20release_SIH_award%20ceremony_18%20Nov%202026.pdf) — tema amplo “Build a Better Future”, com desafios de parceiros; construção em 36 horas. | **Payung** responde à perda de renda de vendedores ambulantes causada por mau tempo: gatilho climático paramétrico e pagamento automático, sem formulário de sinistro. | A SMU confirma o desafio, a equipe vencedora e a solução apresentada. Embora a trilha pedisse dados e IA, a descrição pública não explica em qual etapa Payung usa IA. Não presuma centralidade de IA por causa do enunciado ou do prêmio. |
+| [Global AI Hackathon 2025, MIT RAISE e App Inventor Foundation](https://www.appinventor.org/news/gah-2025-winners) — aplicativos de IA relacionados aos Objetivos de Desenvolvimento Sustentável; seis semanas. | **RehabAI** acompanha, classifica e pontua exercícios em reabilitação remota; **Move to Heal** também aborda fisioterapia em casa sem orientação constante. | A fonte descreve vencedores e diz que a banca avaliou criatividade, impacto, design e qualidade técnica usando apresentação, vídeo e código. Não relata validação clínica nem ganho de recuperação. O evento de seis semanas não é comparável a um hackathon de seis horas. |
+| [NVIDIA Hack for Impact 2026, Public Services](https://www.ucl.ac.uk/engineering/news/2026/jun/phd-student-wins-nvidia-hackathon-prize-and-government-recognition-nhs-tool-3) — filas de espera do NHS. | **WaitWise** cruza listas de espera com diretrizes clínicas, sinaliza pessoas em risco, sugere ações e prepara documentos para revisão de coordenadores. O [repositório público](https://github.com/khayamumair/waitwise) descreve o fluxo e a demonstração. | A UCL confirma que foi construído em um fim de semana e venceu a trilha de serviços públicos. O repositório declara que o fluxo da demonstração usa dados de exemplo e execução local; isso prova o mecanismo do protótipo, não um benefício clínico ou uso pelo NHS. |
 
-## Critérios mais comuns
+## Padrões observados nesta amostra
 
-| Evento | Critérios |
-|---|---|
-| OpenAI Build Week 2026 | implementação técnica, design e UX, impacto potencial, qualidade da ideia |
-| TreeHacks | criatividade, complexidade técnica, impacto social |
-| Hack Brasil 2026 | execução técnica, implementação técnica, impacto, comunicação (pesos iguais, 0–10) |
-| Hackathon Cognition SP | qualidade técnica, apresentação visual, impacto e originalidade (0–10); julgamento assíncrono; top 5 com 3 min no palco |
-| Devfolio (recomendado) | técnica, originalidade, praticidade, usabilidade, "wow factor" |
+Os casos não formam uma amostra representativa nem revelam causalidade do julgamento. Ainda assim, várias descrições oficiais tornam estes elementos visíveis:
 
-Constantes: **impacto** e **qualidade técnica** estão em todas as listas. **Comunicação/apresentação** aparece como critério explícito ou como filtro (só quem se explica chega ao palco).
+1. **O tema amplo é reduzido a uma situação e uma ação.** Educação vira localizar e matricular pessoas elegíveis à EJA; defesa contra desinformação vira apoiar pessoas idosas a verificar conteúdos; crise urbana vira encontrar famílias afetadas ainda não alcançadas.
+2. **Beneficiário e operador podem ser diferentes.** Uma pessoa recebe o benefício, enquanto gestor, coordenador, agente público ou cuidador decide e age. Diga os dois papéis.
+3. **A solução tem uma cadeia que cabe numa cena.** Entrada disponível → tarefa concreta do sistema → checagem → ação de alguém → consequência observável. Isso ajuda a explicar a dor e a decidir o que a demo precisa provar.
+4. **Dados e autoridade de agir fazem parte do produto.** Bases públicas, diretrizes e registros podem encurtar o caminho; a equipe ainda precisa provar acesso, qualidade e quem pode agir sobre a saída.
+5. **O núcleo de IA precisa ser explicado, não presumido.** A descrição pública de Payung, por exemplo, não informa onde está a IA. Se a tarefa do modelo não muda a decisão, a skill deve chamar isso de lacuna.
+6. **O prêmio não é evidência de sucesso social.** Há propostas aguardando avaliação, protótipos com dados de demonstração e vencedores que ainda buscam pilotos. Vitória, funcionamento técnico, uso e impacto são estados diferentes.
 
-## Landing page, login ou app direto?
+## Como usar os precedentes
 
-O app abre **direto na experiência**, já com um exemplo carregado. A "landing" é a faixa de abertura em cima do próprio app (para quem é, dor, ação), não uma página separada. Login só se o problema exigir, e nesse caso com conta de demonstração preenchida. No julgamento assíncrono o jurado abre o link sozinho: a primeira tela e o `?demo=1` precisam funcionar sem nós.
-
-## O que não moveu notas (segundo jurados)
-
-Polimento além da legibilidade, escolha de framework, tamanho do time e credenciais, decks longos, explicar desafios técnicos enfrentados. O design entra pela **clareza**, não pelo enfeite. Não confundir com "feio": apresentação visual é critério explícito no evento da Cognition.
-
-## Fontes
-- OpenAI, Build Week winners: https://developers.openai.com/blog/build-week-winners
-- Stanford Daily, TreeHacks 2026: https://stanforddaily.com/2026/02/15/12th-annual-treehacks/ e 2025: https://stanforddaily.com/2025/02/18/treehacks-awards-200000-in-prizes-to-students-from-around-the-world/
-- Google, Gemini API Developer Competition: https://developers.googleblog.com/en/announcing-the-winners-of-the-gemini-api-developer-competition/
-- Relato de jurado: https://dev.to/kurbaitaev/what-judges-actually-score-notes-from-a-year-of-hackathon-judging-3p4l
-- Análise de vencedores de IA: https://dev.to/jsb-securedme/what-ai-hackathon-winners-actually-have-in-common-1kla
-- TechCrunch, demo de hackathon: https://techcrunch.com/2014/09/01/how-to-crush-your-hackathon-demo/
-- Devfolio, julgamento: https://guide.devfolio.co/docs/guide/participating-in-hackathons/judging-1
-- Hackathon Cognition SP: https://luma.com/cognition-hack-sp
-- Hack Brasil 2026, regulamento: https://hackbrasil.com/regulamento
+Para cada oportunidade, escolha o precedente mais próximo e registre: tema/ano, projeto, mecanismo, critério publicado, status da evidência, semelhança e diferença local. Use o caso para identificar uma lacuna ou evitar repetição; não copie seu produto. Não escreva “venceu porque...” a menos que a banca publique essa explicação. Não transforme observações desta amostra em percentuais, regras universais ou garantia de vitória.

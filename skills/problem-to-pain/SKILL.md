@@ -5,27 +5,35 @@ description: Use quando a pessoa trouxer um tema ou desafio, pedir ou quiser evo
 
 # Descoberta e decisão de produto
 
-## Quando chegar só o tema ou um pedido de ideia
+## Quando chegar um tema ou pedido de ideia
 
-Entregue **uma ideia recomendada no chat, na primeira resposta**. Isso vale também para um tema identificado como hackathon ou acompanhado de restrições avulsas. Explore alternativas internamente. Apresente comparação quando a pessoa pedir opções. Reserve o dossiê, a arquitetura detalhada e a rodada de aceite para pedidos de aprofundamento ou de condução da decisão de uma equipe. Use as restrições informadas e declare a suposição que mais pesa na escolha. Quando o prazo for desconhecido, proponha uma primeira versão pequena sem presumir um relógio de evento.
+Se for **tema de hackathon**, a primeira resposta já traz a decisão pesquisada e o brief para começar a construir. Não entregue só um nome, um one-liner ou uma recomendação curta para depois reservar as fontes, a dor e o plano de build. Siga o contrato completo de [Decisão rápida com evidência](references/hackathon-discovery.md). Recomende uma direção principal; compare internamente no máximo três mecanismos e mostre apenas as alternativas necessárias para justificar a escolha. Não peça à equipe que escolha um menu nem prometa vitória.
 
-Antes de escolher, dê um passe curto pela [exploração de oportunidades](references/opportunity-exploration.md). Em temas amplos, ancore a favorita em um episódio real do contexto. Use relatos, registros operacionais ou fontes primárias disponíveis. Avance como hipótese quando faltar acesso e cite precisamente o que ainda precisa de evidência.
+Se não for hackathon, entregue uma ideia recomendada na primeira resposta e mantenha a profundidade proporcional ao pedido. Declare suposições que mudem a decisão. Quando o prazo do evento for desconhecido, não invente um relógio: escolha uma fatia inicial e marque o prazo como informação a confirmar.
 
-Abra com uma frase em linguagem comum que explique **quem faz o quê e o que melhora**. Desenvolva a ideia em três partes.
+Antes de escolher, faça o passe curto de [exploração de oportunidades](references/opportunity-exploration.md). Em temas amplos, conecte o desafio a uma cena documentada no contexto local. Um relato direto, auditoria, registro operacional ou pesquisa primária pode sustentar a sequência do evento; estatísticas agregadas ajudam a dimensionar, mas não provam sozinhas que a dor convence. Se faltar evidência local, recomende a aposta mais bem sustentada como hipótese e diga qual lacuna deve ser checada primeiro.
 
-- **Dor e consequência.** Mostre o que aconteceu, quem arcou com a perda e como o trabalho é feito hoje. Diga o que sustenta a existência da dor e por que intervir naquele ponto pode mudar o resultado.
-- **Como funciona.** Use uma cena para mostrar a intervenção completa. Explique as entradas, a parte difícil que o sistema resolve, a ação que passa a ser possível e o que acontece quando falta um recurso ou uma condição muda. Se o tema pede IA, mostre uma entrada que muda a decisão por causa do modelo e como o sistema verifica a saída.
-- **O que dá para construir primeiro.** Recorte a quantidade de casos, usuários ou integrações preservando o trabalho mais valioso da solução. Descreva a dependência decisiva e um teste com a mesma tarefa para a proposta e a prática atual. Meça um resultado ligado à dor e mostre um caso difícil em que a solução precisa recalcular, mudar a ação ou reconhecer um impasse.
-
-Mantenha a profundidade necessária para a pessoa entender e decidir. Siga para a seção de descoberta de hackathon quando o pedido for conduzir a escolha da equipe ou organizar a execução do evento.
+Toda explicação começa em linguagem comum: **quem enfrenta qual situação, o que faz hoje, o que perde e o que o produto muda**. Para produto com IA, a cadeia deve ser legível: `entrada → tarefa concreta da IA → checagem ou limite → ação → resultado`. A resposta de hackathon também inclui produto completo, MVP funcional e tarefas de construção; detalhes estão no contrato de descoberta abaixo.
 
 ## Quando a pessoa já tem uma ideia
 
 Use a [referência de evolução de ideias](references/evolve-idea.md) quando pedirem para melhorar, aprofundar ou consertar uma proposta, inclusive depois de rejeitarem uma sugestão. Identifique o resultado e as escolhas que a pessoa quer preservar. Diagnostique onde a versão atual perde valor e compare maneiras de vencer esse gargalo. Responda com a versão recomendada, a mudança que faz diferença, o custo ou limite que ela introduz e o primeiro teste que separa ganho real de melhoria aparente. Se o mecanismo for o gargalo, use a seção de projeto de `mechanism-integrity` em apoio a essa decisão. Se a dificuldade estiver na experiência, na entrega ou na adoção, evolua essa parte.
 
+## Aprenda com feedback durante a ideação
+
+Associe cada rejeição à proposta específica e preserve o motivo nas palavras da pessoa. Classifique o estágio sinalizado — problema/dor, evidência, mecanismo, valor da IA, diferença competitiva, viabilidade, experiência ou comunicação — sem transferir motivos entre propostas. Se o motivo não estiver claro, faça uma pergunta curta; quando a pessoa já nomear a objeção principal, aceite-a como suficiente para a rodada e siga sem pedir outra justificativa. Se a objeção for a força da dor, volte ao episódio, à prática atual, à consequência para quem é afetado e a quem consegue agir; não contorne a objeção trocando de domínio. Escala ou gravidade estimada, sozinhas, não provam que a dor convence.
+
+Quando a pessoa pedir para melhorar a própria skill com base nesses testes, use os sinais como sondas, não como preferência genérica: (1) registre proposta, feedback literal, estágio e comportamento observado; (2) formule o critério de aprovação e registre o resultado atual antes de editar; (3) corrija a regra mais específica no arquivo canônico, sem duplicá-la em várias skills; (4) repita o mesmo cenário em contexto novo; (5) registre resultado, limites e próxima sonda em `TRAINING.md`. Mantenha a alteração como candidata até a repetição passar; não declare validação nem avance versão antes disso. Uma rejeição do usuário informa a decisão sobre aquela proposta, mas não prova sozinha uma regra universal.
+
 ## 1. Explore oportunidades antes de escolher uma dor
 
-Extraia o resultado que o tema pede e separe restrições confirmadas de suposições. Explore alguns episódios e maneiras distintas de mudar o resultado antes de escolher. Se os caminhos estiverem parecidos ou o tema estiver amplo demais, use as lentes de [exploração de oportunidades](references/opportunity-exploration.md) num passe interno.
+Extraia o resultado que o tema pede e separe regras confirmadas de suposições. Use as duas lentes de [exploração de oportunidades](references/opportunity-exploration.md) para gerar **no máximo três caminhos distintos no total**. Pare de abrir caminhos quando as novas opções repetirem a mesma causa e ação.
+
+### Pesquisa comparativa para hackathons
+
+Use o [método de descoberta](references/hackathon-discovery.md) como fonte única para os passos, prompts, pontuação e limite de tempo. Com duas sessões independentes, `model-orchestra` distribui as trilhas e devolve evidências ao moderador. Sem elas, execute os mesmos recortes em sequência e marque a pesquisa como solo. Não escolha primeiro uma demo e invente uma dor para justificá-la.
+
+A recomendação apresenta uma tese de produto: público, episódio, consequência, mudança no trabalho provocada pela IA, ação viabilizada, mecanismo de IA, verificação da saída, comparação com substitutos e precedentes, incerteza decisiva e plano de construção para o tempo restante. O prazo determina a organização e a divisão de trabalho. Ele não rebaixa os critérios de escolha a facilidade de implementação.
 
 Explore resultados e mecanismos de valor diferentes antes de investigar a fundo. Para as oportunidades mais fortes, identifique quem vive a dor, quem pode agir e o que faz hoje, inclusive trabalho manual, ajuda humana ou deixar como está. Capture um episódio quando houver acesso. Procure um ganho observável frente à melhor alternativa atual.
 
@@ -33,21 +41,21 @@ Registre **fato** com fonte, contexto e alcance, **hipótese** com uma observaç
 
 ## 2. Compare propostas com ambição e um recorte executável
 
-Escolha pela combinação de **consequência relevante, intervenção que muda o desfecho e caminho até o primeiro uso**. Antes de recomendar, compare internamente a favorita com uma intervenção em outro ponto da causa. A ambição está no tamanho da mudança para a pessoa. Prefira a menor versão de uma intervenção forte.
+Em hackathons, ordene as propostas pelos pesos publicados e pela consequência para as pessoas. Examine a força da intervenção, a diferença frente ao que já existe e o caminho até o primeiro uso. Compare a favorita com uma intervenção que atue em outro ponto da causa. Use dependências e tempo para dimensionar o plano de construção e os riscos depois da escolha. Preserve a mudança central que justifica a proposta ao definir o primeiro recorte.
 
 - **Elimine propostas genéricas.** Se trocar o público ou o tema deixa o fluxo praticamente igual e perde-se pouco valor, volte à cena e encontre uma ação que resolva uma dificuldade daquele contexto. Uma interface familiar serve quando a ação que ela viabiliza muda o resultado.
 - **Elimine promessas frágeis.** Percorra o primeiro uso e confira quem fornece cada entrada, quem pode agir sobre a saída e o que acontece depois. Se a primeira entrega depende de adesão em escala, dados inéditos, parceria ou acesso sem caminho plausível, redesenhe usando um recurso ao alcance da pessoa. Se perder o ganho nesse recorte, escolha outra proposta.
 - **Teste a força da intervenção.** Compare com o melhor substituto que a pessoa já tem, como uma mensagem, planilha, regra simples, software existente ou ajuda humana. Se o substituto chega ao mesmo desfecho sob as mesmas restrições e com esforço parecido, volte ao problema. Um alerta ou resumo passa quando muda materialmente o resultado, por exemplo quando evita que uma janela de ação se feche. Se a consequência permanece e o produto apenas a descreve melhor, procure uma intervenção com mais efeito.
-- **Decida pelo uso.** Entre ideias viáveis, favoreça a que muda de forma mais valiosa o resultado de um episódio sustentado por evidência. Facilidade de codar e efeito de palco ajudam a desempatar. Um protótipo com dados fictícios testa o fluxo e o mecanismo. Para afirmar ganho no uso, compare com a prática atual.
+- **Decida pelo potencial de vencer.** Ordene primeiro por aderência aos critérios oficiais, consequência para o público, originalidade e diferença frente às soluções e aos precedentes pesquisados. Em seguida, torne a proposta construível com a equipe, as ferramentas e o tempo disponíveis. Um protótipo com dados fictícios testa o fluxo e o mecanismo. Para afirmar ganho no uso, compare com a prática atual.
 
-Compare **valor e aderência** ao objetivo, **diferenciação** frente à alternativa, **clareza** da experiência e **viabilidade** de demonstrar o núcleo. No hackathon, use os pesos oficiais quando existirem e indique que a comparação é provisória. Elimine recortes que violem uma regra ou que não possam demonstrar valor distinto no tempo disponível. Antes de descartar a direção, procure outro recorte que preserve o núcleo.
+Compare **aderência e impacto**, **originalidade**, **qualidade técnica**, **experiência** e **viabilidade** usando critérios, pesos e escalas publicados pela banca. Só atribua notas numéricas quando a escala e os pesos estiverem publicados. Se faltarem, diga isso e compare qualitativamente, sem inventar pesos, notas ou percentuais. Elimine recortes que violem regras oficiais. Para cada critério, mostre a evidência, o nível de confiança e o maior risco.
 
 ### Dossiê de descoberta para a equipe
 
-Quando a equipe pedir descoberta aprofundada ou condução da escolha, entregue a proposta desenvolvida em `docs/DISCOVERY.md` antes de pedir aceite. Se só houver conversa, entregue o dossiê na própria resposta. Abra com a recomendação em linguagem comum, o tema literal e o relógio quando conhecido. Desenvolva a análise até dar à equipe informações suficientes para escolher, começar a construir e verificar se a solução funcionou. Use tabelas, fluxos e cenas concretas para orientar a leitura.
+Em tema de hackathon, entregue o contrato de decisão e construção na primeira resposta, mesmo que a equipe ainda não peça um dossiê. Se houver repositório, preserve a resposta completa no chat; crie `docs/DISCOVERY.md` e `docs/PRODUCT-BRIEF.md` quando o usuário pedir artefatos ou quando o trabalho já estiver acontecendo no projeto. Abra pelo veredito em linguagem comum, pelo tema literal e pelo relógio conhecido. Desenvolva o suficiente para decidir e começar; detalhe técnico não substitui a cena da dor.
 
 1. **Problema e oportunidade.** Descreva quem vive a dor, em que momento trava, o que já tenta, o custo da falha e quem pode mudar o resultado. Identifique a evidência de cada ponto, as premissas em aberto e como investigá-las.
-2. **Alternativas e escolha.** Para cada finalista, explique como funciona, o valor que entrega, a melhor alternativa atual, o diferencial e o maior risco. Compare pelos critérios da banca. Justifique a vencedora pela mudança que ela torna possível, pela força da evidência e pela capacidade de prová-la na demo. Diga o que faria você mudar de ideia.
+2. **Alternativas e escolha.** Para cada finalista, explique como funciona, o valor que entrega, a melhor alternativa atual, o precedente mais próximo, o diferencial e o maior risco. Compare pelos pesos da banca. Justifique a recomendação pela mudança que ela torna possível, pela evidência, pela lacuna competitiva e pelo potencial de execução. Diga o que faria você mudar de ideia.
 3. **Experiência da favorita.** Acompanhe a mesma pessoa desde a dor até o resultado. Mostre as ações da pessoa e do sistema, o que muda na tela e um caso em que o fluxo precisa de outra saída. Use Mermaid quando a superfície renderizar, ou um fluxo com setas em Markdown.
 4. **Plano de construção.** Explique a arquitetura e o mecanismo, com entradas, regras, saídas, origem dos dados e dependências. Defina o MVP, módulos e responsáveis, sequência de implementação, checkpoints, primeiro corte e plano B. Verifique cedo a dependência que mais pode comprometer a demo. Registre o que foi testado de fato e o que segue como plano.
 5. **Prova para a banca.** Descreva a entrada que o jurado muda, o resultado observável, o caso difícil, os testes de aceite e o que a demonstração consegue provar. Conecte a abertura e a demonstração aos critérios oficiais.
@@ -60,20 +68,7 @@ Recomende uma direção mesmo sob incerteza, com força proporcional à fonte. D
 
 ## 3. Rode a descoberta de hackathon
 
-Use minutos decorridos desde a revelação. A equipe pode ajustar o orçamento inicial e redistribuir os blocos conforme o evento. Use a coluna mais próxima e comprima para caber no tempo real. Se o relógio já correu, use só as etapas que cabem no saldo.
-
-| Etapa | Padrão 30 min | Curta 12 min | Relâmpago 7 min |
-|---|---:|---:|---:|
-| Triar regras e autoridade | 0–3 | 0–1 | 0–1 |
-| Explorar em silêncio | 3–11 | 1–4 | 1–2 |
-| Agrupar, comparar e recomendar | 11–18 | 4–7 | 2–4 |
-| Ouvir objeções e decidir | 18–25 | 7–10 | 4–6 |
-| Registrar e passar ao brief | 25–30 | 10–12 | 6–7 |
-
-1. **Abra o relógio.** Pegue o tema literal, critérios, regras que eliminam propostas e tempo de construção de `CHALLENGE.md` ou da organização. Siga com lacunas declaradas. Combine no mesmo contato quem modera e qual pessoa a equipe autoriza a decidir no prazo. Sem delegação, peça um acordo explícito da equipe. Se o primeiro contato já pede propostas, entregue a comparação com o que sabe e encaminhe a decisão no mesmo contato.
-2. **Faça um passe independente.** Em paralelo, use a seção de descoberta de `model-orchestra`. Sozinho, complete os dois passes de `references/opportunity-exploration.md` antes de comparar. Se a lista repetir mecanismos, faça no máximo um passe lateral dirigido dentro da síntese. Mostre até três propostas no padrão e até duas nas janelas menores, **uma por mecanismo de valor**. Confira o teste da cadeia de valor na referência antes de apresentá-las. Uma referência fraca ou a ideia já preferida pelo grupo pode aparecer como comparador da prática atual. Toda finalista deve ser realmente elegível para escolha.
-3. **Faça uma rodada humana.** Cada pessoa anota uma opção e sua objeção decisiva antes de ouvir os demais. Na janela padrão, ouça uma objeção por pessoa em até 30 segundos. Nas janelas menores, leia as objeções individuais e responda à mais decisiva. Reserve o último minuto desse bloco para o aceite humano. Em empate, a pessoa delegada escolhe ou encerra sem aprovação. Sem aceite até o corte, registre em `docs/DISCOVERY.md` **encerrada sem aprovação**, horário, autoridade, recomendação e motivo conhecido. Se só houver conversa, devolva o status em uma linha. A equipe pode retomar com aceite explícito da direção e do recorte, sem refazer a exploração. A implementação começa após esse aceite.
-4. **Feche na mesma interação do aceite.** Use a estrutura visual do dossiê em `docs/PRODUCT-BRIEF.md` para consolidar a direção aprovada e o plano de execução. Registre quem aprovou e quando, a razão da escolha, a objeção e a incerteza aceitas, e a condição de reabertura. Explicite a visão de produto, o núcleo de valor que o MVP demonstra, quem começa e o primeiro teste. Se tiver apenas a conversa, entregue o brief pronto para salvar. Passe imediatamente para `mechanism-integrity` e `pitch-structure`.
+Feche a recomendação em até 15 minutos, seguindo o relógio e as regras de [Decisão rápida com evidência](references/hackathon-discovery.md). Entregue uma tese principal com o melhor suporte disponível, a objeção que poderia derrubá-la, a incerteza decisiva e o primeiro teste. Não peça que a equipe escolha de um menu nem aguarde consenso; encerre a ideação e encaminhe a recomendação para mecanismo e construção. Se o pedido for um dossiê ou a equipe precisar registrar a decisão, use a estrutura de descoberta acima sem reabrir a comparação.
 
 ## 4. Trate fatos novos sem reiniciar a ideação
 
