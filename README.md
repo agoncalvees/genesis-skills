@@ -22,7 +22,7 @@ Abra a pasta do projeto em **uma nova sessão do Codex** e descreva só a tarefa
 
 | Skill | Quando | Saída principal |
 |---|---|---|
-| `problem-to-pain` | Colar um tema de hackathon, comparar propostas, evoluir uma ideia ou escolher o que construir | Na primeira resposta do hackathon: uma direção recomendada, dor e público explicados em cena, pesquisa de fontes e vencedores, mecanismo de IA, diferencial, MVP funcional e plano de build com responsáveis e critérios de aceite. |
+| `problem-to-pain` | Colar um tema de hackathon, comparar propostas, evoluir uma ideia ou escolher o que construir | Na primeira resposta do hackathon: uma direção recomendada com cena, evidência, diferencial frente ao melhor substituto, mecanismo de IA, demo funcional e plano de build com responsáveis e critérios de aceite. |
 | `hackathon-day` | O evento começou: regras, linha do tempo, papéis de construção, congelamento, entrega | `docs/CHALLENGE.md`, cronograma; encaminha a decisão do que construir para `problem-to-pain` |
 | `mechanism-integrity` | Projetar a parte difícil da solução e verificar se a implementação entrega o efeito esperado | `docs/MECHANISM.md` com lógica, condições, contribuição da IA quando usada, comparação e limites |
 | `pitch-structure` | Montar a tela e o pitch: estrutura padrão, `?demo=1`, roteiro de 3 min, templates | `docs/DEMO-SCRIPT.md`, templates |
@@ -78,7 +78,7 @@ Mantenha esse checkout fora do catálogo de skills do agente e exclua `.genesis/
 Para trabalho fora de um evento, selecione só a skill de que a tarefa precisa. Em um hackathon, os passos abaixo são um roteiro de entrega ajustável ao regulamento e ao tempo disponível.
 
 1. `hackathon-day` — captura as regras oficiais e monta o relógio; não conduz a ideação.
-2. `problem-to-pain` — dona única da descoberta: pesquisa os desafios, precedentes, mercado e pessoas; compara pelos pesos oficiais e entrega uma tese principal em até 15 min. `model-orchestra` só coordena as duas trilhas quando há sessões independentes disponíveis.
+2. `problem-to-pain` — explora episódios e intervenções, testa as melhores teses contra substitutos e precedentes relevantes, aplica os critérios oficiais e recomenda uma direção em até 15 min durante o evento. `model-orchestra` coordena a pesquisa quando há sessões independentes.
 3. `mechanism-integrity` — mecanismo real, fronteira, entrada ao vivo.
 4. `pitch-structure` — primeira tela, `?demo=1`, antes/depois.
 5. `art-direction` — identidade visual. Use `design-engineering` conforme a necessidade da interação.

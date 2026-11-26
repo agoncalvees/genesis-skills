@@ -2,6 +2,8 @@
 
 Atualizado em 26/11/2026. Esta é uma biblioteca de precedentes para comparação, não uma pesquisa estatística sobre “o que faz vencer”. As fontes abaixo confirmam tema, resultado e descrição pública do projeto; elas não autorizam inferir a razão do prêmio. Registre sempre o que é proposta, protótipo, piloto ou uso medido.
 
+Abra a biblioteca depois de formular as primeiras teses. Procure o caso que já entrega a mesma mudança, mesmo que o tema, o público ou a interface sejam diferentes. Use a evidência do caso para revisar ou descartar a tese se ele tornar o diferencial irrelevante.
+
 ## Casos documentados
 
 | Evento, ano e desafio | Projeto reconhecido e mecanismo descrito | O que a fonte comprova — e o limite |
@@ -28,4 +30,4 @@ Os casos não formam uma amostra representativa nem revelam causalidade do julga
 
 ## Como usar os precedentes
 
-Para cada oportunidade, escolha o precedente mais próximo e registre: tema/ano, projeto, mecanismo, critério publicado, status da evidência, semelhança e diferença local. Use o caso para identificar uma lacuna ou evitar repetição; não copie seu produto. Não escreva “venceu porque...” a menos que a banca publique essa explicação. Não transforme observações desta amostra em percentuais, regras universais ou garantia de vitória.
+Quando um caso mudar a decisão, registre fonte, tema e ano, ação que ele permite, estágio demonstrado e diferença que ainda importa para a pessoa. Mencione os critérios ou as razões do prêmio se a banca os tiver publicado. Se a semelhança estiver só no tema ou na tecnologia, procure um substituto mais próximo da prática atual.

@@ -9,9 +9,9 @@ Esta skill coordena trabalho independente. Ela não define como pesquisar ou esc
 
 ## Pesquisa da ideia
 
-Quando duas sessões estiverem disponíveis, distribua as duas trilhas de [Decisão rápida com evidência](../problem-to-pain/references/hackathon-discovery.md). Envie a mesma ficha do desafio às duas, oculte preferências e conclusões da outra trilha e defina o retorno no minuto 7. A primeira sessão cobre pessoas, trabalho e oportunidade; a segunda cobre temas, vencedores e mercado. Cada uma devolve até três fatos decisivos com links, implicação e incerteza.
+Quando duas sessões estiverem disponíveis, distribua a pesquisa seguindo o [método de decisão e brief](../problem-to-pain/references/hackathon-discovery.md). Envie a mesma ficha a ambas. A primeira busca evidência de episódios, consequências e quem pode agir. A segunda busca o melhor substituto e o precedente relevante, quando houver. Cada sessão devolve os fatos decisivos com fonte, implicação e incerteza. Combine um retorno que deixe tempo para comparar, por exemplo no minuto 7 de uma descoberta de 15 minutos.
 
-O moderador verifica as fontes e faz a recomendação pelo método `problem-to-pain`. Não peça às sessões para produzir listas longas nem para chegar a consenso. Se uma sessão falhar, siga com a outra e marque a cobertura como solo.
+O moderador mantém os achados competitivos reservados até formular as primeiras teses. Depois verifica as fontes, usa os comparadores para atacar as teses e recomenda pelo método `problem-to-pain`. Se só uma sessão responder, use seus achados e complete a busca decisiva em modo solo.
 
 ## Implementação depois da escolha
 
